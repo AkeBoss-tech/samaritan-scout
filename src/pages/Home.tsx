@@ -31,7 +31,7 @@ function Home() {
 function HomeSearch() {
   return (
     <Container sx={{ backgroundColor: 'lightgray', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'text.primary' }}>
-      <img src="/logo.svg" className="Home-logo" alt="logo" />
+      <img src="%PUBLIC_URL%/logo.svg" className="Home-logo" alt="logo" />
       <h1>
         Samaritan Scout
       </h1>
