@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/samaritan-scout/static/css/main.073c9b0a.css",
+    "main.js": "/samaritan-scout/static/js/main.0df3dbc2.js",
+    "static/js/787.8eeb69e7.chunk.js": "/samaritan-scout/static/js/787.8eeb69e7.chunk.js",
+    "index.html": "/samaritan-scout/index.html",
+    "main.073c9b0a.css.map": "/samaritan-scout/static/css/main.073c9b0a.css.map",
+    "main.0df3dbc2.js.map": "/samaritan-scout/static/js/main.0df3dbc2.js.map",
+    "787.8eeb69e7.chunk.js.map": "/samaritan-scout/static/js/787.8eeb69e7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.0df3dbc2.js"
+  ]
+}
