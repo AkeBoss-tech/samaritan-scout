@@ -17,7 +17,8 @@
         type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-
+    <style>
+    </style>
 </head>
 
 <body id="page-top">
@@ -45,9 +46,10 @@
             </div>
         </div>
     </nav>
+    
     <!-- Masthead-->
-    <header class="masthead text-center bg-primary text-white ">
-        <div class="container d-flex align-items-center flex-column">
+    <header class="masthead text-center bg-primary text-white h-25" >
+        <div class="container d-flex align-items-center flex-column h-25">
             <!-- Masthead Heading-->
             <h1 class="masthead-heading text-uppercase mb-0">ABOUT</h1>
             <!-- Icon Divider-->
@@ -264,7 +266,7 @@
     </footer>
     <!-- Copyright Section-->
     <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>Copyright &copy; Samaritan Scout 2023</small></div>
+        <div class="container"><small>Copyright &copy; Samaritan Scout 2023<br> A 501(C)(3) Organization. <br>EIN: 92-3607846</small></div>
     </div>
 
     <!-- Bootstrap core JS-->
@@ -276,6 +278,17 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script>
+        document.body.onscroll = function() {
+            if (window.scrollY === 0) {
+                document.getElementById("mainNav").classList.remove("bg-secondary");
+                document.getElementById("mainNav").classList.add("bg-primary");
+            } else {
+                document.getElementById("mainNav").classList.remove("bg-primary");
+                document.getElementById("mainNav").classList.add("bg-secondary");
+            }
+        };
+    </script>
 </body>
 
 </html>
