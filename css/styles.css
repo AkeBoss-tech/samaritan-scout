@@ -612,6 +612,16 @@ progress {
   height: auto;
 }
 
+.img-rounded {
+  padding: 0.25rem;
+  /* background-color: #fff; */
+  border: 0.125rem solid var(--bs-border-color);
+  border-radius: 5rem;
+  max-width: 75%;
+  height: auto;
+}
+
+
 .figure {
   display: inline-block;
 }
