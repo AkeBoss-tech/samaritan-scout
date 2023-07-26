@@ -50,7 +50,7 @@
             justify-content: center;
             align-items: center;
         }
-
+        
         .mainNav {
             transition: background 0.5s ease-in-out;
         }
@@ -108,16 +108,13 @@
             <div class="col-lg-6 col-md-6 col-sm-7 col-xl-5">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Enter location...">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary">
-                            In-Person
-                        </label>
-                        <label class="btn btn-secondary">
-                            Remote
-                        </label>
+                    <div class="btn-group btn-toggle">
+                        <button type="button" class="btn btn-outline-secondary" id="inPerson">In-Person</button>
+                        <button type="button" class="btn btn-outline-secondary" id="remote">Remote</button>
                     </div>
                 </div>
             </div>
+            
             <hr>
             <!-- <div class="container"><small>Copyright &copy; Samaritan Scout 2023</small></div> -->
             <div class="divider-custom divider-light fs-3">
@@ -284,6 +281,7 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
 
     <script>
         document.body.onscroll = function() {
@@ -295,6 +293,27 @@
                 document.getElementById("mainNav").classList.add("bg-secondary");
             }
         };
+
+        document.getElementById('inPerson').onclick = function() {
+            if (document.getElementById('inPerson').classList.contains('btn-secondary')) {
+                document.getElementById('inPerson').classList.add('btn-outline-secondary');
+                document.getElementById('inPerson').classList.remove('btn-secondary');
+            } else {
+                document.getElementById('inPerson').classList.add('btn-secondary');
+                document.getElementById('inPerson').classList.remove('btn-outline-secondary');
+            }
+        };
+
+        document.getElementById('remote').onclick = function() {
+            if (document.getElementById('remote').classList.contains('btn-secondary')) {
+                document.getElementById('remote').classList.add('btn-outline-secondary');
+                document.getElementById('remote').classList.remove('btn-secondary');
+            } else {
+                document.getElementById('remote').classList.add('btn-secondary');
+                document.getElementById('remote').classList.remove('btn-outline-secondary');
+            }
+        };
+
     </script>
 </body>
 
