@@ -109,8 +109,8 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Enter location...">
                     <div class="btn-group btn-toggle">
-                        <button type="button" class="btn btn-outline-secondary" id="inPerson">In-Person</button>
-                        <button type="button" class="btn btn-outline-secondary" id="remote">Remote</button>
+                        <button type="button" class="btn btn-outline-light" id="inPerson">In-Person</button>
+                        <button type="button" class="btn btn-outline-light" id="remote">Remote</button>
                     </div>
                 </div>
             </div>
@@ -296,21 +296,21 @@
 
         document.getElementById('inPerson').onclick = function() {
             if (document.getElementById('inPerson').classList.contains('btn-secondary')) {
-                document.getElementById('inPerson').classList.add('btn-outline-secondary');
+                document.getElementById('inPerson').classList.add('btn-outline-light');
                 document.getElementById('inPerson').classList.remove('btn-secondary');
             } else {
                 document.getElementById('inPerson').classList.add('btn-secondary');
-                document.getElementById('inPerson').classList.remove('btn-outline-secondary');
+                document.getElementById('inPerson').classList.remove('btn-outline-light');
             }
         };
 
         document.getElementById('remote').onclick = function() {
             if (document.getElementById('remote').classList.contains('btn-secondary')) {
-                document.getElementById('remote').classList.add('btn-outline-secondary');
+                document.getElementById('remote').classList.add('btn-outline-light');
                 document.getElementById('remote').classList.remove('btn-secondary');
             } else {
                 document.getElementById('remote').classList.add('btn-secondary');
-                document.getElementById('remote').classList.remove('btn-outline-secondary');
+                document.getElementById('remote').classList.remove('btn-outline-light');
             }
         };
 
