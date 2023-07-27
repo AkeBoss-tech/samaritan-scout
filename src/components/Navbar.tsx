@@ -1,96 +1,165 @@
-import React from "react";
-
-import AppBar from '@mui/material/AppBar';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
-import IconButton from '@mui/material/IconButton';
+import React, { useState } from "react";
 import Stack from '@mui/material/Stack';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Tooltip from '@mui/material/Tooltip';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Avatar from '@mui/material/Avatar';
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+import { styled } from '@mui/material/styles';
+import { Link, useLocation } from "react-router-dom";
+import { AppBar, Box, Drawer, IconButton, Typography, useMediaQuery, useTheme } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+
+// const theme = {
+//   bgColor: '#273225',
+//   fontColor:'white',
+//   fontHoverColor:'#62B16E',
+// }
+
+const theme = {
+  bgColor: 'white',
+  fontColor: 'black',
+  fontHoverColor: '#62B16E',
+}
+
+
+const StyledTypography = styled(Typography)`
+  font-size: 18px;
+  cursor: pointer;
+  /* text-transform: uppercase; */
+`;
 
 function Navbar() {
-    // All of this stuff is from here https://mui.com/material-ui/react-Home-bar/
-    // idk how any of it works
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-  
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-      setAnchorElNav(event.currentTarget);
+    // Used for opening and cloing narbar menu on mobile device
+    const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+    const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      setIsDrawerOpen(open);
     };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
-    };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
+
+    // Get breakpoints for responsive design
+    const theme1 = useTheme();
+    const isMd = useMediaQuery(theme1.breakpoints.only('md'));
+    const isLg = useMediaQuery(theme1.breakpoints.only('lg'));
+    const isXl = useMediaQuery(theme1.breakpoints.only('xl'));
+
+    // Navbar menu items and links
+    const menuItems = [
+      { label: 'Search', link: '/' },
+      { label: 'About Us', link: '/about' },
+      { label: 'Contact', link: '/contact' },
+      { label: 'Donate', link: '/donate' },
+    ];
+
+    // Get current route for indicating navbar items
+    const location = useLocation();
+    const isActiveRoute = (route: string) => {
+      return location.pathname === route;
     };
   
     return (
-      <div>
-        <AppBar position="static" sx={{ justifyContent: 'space-between', backgroundColor: 'lightgray', color: 'black' }}>
-          <Container maxWidth="xl">
-            <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-              <CameraIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="/"
-                sx={{
-                  mr: 2,
-                  display: { xs: 'none', md: 'flex' },
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.3rem',
-                  color: 'inherit',
-                  textDecoration: 'none',
-                }}
-              >
-                SAMARITAN SCOUT
-              </Typography>
-              <Stack direction="row" alignItems="center">
-                <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: '45px' }}
-                  id="menu-Homebar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu>
+      <AppBar position="sticky" sx={{ top: 0, zIndex: 999, backgroundColor: theme.bgColor }}>
+        <Container maxWidth="xl">
+          {(isXl || isLg || isMd) ? (
+            <Stack direction="row" spacing={2} sx={{ height: 40, pt: 2, pb: 2, alignItems: 'center', justifyContent: 'space-between' }}>
+              <Stack direction="row" spacing={2} alignItems={'center'}>
+
+                <Link to="/" style={{ textDecoration: 'none'}}>
+                  <img src={'/samaritan-scout/lacy-dog-square.jpg'} alt="logo" style={{ display: 'block', height: '45px', width: 'auto', borderRadius: '12px' }} />
+                </Link>
+
+                <Link to="/" style={{ textDecoration: 'none' }} >
+                  <Typography variant="h6" fontWeight={'bold'} noWrap color={theme.fontColor}>
+                    Samaritan Scout  
+                  </Typography>
+                </Link>
               </Stack>
-            </Toolbar>
-          </Container>
-        </AppBar>
-      </div>
+
+            <Stack direction="row" spacing={4} sx={{ justifyContent: 'flex-end' }}>      
+              {menuItems.map((item) => (
+              <Link key={item.label} to={item.link} style={{ textDecoration: 'none'}}>
+                <StyledTypography variant="h6" noWrap sx={{ 
+                  color: isActiveRoute(item.link) ? theme.fontHoverColor : theme.fontColor, 
+                  borderBottom: `2px solid ${ isActiveRoute(item.link) ? theme.fontHoverColor : theme.bgColor}`, 
+                  transition: 'border-bottom 0.2s ease, color 0.2s ease',
+                  '&:hover': { 
+                    color: theme.fontHoverColor, 
+                    borderBottom: `2px solid ${theme.fontHoverColor}`  
+                  }
+                }}>
+                  {item.label}
+                </StyledTypography>
+              </Link>
+              ))}        
+            </Stack>
+            </Stack>
+          ) : (
+            <Stack direction="row" spacing={2} sx={{ height: 40, pt: 2, pb: 2, pl: 1, alignItems: 'center', justifyContent: 'space-between' }}>
+              {/* TODO: Change the title to the page title */}
+              <StyledTypography variant="h6" fontWeight={'bold'} noWrap color={ theme.fontColor }>
+              { isActiveRoute('/') ? 
+                'Search' : 
+                (isActiveRoute('/about') ? 
+                  'About Us' : 
+                  (isActiveRoute('/contact') ? 
+                    'Contact' : 
+                    (isActiveRoute('/donate') ? 'Donate' : 
+                      'Samaritan Scout'
+                    )
+                  )
+                )
+              }
+              </StyledTypography>
+              <Stack direction="row" alignItems="center">
+                <IconButton onClick={toggleDrawer(true)}>
+                  <MenuIcon fontSize="large" sx={{ color: theme.fontColor }}/>
+                </IconButton>
+                <Drawer
+                  anchor={'top'}
+                  open={isDrawerOpen}
+                  onClose={toggleDrawer(false)}
+                  
+                >
+                  <Box
+                    width={'auto'}
+                    role="presentation"
+                    onClick={toggleDrawer(false)}
+                    onKeyDown={toggleDrawer(false)}
+                    bgcolor={ theme.bgColor }
+                    pl={5}
+                    pr={5}
+                    py={5}
+                  >
+                    <Stack direction="row" spacing={2}>
+                      <IconButton onClick={toggleDrawer(false)} sx={{ marginLeft: 'auto', marginRight: '0'}}>
+                        <CloseIcon fontSize="large" sx={{ color: theme.fontColor }}/>
+                      </IconButton>
+                    </Stack>
+                    <Stack direction="column" spacing={2}>
+                      {menuItems.map((item) => (
+                      <Link key={item.label} to={item.link} style={{ textDecoration: 'none' }}>
+                        <StyledTypography variant="h6" noWrap sx={{ 
+                          display: 'inline',
+                          color: isActiveRoute(item.link) ? theme.fontHoverColor : theme.fontColor, 
+                          borderBottom: `2px solid ${ isActiveRoute(item.link) ? theme.fontHoverColor : theme.bgColor}`, 
+                          transition: 'border-bottom 0.2s ease, color 0.2s ease',
+                          '&:hover': { 
+                            color: theme.fontHoverColor, 
+                            borderBottom: `2px solid ${theme.fontHoverColor}`  
+                          }
+                        }}>
+                          {item.label}
+                        </StyledTypography>
+                      </Link>
+                      ))}  
+                    </Stack>
+                  </Box>
+                </Drawer>
+              </Stack>
+            </Stack>
+          )}
+
+
+        </Container>
+      </AppBar>
     );
 }
 

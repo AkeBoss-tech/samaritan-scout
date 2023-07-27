@@ -1,10 +1,7 @@
 import './App.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -19,10 +16,7 @@ function Home() {
   return (
     <div className="Home">
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Navbar />
         <HomeSearch />
-        <Footer />
       </ThemeProvider>
     </div>
   );
