@@ -19,6 +19,15 @@
     <link href="css/styles.css" rel="stylesheet" />
     <style>
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWW47VW7S4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XWW47VW7S4');
+    </script>
 </head>
 
 <body id="page-top">
@@ -229,7 +238,7 @@
                         <a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                             href="#">Our Plan</a>
                         <br />
-                        <a class="link-light" href="#">Our Team</a> <!-- Is this color better? -->
+                        <a class="link-light" href="contact.html">Our Team</a> <!-- Is this color better? -->
                         <br />
                         <a class="link-light" href="#">Donate</a>
                     </p>
@@ -268,7 +277,7 @@
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script>
         document.body.onscroll = function () {
-            if (window.scrollY === 0) {
+            if (window.scrollY <= 0) {
                 document.getElementById("mainNav").classList.remove("bg-secondary");
                 document.getElementById("mainNav").classList.add("bg-primary");
             } else {
