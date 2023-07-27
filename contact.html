@@ -234,6 +234,28 @@
             
         </div>
     --> 
+        <div class = "align-items-center"
+        style = 
+        "height: 40vh;
+        width: 100vw;
+        background-color:#62B16E;
+        margin: 0rem;
+        overflow: hidden;">
+        <container class = "align-items-center">
+            <h1> &emsp; scroll to see our volunteers in action </h1>
+        </container>
+       
+            <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+                <img class="image" src="resources/stock1.jpg" draggable="false" />
+                <img class="image" src="resources/stock2.jpg" draggable="false" />
+                <img class="image" src="resources/stock3.jpg" draggable="false" />
+                <img class="image" src="resources/stock4.jpg" draggable="false" />
+                <img class="image" src="resources/stock5.jpg" draggable="false" />
+                <img class="image" src="resources/stock1.jpg" draggable="false" />
+                <img class="image" src="resources/stock2.jpg" draggable="false" />
+                <img class="image" src="resources/stock3.jpg" draggable="false" />
+            </div>
+        </div>
     </section>
 
 
@@ -412,6 +434,54 @@
                 document.getElementById("mainNav").classList.add("bg-secondary");
             }
         };
+    </script>
+
+    <script>
+        const track = document.getElementById("image-track");
+
+const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+
+const handleOnUp = () => {
+  track.dataset.mouseDownAt = "0";  
+  track.dataset.prevPercentage = track.dataset.percentage;
+}
+
+const handleOnMove = e => {
+  if(track.dataset.mouseDownAt === "0") return;
+  
+  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+        maxDelta = window.innerWidth / 2;
+  
+  const percentage = (mouseDelta / maxDelta) * -100,
+        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+  
+  track.dataset.percentage = nextPercentage;
+  
+  track.animate({
+    transform: `translate(${nextPercentage}%, -0%)`
+  }, { duration: 1200, fill: "forwards" });
+  
+  for(const image of track.getElementsByClassName("image")) {
+    image.animate({
+      objectPosition: `${100 + nextPercentage}% center`
+    }, { duration: 1200, fill: "forwards" });
+  }
+}
+
+/* -- Had to add extra lines for touch events -- */
+
+window.onmousedown = e => handleOnDown(e);
+
+window.ontouchstart = e => handleOnDown(e.touches[0]);
+
+window.onmouseup = e => handleOnUp(e);
+
+window.ontouchend = e => handleOnUp(e.touches[0]);
+
+window.onmousemove = e => handleOnMove(e);
+
+window.ontouchmove = e => handleOnMove(e.touches[0]);
     </script>
 </body>
 
