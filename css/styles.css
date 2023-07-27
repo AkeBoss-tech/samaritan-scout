@@ -104,6 +104,23 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  transform: translate(0%, 0); 
+  user-select: none; /* -- Prevent image highlighting -- */
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#image-track > .image {
+  width: 30vmin;
+  height: 42vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -4178,7 +4195,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #fff;
+  --bs-card-bg: #adc5a4;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
