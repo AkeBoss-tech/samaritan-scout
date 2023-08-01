@@ -104,23 +104,6 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-#image-track {
-  display: flex;
-  gap: 4vmin;
-  transform: translate(0%, 0); 
-  user-select: none; /* -- Prevent image highlighting -- */
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-#image-track > .image {
-  width: 30vmin;
-  height: 42vmin;
-  object-fit: cover;
-  object-position: 100% center;
-}
-
-
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -629,16 +612,6 @@ progress {
   height: auto;
 }
 
-.img-rounded {
-  padding: 0.25rem;
-  /* background-color: #fff; */
-  border: 0.125rem solid var(--bs-border-color);
-  border-radius: 5rem;
-  max-width: 75%;
-  height: auto;
-}
-
-
 .figure {
   display: inline-block;
 }
@@ -652,8 +625,6 @@ progress {
   font-size: 0.875em;
   color: #6c757d;
 }
-
-
 
 .container,
 .container-fluid,
@@ -704,8 +675,6 @@ progress {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
 }
 .row > * {
   flex-shrink: 0;
@@ -4195,15 +4164,13 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #adc5a4;
+  --bs-card-bg: #fff;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  max-width: 200;
-  width: 200;
   height: var(--bs-card-height);
   word-wrap: break-word;
   background-color: var(--bs-card-bg);
@@ -10877,20 +10844,6 @@ html {
   }
 }
 
-.people-page-section {
-  padding: 6rem 0;
-}
-.people-page-section .page-section-heading {
-  font-size: 2.25rem;
-  line-height: 1.5rem;
-}
-@media (min-width: 992px) {
-  .people-page-section .page-section-heading {
-    font-size: 3rem;
-    line-height: 2rem;
-  }
-}
-
 .divider-custom {
   margin: 1.25rem 0 1.5rem;
   width: 100%;
@@ -10954,8 +10907,7 @@ html {
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: var(--bs-light);
-  background-color: var(--bs-secondary);
+  color: #1abc9c;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
   color: #fff;
