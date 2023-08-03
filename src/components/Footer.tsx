@@ -19,6 +19,7 @@ const theme = {
   fontColor: 'black',
   fontHoverColor: '#62B16E',
   iconColor: '#273225',
+  secondaryFontColor: 'gray',
 };
 
 // const theme = {
@@ -32,11 +33,15 @@ function Copyright() {
   return (
     <Typography variant='body2' color={theme.fontColor} align='center'>
       {'© '}
-      <Link color='inherit' href='https://samaritanscout.org/'>
-        SamaritanScout.org
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}A 501(C)(3) Organization. EIN: 92-3607846
+      {new Date().getFullYear()}{' '}
+      <Link
+        color='inherit'
+        href='https://samaritanscout.org/'
+        sx={{ textDecoration: 'none' }}
+      >
+        Samaritan Scout
+      </Link>
+      {', '}a 501(c)(3) organization. EIN: 92-3607846
     </Typography>
   );
 }
@@ -84,20 +89,17 @@ function Footer() {
   }
 
   const siteMap: SiteMap = {
-    Discover: [
-      { label: 'Volunteer Events', link: '/' },
-      { label: 'Organizations', link: '/' },
+    Volunteer: [
+      { label: 'With Samaritan Scout', link: '/' },
+      { label: 'Remotely', link: '/' },
+      { label: 'Near You', link: '/' },
     ],
-    'About Us': [
-      // { label: 'About Us',  link: '/', },
-      { label: 'Our Plan', link: '/' },
-      { label: 'Our Team', link: '/' },
-      { label: 'Contact Us', link: '/' },
-      { label: 'Donate', link: '/' },
+    About: [
+      { label: 'Our Plan', link: '/about' },
+      { label: 'Our Team', link: '/people' },
     ],
     'Learn More': [
       { label: 'Contact Us', link: '/' },
-      { label: 'Help & FAQ', link: '/' },
       { label: 'Privacy Policy', link: '/' },
       { label: 'Terms of Use', link: '/' },
     ],
@@ -117,198 +119,221 @@ function Footer() {
     >
       <Container maxWidth='lg'>
         <Stack spacing={2} py={5}>
-          <Grid container spacing={2}>
-            {/* Intro and Button */}
-            <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-              <Stack
-                spacing={2}
-                alignItems={isXs || isSm ? 'center' : 'flex-start'}
-              >
-                <Stack direction='row' spacing={2} alignItems={'center'}>
-                  <img
-                    src={'/images/lacy-dog-square.jpg'}
-                    alt='logo'
-                    style={{
-                      display: 'block',
-                      height: '45px',
-                      width: 'auto',
-                      borderRadius: '12px',
+          <Box>
+            <Grid container spacing={2}>
+              {/* Intro and Donate Button */}
+              <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+                <Stack
+                  spacing={2}
+                  alignItems={isXs || isSm ? 'center' : 'flex-start'}
+                >
+                  <Stack direction='row' spacing={2} alignItems={'center'}>
+                    <img
+                      src={'/images/lacy-dog-square.jpg'}
+                      alt='logo'
+                      style={{
+                        display: 'block',
+                        height: '45px',
+                        width: 'auto',
+                        borderRadius: '12px',
+                      }}
+                    />
+                    <Typography variant='h6' fontWeight={'bold'} noWrap>
+                      Samaritan Scout
+                    </Typography>
+                  </Stack>
+                  <Box
+                    width={{
+                      xs: '260px',
+                      sm: '440px',
+                      md: '100%',
+                      lg: '100%',
+                      xl: '90%',
                     }}
-                  />
-                  <Typography variant='h6' fontWeight={'bold'} noWrap>
-                    Samaritan Scout
-                  </Typography>
+                  >
+                    <Typography color={theme.secondaryFontColor}>
+                      Leveraging cutting-edge technology to connect people with
+                      nonprofit organizations, we're a search engine dedicated
+                      to creating a better world for all.
+                    </Typography>
+                  </Box>
+                  <Button
+                    variant='contained'
+                    sx={{
+                      backgroundColor: theme.fontHoverColor,
+                      maxWidth: '60%',
+                      minWidth: '150px',
+                      ':hover': {
+                        backgroundColor: '#4a8353',
+                      },
+                    }}
+                    size='large'
+                  >
+                    <Typography variant='body1' fontWeight={'bold'}>
+                      Donate
+                    </Typography>
+                  </Button>
                 </Stack>
-                <Box
-                  width={{
-                    xs: '260px',
-                    sm: '480px',
-                    md: '80%',
-                    lg: '100%',
-                    xl: '100%',
-                  }}
-                >
-                  <Typography color='inherit'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam.
-                  </Typography>
-                </Box>
-                <Button
-                  variant='contained'
-                  style={{
-                    backgroundColor: theme.fontHoverColor,
-                    maxWidth: '60%',
-                  }}
-                  size='large'
-                >
-                  Contact Us
-                </Button>
-              </Stack>
-            </Grid>
+              </Grid>
 
-            {/* Site Map */}
-            <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
-              {isXs ? (
-                // Phone version
-                <Stack
-                  direction='row'
-                  spacing={5}
-                  justifyContent={'center'}
-                  pt={2}
-                >
-                  {/* Left Column */}
-                  <Stack direction='column' spacing={5}>
-                    {/* Discover List */}
-                    <Stack direction='column' spacing={2}>
-                      <Typography variant='h6' fontWeight={'bold'} noWrap>
-                        Discover
-                      </Typography>
-                      <Stack direction='column' spacing={1}>
-                        {siteMap['Discover'].map((link) => (
-                          <Link
-                            href={link.link}
-                            key={link.label}
-                            underline='hover'
-                            color='inherit'
-                            sx={{ '&:hover': { color: theme.fontHoverColor } }}
-                          >
-                            <Typography
-                              variant='body1'
+              {/* Site Map */}
+              <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
+                {isXs ? (
+                  // Phone version
+                  <Stack
+                    direction='row'
+                    spacing={5}
+                    justifyContent={'center'}
+                    pt={2}
+                  >
+                    {/* Left Column */}
+                    <Stack direction='column' spacing={5}>
+                      {/* Volunteer List */}
+                      <Stack direction='column' spacing={2}>
+                        <Typography variant='h6' fontWeight={'bold'} noWrap>
+                          Volunteer
+                        </Typography>
+                        <Stack direction='column' spacing={1}>
+                          {siteMap['Volunteer'].map((link) => (
+                            <Link
+                              href={link.link}
+                              key={link.label}
+                              underline='hover'
                               color='inherit'
-                              noWrap
                               sx={{
                                 '&:hover': { color: theme.fontHoverColor },
                               }}
                             >
-                              {link.label}
-                            </Typography>
-                          </Link>
-                        ))}
+                              <Typography
+                                variant='body1'
+                                color='inherit'
+                                noWrap
+                                sx={{
+                                  '&:hover': { color: theme.fontHoverColor },
+                                }}
+                              >
+                                {link.label}
+                              </Typography>
+                            </Link>
+                          ))}
+                        </Stack>
+                      </Stack>
+                      {/* Learn More List */}
+                      <Stack direction='column' spacing={2}>
+                        <Typography variant='h6' fontWeight={'bold'} noWrap>
+                          Learn More
+                        </Typography>
+                        <Stack direction='column' spacing={1}>
+                          {siteMap['Learn More'].map((link) => (
+                            <Link
+                              href={link.link}
+                              key={link.label}
+                              underline='hover'
+                              color='inherit'
+                              sx={{
+                                '&:hover': { color: theme.fontHoverColor },
+                              }}
+                            >
+                              <Typography
+                                variant='body1'
+                                color='inherit'
+                                noWrap
+                                sx={{
+                                  '&:hover': { color: theme.fontHoverColor },
+                                }}
+                              >
+                                {link.label}
+                              </Typography>
+                            </Link>
+                          ))}
+                        </Stack>
                       </Stack>
                     </Stack>
-                    {/* About Us List */}
-                    <Stack direction='column' spacing={2}>
-                      <Typography variant='h6' fontWeight={'bold'} noWrap>
-                        Learn More
-                      </Typography>
-                      <Stack direction='column' spacing={1}>
-                        {siteMap['Learn More'].map((link) => (
-                          <Link
-                            href={link.link}
-                            key={link.label}
-                            underline='hover'
-                            color='inherit'
-                            sx={{ '&:hover': { color: theme.fontHoverColor } }}
-                          >
-                            <Typography
-                              variant='body1'
+                    {/* Right Column */}
+                    <Stack direction='column'>
+                      {/* Learn More List */}
+                      <Stack direction='column' spacing={2}>
+                        <Typography variant='h6' fontWeight={'bold'} noWrap>
+                          About
+                        </Typography>
+                        <Stack direction='column' spacing={1}>
+                          {siteMap['About'].map((link) => (
+                            <Link
+                              href={link.link}
+                              key={link.label}
+                              underline='hover'
                               color='inherit'
-                              noWrap
                               sx={{
                                 '&:hover': { color: theme.fontHoverColor },
                               }}
                             >
-                              {link.label}
-                            </Typography>
-                          </Link>
-                        ))}
+                              <Typography
+                                variant='body1'
+                                color='inherit'
+                                noWrap
+                                sx={{
+                                  '&:hover': { color: theme.fontHoverColor },
+                                }}
+                              >
+                                {link.label}
+                              </Typography>
+                            </Link>
+                          ))}
+                        </Stack>
                       </Stack>
                     </Stack>
                   </Stack>
-                  {/* Right Column */}
-                  <Stack direction='column'>
-                    {/* Learn More List */}
-                    <Stack direction='column' spacing={2}>
-                      <Typography variant='h6' fontWeight={'bold'} noWrap>
-                        About Us
-                      </Typography>
-                      <Stack direction='column' spacing={1}>
-                        {siteMap['About Us'].map((link) => (
-                          <Link
-                            href={link.link}
-                            key={link.label}
-                            underline='hover'
-                            color='inherit'
-                            sx={{ '&:hover': { color: theme.fontHoverColor } }}
-                          >
-                            <Typography
-                              variant='body1'
+                ) : (
+                  // Desktop Version
+                  <Stack
+                    direction='row'
+                    justifyContent={'center'}
+                    spacing={{ sm: 5, md: 8, lg: 5, xl: 5 }}
+                    p={{ sm: 2, md: 0, lg: 0, xl: 0 }}
+                    pl={{ sm: 0, md: 0, lg: 10, xl: 15 }}
+                  >
+                    {Object.keys(siteMap).map((section) => (
+                      <Stack
+                        key={section}
+                        direction='column'
+                        spacing={2}
+                        width={{ xl: 170, lg: 170, md: 'auto', sm: 'auto' }}
+                        justifyContent={'flex-start'}
+                      >
+                        <Typography variant='h6' fontWeight={'bold'} noWrap>
+                          {section}
+                        </Typography>
+                        <Stack direction='column' spacing={1}>
+                          {siteMap[section].map((link) => (
+                            <Link
+                              href={link.link}
+                              key={link.label}
+                              underline='hover'
                               color='inherit'
-                              noWrap
                               sx={{
                                 '&:hover': { color: theme.fontHoverColor },
                               }}
                             >
-                              {link.label}
-                            </Typography>
-                          </Link>
-                        ))}
+                              <Typography
+                                variant='body1'
+                                color='inherit'
+                                noWrap
+                                sx={{
+                                  '&:hover': { color: theme.fontHoverColor },
+                                }}
+                              >
+                                {link.label}
+                              </Typography>
+                            </Link>
+                          ))}
+                        </Stack>
                       </Stack>
-                    </Stack>
+                    ))}
                   </Stack>
-                </Stack>
-              ) : (
-                // Desktop Version
-                <Stack
-                  direction='row'
-                  spacing={10}
-                  justifyContent={'center'}
-                  p={{ sm: 2, xl: 0, lg: 0, md: 0 }}
-                >
-                  {Object.keys(siteMap).map((section) => (
-                    <Stack key={section} direction='column' spacing={2}>
-                      <Typography variant='h6' fontWeight={'bold'} noWrap>
-                        {section}
-                      </Typography>
-                      <Stack direction='column' spacing={1}>
-                        {siteMap[section].map((link) => (
-                          <Link
-                            href={link.link}
-                            key={link.label}
-                            underline='hover'
-                            color='inherit'
-                            sx={{ '&:hover': { color: theme.fontHoverColor } }}
-                          >
-                            <Typography
-                              variant='body1'
-                              color='inherit'
-                              noWrap
-                              sx={{
-                                '&:hover': { color: theme.fontHoverColor },
-                              }}
-                            >
-                              {link.label}
-                            </Typography>
-                          </Link>
-                        ))}
-                      </Stack>
-                    </Stack>
-                  ))}
-                </Stack>
-              )}
+                )}
+              </Grid>
             </Grid>
-          </Grid>
+          </Box>
 
           {/* Outside Links and Copyright */}
           <Stack

@@ -44,7 +44,7 @@ function HomeSearch() {
           id='outlined-uncontrolled'
           color='primary'
           size='medium'
-          sx={{ width: '400px', mr: '10px' }}
+          sx={{ width: 'auto', mr: '10px' }}
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>

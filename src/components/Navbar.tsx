@@ -51,8 +51,8 @@ function Navbar() {
   // Navbar menu items and links
   const menuItems = [
     { label: 'Search', link: '/' },
-    { label: 'About Us', link: '/about' },
-    { label: 'Contact', link: '/contact' },
+    { label: 'About', link: '/about' },
+    // { label: 'Contact', link: '/contact' },
     { label: 'Donate', link: '/donate' },
   ];
 
