@@ -20,63 +20,20 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 
+import theme from './Theme';
+import Separator from './Separator';
+
 // const theme = {
 //   bgColor: '#273225',
 //   fontColor: 'white',
 //   fontHoverColor: '#62B16E',
 // };
 
-const theme = {
-  bgColor: 'white',
-  fontColor: 'black',
-  fontHoverColor: '#62B16E',
-  separatorColor: '#62B16E',
-  primaryBgColor: '#62B16E',
-  primaryFontColor: 'white',
-};
-
 const StyledTypography = styled(Typography)`
   font-size: 18px;
   cursor: pointer;
   /* text-transform: uppercase; */
 `;
-
-function Separator({primary} : {primary: boolean}) {
-  const fontColor = primary ? theme.primaryFontColor : theme.fontColor;
-
-  return (
-    <Container
-      style={{
-        flex: 1,
-        paddingBottom: '50px',
-      }}
-      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
-    >
-      <Grid container alignItems="center" spacing={2}>
-        <Grid item xs={2} md={2}>
-        </Grid>
-        <Grid item xs={3} md={3} color={fontColor}>
-          <Divider color={fontColor} sx={{ borderBottomWidth: 5 }} />
-        </Grid>
-        <Grid item xs={2} md={2} textAlign={'center'}>
-          <img
-            src={"/images/dog_silhouette.png"}
-            alt="dog"
-            style={{
-              width: '100%', 
-              height: 'auto',
-              maxWidth: "7rem",
-              transform: 'scaleX(-1)',
-            }}
-          ></img>
-        </Grid>
-        <Grid item xs={3} md={3} color={fontColor}>
-          <Divider color={fontColor} sx={{ borderBottomWidth: 5 }} />
-        </Grid>
-      </Grid>
-    </Container>
-  );
-}
 
 function Section({title, children, cols, primary, separator} : {title: string, children: Array<string>, cols: number, primary: boolean, separator: boolean}) {
   // Get breakpoints for responsive design
@@ -96,7 +53,13 @@ function Section({title, children, cols, primary, separator} : {title: string, c
       }}
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
-      <Typography variant="h2" align="center" color="primary" gutterBottom>
+      <Typography
+        variant='h3'
+        fontWeight={'bold'}
+        noWrap
+        color={primary ? theme.primaryFontColor : theme.fontColor}
+        align='center'
+      >
         {title}
       </Typography>
 
