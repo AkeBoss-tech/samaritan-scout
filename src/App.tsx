@@ -13,7 +13,8 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <main>
+    
+      <BrowserRouter>
       <Navbar />
       
         <Routes>
@@ -25,7 +26,8 @@ const App = () => {
         </Routes>
       
       <Footer />
-    </main>
+      </BrowserRouter>
+    
   );
 };
 
