@@ -52,7 +52,7 @@ function Navbar() {
   const menuItems = [
     { label: 'Search', link: '/' },
     { label: 'About', link: '/about' },
-    // { label: 'Contact', link: '/contact' },
+    { label: 'People', link: '/people' },
     { label: 'Donate', link: '/donate' },
   ];
 
@@ -166,8 +166,8 @@ function Navbar() {
                 ? 'Search'
                 : isActiveRoute('/about')
                 ? 'About Us'
-                : isActiveRoute('/contact')
-                ? 'Contact'
+                : isActiveRoute('/people')
+                ? 'People'
                 : isActiveRoute('/donate')
                 ? 'Donate'
                 : 'Samaritan Scout'}

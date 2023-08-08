@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 function About() {
   return (
     <>
-      <Navbar />
+      
       <Section
         title="Our Mission"
         children={[
@@ -37,7 +37,7 @@ function About() {
         primary={false}
         separator={true}
       />
-      <Footer />
+     
     </>
   );
 }

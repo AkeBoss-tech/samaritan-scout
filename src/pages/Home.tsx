@@ -5,7 +5,7 @@ import SendIcon from "@mui/icons-material/Send";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Nav } from "react-bootstrap";
+//import { Nav } from "react-bootstrap";
 import {
   TextField,
   InputAdornment,
@@ -81,7 +81,7 @@ const BootstrapHome = () => {
 
   return (
     <>
-    <Nav className="navbar navbar-expand-lg text-uppercase fixed-top bg-primary" id="mainNav">
+    <div className="navbar navbar-expand-lg text-uppercase fixed-top bg-primary" id="mainNav">
       <div className="container">
         <a className="navbar-brand" href="home">Samaritan Scout</a>
         <button className="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
@@ -103,7 +103,7 @@ const BootstrapHome = () => {
           </ul>
         </div>
       </div>
-    </Nav>
+    </div>
     <header className="masthead bg-primary text-white text-center" id="container-full">
         <div className="container d-flex align-items-center flex-column">
           <div className="divider-custom divider-light fs-3"></div>
