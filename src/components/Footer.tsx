@@ -50,7 +50,7 @@ function Copyright() {
         </Link>
       </Typography>
       <Typography variant='body2'>
-        <div>a 501(c)(3) organization. EIN: 92-3607846</div>
+        a 501(c)(3) organization. EIN: 92-3607846
       </Typography>
     </Stack>
   );
@@ -59,7 +59,7 @@ function Copyright() {
 const socialMediaLinks = [
   {
     icon: InstagramIcon,
-    url: 'https://www.facebook.com/your-facebook-page',
+    url: 'https://www.instagram.com/your-instagram-page',
     color: '#ff1bb7',
   },
   {
@@ -74,7 +74,7 @@ const socialMediaLinks = [
   },
   {
     icon: YouTubeIcon,
-    url: 'https://youtube.com/your-twitter-profile',
+    url: 'https://youtube.com/your-youtube-profile',
     color: '#ff0000',
   },
 ];
