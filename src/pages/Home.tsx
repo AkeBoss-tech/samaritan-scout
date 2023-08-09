@@ -19,6 +19,7 @@ import {
   Grid,
   useMediaQuery,
   useTheme,
+  IconButton,
 } from "@mui/material";
 import Footer from "../components/Footer";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -54,7 +55,6 @@ function Home() {
           <Typography
             variant='h5'
             fontWeight={'bold'}
-            noWrap
             color={theme.primaryFontColor}
             align='center'
           >
@@ -82,6 +82,10 @@ const BootstrapHome = () => {
     console.log("Remote: ", remote);
   };
 
+  const headStyle = {
+    paddingTop: '6rem', paddingBottom: '6rem', height: 'calc(100vh-35px)'
+  };
+
   return (
     <>
     <div className="navbar navbar-expand-lg text-uppercase fixed-top bg-primary" id="mainNav">
@@ -107,7 +111,7 @@ const BootstrapHome = () => {
         </div>
       </div>
     </div>
-    <header className="masthead bg-primary text-white text-center" id="container-full">
+    <header className="bg-primary text-white text-center" id="container-full" style={ headStyle }>
         <div className="container d-flex align-items-center flex-column">
           <div className="divider-custom divider-light fs-3"></div>
           <h1 className="masthead-heading text-uppercase mb-0">DISCOVER VOLUNTEER OPPORTUNITIES</h1>
@@ -137,7 +141,9 @@ const BootstrapHome = () => {
           </div>
 
             <div className="divider-custom divider-light fs-3">
-              <div className="btn-outline-success "><ArrowDownwardIcon /></div>
+              <IconButton aria-label="delete" size="large">
+                <ArrowDownwardIcon fontSize="inherit" style={{ color: 'white' }} />
+              </IconButton>
             </div>
           </div>
       </header>
@@ -240,7 +246,6 @@ function RecentActivity() {
     >
       <Typography
         variant='h3'
-        noWrap
         color={theme.fontColor}
         align='center'
       >
