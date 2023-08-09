@@ -16,22 +16,20 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-// const theme = {
-//   bgColor: '#273225',
-//   fontColor: 'white',
-//   fontHoverColor: '#62B16E',
-// };
-
 const theme = {
-  bgColor: 'white',
-  fontColor: 'black',
+  bgColor: '#273225',
+  fontColor: 'white',
   fontHoverColor: '#62B16E',
 };
 
 const StyledTypography = styled(Typography)`
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 4px;
 `;
 
 function Navbar() {
@@ -67,15 +65,13 @@ function Navbar() {
       position='sticky'
       sx={{ top: 0, zIndex: 999, backgroundColor: theme.bgColor }}
     >
-      <Container maxWidth='xl'>
+      <Container maxWidth='xl' sx={{ height: 75, alignItems: 'center' }}>
         {isXl || isLg || isMd ? (
           <Stack
             direction='row'
             spacing={2}
             sx={{
-              height: 40,
-              pt: 2,
-              pb: 2,
+              height: '100%',
               alignItems: 'center',
               justifyContent: 'space-between',
             }}
@@ -87,9 +83,9 @@ function Navbar() {
                   alt='logo'
                   style={{
                     display: 'block',
-                    height: '45px',
+                    height: '50px',
                     width: 'auto',
-                    borderRadius: '12px',
+                    borderRadius: '50%',
                   }}
                 />
               </Link>
@@ -99,7 +95,9 @@ function Navbar() {
                   variant='h6'
                   fontWeight={'bold'}
                   noWrap
-                  color={theme.fontColor}
+                  color={'#FFFDD0'}
+                  textTransform={'uppercase'}
+                  letterSpacing={2}
                 >
                   Samaritan Scout
                 </Typography>
@@ -108,7 +106,7 @@ function Navbar() {
 
             <Stack
               direction='row'
-              spacing={4}
+              spacing={2}
               sx={{ justifyContent: 'flex-end' }}
             >
               {menuItems.map((item) => (
@@ -122,17 +120,16 @@ function Navbar() {
                     noWrap
                     sx={{
                       color: isActiveRoute(item.link)
-                        ? theme.fontHoverColor
+                        ? theme.bgColor
                         : theme.fontColor,
-                      borderBottom: `2px solid ${
-                        isActiveRoute(item.link)
-                          ? theme.fontHoverColor
-                          : theme.bgColor
-                      }`,
-                      transition: 'border-bottom 0.2s ease, color 0.2s ease',
+                      bgcolor: isActiveRoute(item.link)
+                        ? theme.fontHoverColor
+                        : 'transparent',
                       '&:hover': {
-                        color: theme.fontHoverColor,
-                        borderBottom: `2px solid ${theme.fontHoverColor}`,
+                        color: theme.bgColor,
+                        bgcolor: theme.fontColor,
+                        transition:
+                          'background-color 0.3s ease-out, color 0.3s ease-out',
                       },
                     }}
                   >
@@ -147,15 +144,11 @@ function Navbar() {
             direction='row'
             spacing={2}
             sx={{
-              height: 40,
-              pt: 2,
-              pb: 2,
-              pl: 1,
+              height: '100%',
               alignItems: 'center',
               justifyContent: 'space-between',
             }}
           >
-            {/* TODO: Change the title to the page title */}
             <StyledTypography
               variant='h6'
               fontWeight={'bold'}
@@ -215,18 +208,16 @@ function Navbar() {
                           sx={{
                             display: 'inline',
                             color: isActiveRoute(item.link)
-                              ? theme.fontHoverColor
+                              ? theme.bgColor
                               : theme.fontColor,
-                            borderBottom: `2px solid ${
-                              isActiveRoute(item.link)
-                                ? theme.fontHoverColor
-                                : theme.bgColor
-                            }`,
-                            transition:
-                              'border-bottom 0.2s ease, color 0.2s ease',
+                            bgcolor: isActiveRoute(item.link)
+                              ? theme.fontHoverColor
+                              : 'transparent',
                             '&:hover': {
-                              color: theme.fontHoverColor,
-                              borderBottom: `2px solid ${theme.fontHoverColor}`,
+                              color: theme.bgColor,
+                              bgcolor: theme.fontColor,
+                              transition:
+                                'background-color 0.3s ease-out, color 0.3s ease-out',
                             },
                           }}
                         >

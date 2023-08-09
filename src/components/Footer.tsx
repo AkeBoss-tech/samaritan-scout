@@ -12,61 +12,76 @@ import {
 import { Button } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const theme = {
-  bgColor: 'white',
-  fontColor: 'black',
+  bgColor: '#273225',
+  fontColor: 'white',
   fontHoverColor: '#62B16E',
-  iconColor: '#273225',
-  secondaryFontColor: 'gray',
+  iconColor: 'white',
+  secondaryFontColor: '#CBCFCB',
 };
-
-// const theme = {
-//   bgColor: '#273225',
-//   fontColor: 'white',
-//   fontHoverColor: '#62B16E',
-//   iconColor: 'white',
-// };
 
 function Copyright() {
   return (
-    <Typography variant='body2' color={theme.fontColor} align='center'>
-      {'© '}
-      {new Date().getFullYear()}{' '}
-      <Link
-        color='inherit'
-        href='https://samaritanscout.org/'
-        sx={{ textDecoration: 'none' }}
-      >
-        Samaritan Scout
-      </Link>
-      {', '}a 501(c)(3) organization. EIN: 92-3607846
-    </Typography>
+    <Stack
+      flexDirection={{
+        xs: 'column',
+        sm: 'row',
+        md: 'row',
+        lg: 'row',
+        xl: 'row',
+      }}
+      color={theme.fontColor}
+    >
+      <Typography variant='body2'>
+        {'Copyrights © '}
+        {new Date().getFullYear()}{' '}
+        <Link
+          color='inherit'
+          href='https://samaritanscout.org/'
+          sx={{
+            textDecoration: 'none',
+            ':hover': { color: theme.fontColor },
+          }}
+        >
+          Samaritan Scout,&nbsp;
+        </Link>
+      </Typography>
+      <Typography variant='body2'>
+        <div>a 501(c)(3) organization. EIN: 92-3607846</div>
+      </Typography>
+    </Stack>
   );
 }
 
 const socialMediaLinks = [
   {
+    icon: InstagramIcon,
+    url: 'https://www.facebook.com/your-facebook-page',
+    color: '#ff1bb7',
+  },
+  {
     icon: FacebookIcon,
     url: 'https://www.facebook.com/your-facebook-page',
-    color: '#3b5998',
+    color: '#82c8f7',
   },
   {
     icon: LinkedInIcon,
     url: 'https://www.linkedin.com/in/your-linkedin-profile',
-    color: '#0e76a8',
+    color: '#3c6292',
   },
   {
-    icon: TwitterIcon,
-    url: 'https://twitter.com/your-twitter-profile',
-    color: '#1da1f2',
+    icon: YouTubeIcon,
+    url: 'https://youtube.com/your-twitter-profile',
+    color: '#ff0000',
   },
 ];
 
 function SocialMediaIcons() {
   return (
-    <Stack direction='row' spacing={2}>
+    <Stack direction='row' spacing={4}>
       {socialMediaLinks.map((link) => (
         <IconButton
           key={link.url}
@@ -74,9 +89,14 @@ function SocialMediaIcons() {
           target='_blank'
           rel='noopener noreferrer'
           color='primary'
-          sx={{ color: theme.iconColor, '&:hover': { color: link.color } }}
+          sx={{
+            // width: 32,
+            color: theme.iconColor,
+            '&:hover': { color: link.color },
+            padding: 0,
+          }}
         >
-          <link.icon />
+          <link.icon sx={{ fontSize: 32 }} />
         </IconButton>
       ))}
     </Stack>
@@ -118,27 +138,34 @@ function Footer() {
       }}
     >
       <Container maxWidth='lg'>
-        <Stack spacing={2} py={5}>
+        <Stack spacing={4} py={5}>
           <Box>
-            <Grid container spacing={2}>
+            <Grid container spacing={{ xl: 2, lg: 2, md: 2, sm: 5, xs: 2 }}>
               {/* Intro and Donate Button */}
               <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
                 <Stack
-                  spacing={2}
+                  spacing={{ xl: 3, lg: 3, md: 3, sm: 4, xs: 4 }}
                   alignItems={isXs || isSm ? 'center' : 'flex-start'}
                 >
                   <Stack direction='row' spacing={2} alignItems={'center'}>
-                    <img
+                    {/* <img
                       src={'/images/lacy-dog-square.jpg'}
                       alt='logo'
                       style={{
                         display: 'block',
-                        height: '45px',
+                        height: '50px',
                         width: 'auto',
-                        borderRadius: '12px',
+                        borderRadius: '50%',
                       }}
-                    />
-                    <Typography variant='h6' fontWeight={'bold'} noWrap>
+                    /> */}
+                    <Typography
+                      variant='h5'
+                      fontWeight={'bold'}
+                      noWrap
+                      textTransform={'uppercase'}
+                      letterSpacing={2}
+                      color={'#FFFDD0'}
+                    >
                       Samaritan Scout
                     </Typography>
                   </Stack>
@@ -148,7 +175,7 @@ function Footer() {
                       sm: '440px',
                       md: '100%',
                       lg: '100%',
-                      xl: '90%',
+                      xl: '100%',
                     }}
                   >
                     <Typography color={theme.secondaryFontColor}>
@@ -160,17 +187,23 @@ function Footer() {
                   <Button
                     variant='contained'
                     sx={{
+                      color: theme.bgColor,
                       backgroundColor: theme.fontHoverColor,
+                      height: '50px',
                       maxWidth: '60%',
-                      minWidth: '150px',
+                      minWidth: '250px',
                       ':hover': {
-                        backgroundColor: '#4a8353',
+                        backgroundColor: theme.fontColor,
                       },
                     }}
                     size='large'
                   >
-                    <Typography variant='body1' fontWeight={'bold'}>
-                      Donate
+                    <Typography
+                      variant='body1'
+                      fontSize={'20px'}
+                      fontWeight={'bold'}
+                    >
+                      Support Scout
                     </Typography>
                   </Button>
                 </Stack>
@@ -190,7 +223,12 @@ function Footer() {
                     <Stack direction='column' spacing={5}>
                       {/* Volunteer List */}
                       <Stack direction='column' spacing={2}>
-                        <Typography variant='h6' fontWeight={'bold'} noWrap>
+                        <Typography
+                          variant='h6'
+                          fontWeight={'bold'}
+                          noWrap
+                          textTransform={'uppercase'}
+                        >
                           Volunteer
                         </Typography>
                         <Stack direction='column' spacing={1}>
@@ -220,7 +258,12 @@ function Footer() {
                       </Stack>
                       {/* Learn More List */}
                       <Stack direction='column' spacing={2}>
-                        <Typography variant='h6' fontWeight={'bold'} noWrap>
+                        <Typography
+                          variant='h6'
+                          fontWeight={'bold'}
+                          noWrap
+                          textTransform={'uppercase'}
+                        >
                           Learn More
                         </Typography>
                         <Stack direction='column' spacing={1}>
@@ -253,7 +296,12 @@ function Footer() {
                     <Stack direction='column'>
                       {/* Learn More List */}
                       <Stack direction='column' spacing={2}>
-                        <Typography variant='h6' fontWeight={'bold'} noWrap>
+                        <Typography
+                          variant='h6'
+                          fontWeight={'bold'}
+                          noWrap
+                          textTransform={'uppercase'}
+                        >
                           About
                         </Typography>
                         <Stack direction='column' spacing={1}>
@@ -288,47 +336,130 @@ function Footer() {
                   <Stack
                     direction='row'
                     justifyContent={'center'}
-                    spacing={{ sm: 5, md: 8, lg: 5, xl: 5 }}
+                    spacing={{ sm: 5, md: 8, lg: 5, xl: 10 }}
                     p={{ sm: 2, md: 0, lg: 0, xl: 0 }}
                     pl={{ sm: 0, md: 0, lg: 10, xl: 15 }}
                   >
-                    {Object.keys(siteMap).map((section) => (
-                      <Stack
-                        key={section}
-                        direction='column'
-                        spacing={2}
-                        width={{ xl: 170, lg: 170, md: 'auto', sm: 'auto' }}
-                        justifyContent={'flex-start'}
+                    {/* Volunteer List */}
+                    <Stack
+                      direction='column'
+                      spacing={2}
+                      width={{ xl: 170, lg: 170, md: 'auto', sm: 'auto' }}
+                      justifyContent={'flex-start'}
+                    >
+                      <Typography
+                        variant='h6'
+                        fontWeight={'bold'}
+                        noWrap
+                        textTransform={'uppercase'}
                       >
-                        <Typography variant='h6' fontWeight={'bold'} noWrap>
-                          {section}
-                        </Typography>
-                        <Stack direction='column' spacing={1}>
-                          {siteMap[section].map((link) => (
-                            <Link
-                              href={link.link}
-                              key={link.label}
-                              underline='hover'
+                        Volunteer
+                      </Typography>
+                      <Stack direction='column' spacing={1}>
+                        {siteMap['Volunteer'].map((link) => (
+                          <Link
+                            href={link.link}
+                            key={link.label}
+                            underline='hover'
+                            color='inherit'
+                            sx={{
+                              '&:hover': { color: theme.fontHoverColor },
+                            }}
+                          >
+                            <Typography
+                              variant='body1'
                               color='inherit'
+                              noWrap
                               sx={{
                                 '&:hover': { color: theme.fontHoverColor },
                               }}
                             >
-                              <Typography
-                                variant='body1'
-                                color='inherit'
-                                noWrap
-                                sx={{
-                                  '&:hover': { color: theme.fontHoverColor },
-                                }}
-                              >
-                                {link.label}
-                              </Typography>
-                            </Link>
-                          ))}
-                        </Stack>
+                              {link.label}
+                            </Typography>
+                          </Link>
+                        ))}
                       </Stack>
-                    ))}
+                    </Stack>
+                    {/* About List */}
+                    <Stack
+                      direction='column'
+                      spacing={2}
+                      width={{ xl: 110, lg: 110, md: 'auto', sm: 'auto' }}
+                      justifyContent={'flex-start'}
+                    >
+                      <Typography
+                        variant='h6'
+                        fontWeight={'bold'}
+                        noWrap
+                        textTransform={'uppercase'}
+                      >
+                        About
+                      </Typography>
+                      <Stack direction='column' spacing={1}>
+                        {siteMap['About'].map((link) => (
+                          <Link
+                            href={link.link}
+                            key={link.label}
+                            underline='hover'
+                            color='inherit'
+                            sx={{
+                              '&:hover': { color: theme.fontHoverColor },
+                            }}
+                          >
+                            <Typography
+                              variant='body1'
+                              color='inherit'
+                              noWrap
+                              sx={{
+                                '&:hover': { color: theme.fontHoverColor },
+                              }}
+                            >
+                              {link.label}
+                            </Typography>
+                          </Link>
+                        ))}
+                      </Stack>
+                    </Stack>
+                    {/* Learn More List  */}
+                    <Stack
+                      direction='column'
+                      spacing={2}
+                      width={{ xl: 170, lg: 170, md: 'auto', sm: 'auto' }}
+                      justifyContent={'flex-start'}
+                    >
+                      <Typography
+                        variant='h6'
+                        fontWeight={'bold'}
+                        noWrap
+                        textTransform={'uppercase'}
+                      >
+                        Learn More
+                      </Typography>
+                      <Stack direction='column' spacing={1}>
+                        {siteMap['Learn More'].map((link) => (
+                          <Link
+                            href={link.link}
+                            key={link.label}
+                            underline='hover'
+                            color='inherit'
+                            sx={{
+                              '&:hover': { color: theme.fontHoverColor },
+                            }}
+                          >
+                            <Typography
+                              variant='body1'
+                              color='inherit'
+                              noWrap
+                              sx={{
+                                '&:hover': { color: theme.fontHoverColor },
+                              }}
+                            >
+                              {link.label}
+                            </Typography>
+                          </Link>
+                        ))}
+                      </Stack>
+                    </Stack>
                   </Stack>
                 )}
               </Grid>
@@ -337,20 +468,25 @@ function Footer() {
 
           {/* Outside Links and Copyright */}
           <Stack
-            direction={{ xs: 'column', sm: 'row' }}
+            direction={'column'}
             spacing={2}
-            justifyContent={'space-between'}
-            alignItems={'center'}
+            alignItems={{
+              xs: 'center',
+              sm: 'center',
+              md: 'flex-start',
+              lg: 'flex-start',
+              xl: 'flex-start',
+            }}
           >
-            <SocialMediaIcons />
-            {/* <Typography
-              variant="subtitle1"
-              align="center"
-              color="text.secondary"
-              component="p"
+            <Typography
+              variant='body1'
+              textTransform={'uppercase'}
+              noWrap
+              letterSpacing={2}
             >
-              A Search Engine like no other!
-            </Typography> */}
+              Follow Us
+            </Typography>
+            <SocialMediaIcons />
             <Copyright />
           </Stack>
         </Stack>
