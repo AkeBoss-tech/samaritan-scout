@@ -17,6 +17,8 @@ import {
   FormGroup,
   FormControlLabel,
   Grid,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import Footer from "../components/Footer";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -59,7 +61,9 @@ function Home() {
             We’re making it easier for people and organizations to DO GOOD
           </Typography>
         </Container>
-        <OtherStuff />
+        <OtherStuff 
+          primary={false}
+        />
       </ThemeProvider>
     </div>
   );
@@ -141,9 +145,83 @@ const BootstrapHome = () => {
   );
 };
 
-function OtherStuff() {
+function OtherStuff({ primary } : {primary: boolean}) {
+  const bgColor = primary ? theme.primaryBgColor : theme.bgColor;
+  const fontColor = primary ? theme.primaryFontColor : theme.fontColor;
+  const theme1 = useTheme();
+  const isXs = useMediaQuery(theme1.breakpoints.only('xs'));
+  const isSm = useMediaQuery(theme1.breakpoints.only('sm'));
+
+  const imageWidth = (isSm || isXs) ? '90vw' : '45vw';
+  
+  const containerStyle = {
+    paddingTop: '50px',
+    paddingBottom: '50px',
+    flex: 1,
+    color: fontColor,
+    backgroundColor: bgColor,
+    display: 'flex', // Center the content vertically and horizontally
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
   return (
-    <div></div>
+    <>
+    <Container
+      style={containerStyle}
+      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+    >
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6} alignContent={'center'} alignSelf={'center'}>
+          <Typography variant="h4" align="left" color={fontColor} className="lead" textAlign={'center'}>
+            Harnessing the latest technology…
+          </Typography>
+          <Typography variant="body1" align="left" color={fontColor} className="lead" textAlign={'center'}>
+            to connect individuals with meaningful and impactful service activities
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6} alignSelf={'center'}>
+          <img src="https://media.istockphoto.com/id/1299624974/photo/futuristic-city-vr-wire-frame-with-group-of-people.jpg?s=612x612&w=0&k=20&c=Wf0Zroz23XgI-aDsF4bYNuRew_Jql-XjvECAGE0IIDo=" alt="Image that shows tech and people" style={{ maxWidth: imageWidth }} />
+        </Grid>
+      </Grid>
+    </Container>
+    <Container
+      style={containerStyle}
+      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+    >
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6} alignSelf={'center'} maxWidth={'5'}>
+          <img src="https://www.cio.com/wp-content/uploads/2023/05/iStock-654187068.jpg?quality=50&strip=all" alt="overburdened" style={{ maxWidth: imageWidth }}/>
+        </Grid>
+        <Grid item xs={12} md={6} alignContent={'center'} alignSelf={'center'}>
+          <Typography variant="h4" align="left" color={fontColor} className="lead" textAlign={'center'}>
+          Lightening the load on nonprofitable organizations and charities…
+          </Typography>
+          <Typography variant="body1" align="left" color={fontColor} className="lead" textAlign={'center'}>
+          Removing the burden of entering volunteer info on 3rd party static databases
+          </Typography>
+        </Grid>
+      </Grid>
+      </Container>
+    <Container
+      style={containerStyle}
+      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+    >
+      <Grid container spacing={2} alignItems={'center'}>
+        <Grid item xs={12} md={6} alignContent={'center'} alignSelf={'center'}>
+          <Typography variant="h4" align="left" color={fontColor} className="lead" textAlign={'center'}>
+          Building community…
+          </Typography>
+          <Typography variant="body1" align="left" color={fontColor} className="lead" textAlign={'center'}>
+          Rooted in kindness and collaboration
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6} alignSelf={'center'}>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif" alt="Image that shows tech and people" style={{ maxWidth: imageWidth, alignSelf: 'center' }} />
+        </Grid>
+      </Grid>
+    </Container>
+      </>
   );
 }
 
