@@ -4,14 +4,8 @@ import React, { useState } from 'react';
 import theme from './Theme2';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import MaterialTheme from './MaterialTheme';
 
-const theme2 = createTheme({
-  palette: {
-    primary: {
-      main: theme.primaryColor2,
-    },
-  },
-});
 const TeamContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -32,7 +26,7 @@ const TeamContactForm = () => {
 
   return (
     <div>
-      <ThemeProvider theme={theme2}>
+      <ThemeProvider theme={MaterialTheme}>
         <Grid
           container
           spacing={{ xs: 10, sm: 10, md: 2, lg: 2, xl: 10 }}
