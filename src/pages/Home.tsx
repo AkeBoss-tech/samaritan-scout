@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 import {
   createTheme,
   ThemeProvider,
-  responsiveFontSizes
+  responsiveFontSizes,
 } from "@mui/material/styles";
 //import { Nav } from "react-bootstrap"
 import {
@@ -25,6 +25,7 @@ import {
   useTheme,
   IconButton,
   ButtonGroup,
+  Stack,
   styled,
   Paper,
 } from "@mui/material";
@@ -35,33 +36,54 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 import "./styles.css";
 import Section from "../components/Section";
-import theme from "../components/Theme";
+import color_theme from "../components/Theme";
 import Separator from "../components/Separator";
 import Navbar from "../components/Navbar";
 import MaterialTheme from "../components/MaterialTheme";
 
 // Code from https://mui.com/ with some modifications
 
+const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
+  backgroundColor: color_theme.primaryBgColor,
+  color: color_theme.primaryFontColor,
+  position: "relative",
+  display: "flex",
+  alignItems: "center",
+  [theme.breakpoints.up("sm")]: {
+    height: "calc(100vh - 63px)",
+    minHeight: 500,
+    maxHeight: 1300,
+  },
+}));
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+
 function Home() {
   return (
     <div className="Home">
       <ThemeProvider theme={MaterialTheme}>
-        <BootstrapHome />
+        <ReactHome />
         <RecentActivity />
         <Container
           style={{
             paddingTop: "50px",
             paddingBottom: "50px",
             flex: 1,
-            color: theme.primaryFontColor,
-            backgroundColor: theme.accentBgColor,
+            color: color_theme.primaryFontColor,
+            backgroundColor: color_theme.accentBgColor,
           }}
           maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
         >
           <Typography
             variant="h5"
             fontWeight={"bold"}
-            color={theme.primaryFontColor}
+            color={color_theme.primaryFontColor}
             align="center"
           >
             We’re making it easier for people and organizations to DO GOOD
@@ -73,7 +95,7 @@ function Home() {
   );
 }
 
-const BootstrapHome = () => {
+const ReactHome = () => {
   const [keywords, setKeywords] = useState("");
   const [location, setLocation] = useState("");
   const [inPerson, setInPerson] = useState(true);
@@ -88,18 +110,10 @@ const BootstrapHome = () => {
 
   return (
     <>
-      <Container
-        style={{
-          height: "calc(100vh-35px)",
-          backgroundColor: theme.primaryBgColor,
-          color: theme.primaryFontColor,
-          alignContent: "center",
-        }}
-        maxWidth={false}
-      >
+      <ProductHeroLayoutRoot>
         <Grid
           container
-          spacing={2}
+          spacing={1}
           paddingTop={"35px"}
           justifyContent="center"
           alignItems="center"
@@ -108,41 +122,57 @@ const BootstrapHome = () => {
           <Grid xs={12} textAlign={"center"}>
             <Box sx={{ height: 35 }}></Box>
           </Grid>
-          <Grid xs={12} textAlign={"center"}>
+          <Grid xs={10} sm={10} md={12} lg={12} xl={12} textAlign={"center"}>
             <Typography variant="h1" component="h1" gutterBottom>
               DISCOVER VOLUNTEER OPPORTUNITIES
             </Typography>
           </Grid>
-          <Grid xs={12} textAlign={"center"}>
+          <Grid xs={10} sm={10} md={12} lg={12} xl={12} textAlign={"center"}>
             <Typography variant="body1" gutterBottom>
               The web’s first search engine focused exclusively on finding ways
               we can help nonprofit organizations we care about
             </Typography>
           </Grid>
-          <Grid xs={12} textAlign={"center"}>
-            <Box sx={{ height: 35 }}></Box>
-          </Grid>
-          <Grid xs={6} textAlign={"center"}>
+          <Grid xs={10} sm={7} md={7} lg={7} xl={7} textAlign={"center"}>
             <TextField
               variant="outlined"
-              label="Enter keywords..."
+              placeholder="Enter keywords..."
               color="primary"
               margin="dense"
               fullWidth={true}
+              sx={{ backgroundColor: "#fff", input: { color: "black" } }}
             />
           </Grid>
-          <Grid xs={1} textAlign={"center"}>
-            <Button variant="contained" color="primary" id="inPerson" fullWidth={true}>
+          <Grid xs={10} sm={2} md={2} lg={2} xl={2} textAlign={"center"} alignItems={"center"} sx={{ paddingTop: "3px" }}>
+            <Button
+              variant="contained"
+              color="primary"
+              id="inPerson"
+              fullWidth={true}
+              sx={{ height: 55 }}
+            >
               <SearchIcon />
             </Button>
           </Grid>
-          <Grid xs={8} textAlign={"center"} alignItems={'center'} justifyContent="center">
-            <TextField variant="outlined" label="Enter location..." margin="dense" color="primary"/>
-            <ButtonGroup>
-              <Button variant="outlined" color="primary" id="inPerson">
+          <Grid xs={10} sm={4} md={4} lg={4} xl={4} textAlign={"center"}
+            alignItems={"center"}
+            justifyContent="center">
+            <TextField
+              variant="outlined"
+              placeholder="Enter location..."
+              color="primary"
+              margin="dense"
+              fullWidth={true}
+              sx={{ backgroundColor: "#fff", input: { color: "black" } }}
+            />
+            
+          </Grid>
+          <Grid xs={10} sm={4} md={3} lg={3} xl={3} textAlign={"left"} alignItems={"center"} sx={{ paddingTop: "3px" }}>
+            <ButtonGroup fullWidth={true}>
+              <Button variant="contained" color="primary" id="inPerson" sx={{ height: 55 }}>
                 In-Person
               </Button>
-              <Button variant="outlined" color="primary" id="remote">
+              <Button variant="contained" color="primary" id="remote" sx={{ height: 55 }}>
                 Remote
               </Button>
             </ButtonGroup>
@@ -162,14 +192,16 @@ const BootstrapHome = () => {
             <Box sx={{ height: 35 }}></Box>
           </Grid>
         </Grid>
-      </Container>
+      </ProductHeroLayoutRoot>
     </>
   );
 };
 
 function OtherStuff({ primary }: { primary: boolean }) {
-  const bgColor = primary ? theme.primaryBgColor : theme.bgColor;
-  const fontColor = primary ? theme.primaryFontColor : theme.fontColor;
+  const bgColor = primary ? color_theme.primaryBgColor : color_theme.bgColor;
+  const fontColor = primary
+    ? color_theme.primaryFontColor
+    : color_theme.fontColor;
   const theme1 = useTheme();
   const isXs = useMediaQuery(theme1.breakpoints.only("xs"));
   const isSm = useMediaQuery(theme1.breakpoints.only("sm"));
@@ -322,13 +354,13 @@ function RecentActivity() {
         paddingTop: "50px",
         paddingBottom: "50px",
         flex: 1,
-        color: theme.fontColor,
-        backgroundColor: theme.bgColor,
+        color: color_theme.fontColor,
+        backgroundColor: color_theme.bgColor,
       }}
       id="recent-activity"
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
-      <Typography variant="h3" color={theme.fontColor} align="center">
+      <Typography variant="h3" color={color_theme.fontColor} align="center">
         Recent Volunteer Activities
       </Typography>
       <Separator primary={false} />
@@ -337,7 +369,7 @@ function RecentActivity() {
           <Typography
             variant="body1"
             align="left"
-            color={theme.fontColor}
+            color={color_theme.fontColor}
             className="lead"
             textAlign={"center"}
           >
@@ -350,7 +382,7 @@ function RecentActivity() {
           <Typography
             variant="body1"
             align="left"
-            color={theme.fontColor}
+            color={color_theme.fontColor}
             className="lead"
             textAlign={"center"}
           >
@@ -363,7 +395,7 @@ function RecentActivity() {
           <Typography
             variant="body1"
             align="left"
-            color={theme.fontColor}
+            color={color_theme.fontColor}
             className="lead"
             textAlign={"center"}
           >

@@ -1,6 +1,6 @@
 import MaterialTheme from "./MaterialTheme";
 
-const theme = {
+const color_theme = {
   bgColor: 'white',
   coverBg: '#273225',
   fontColor: 'black',
@@ -11,4 +11,4 @@ const theme = {
   accentBgColor: '#a79360',
 };
 
-export default theme;
+export default color_theme;
