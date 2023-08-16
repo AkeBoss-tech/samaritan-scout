@@ -36,6 +36,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import PublicIcon from "@mui/icons-material/Public";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import TranslateIcon from '@mui/icons-material/Translate';
 
 import "./styles.css";
 import Section from "../components/Section";
@@ -133,11 +134,11 @@ function Home() {
             color={color_theme.primaryFontColor}
             align="center"
           >
-            Meet the People
+            Meet the People making this Vision a Reality
           </Typography>
           <Box sx={{ height: "20px " }}></Box>
           <Button variant="contained" size="large">
-            Meet the Team
+            Our Team
           </Button>
         </Container>
       </ThemeProvider>
@@ -445,7 +446,7 @@ function RecentActivity() {
       </Typography>
       <Separator primary={false} />
       <Grid container spacing={4}>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} sm={4}>
           <VolunteerCard
             cause="Environment"
             volunteer="Trash Pickup"
@@ -454,7 +455,7 @@ function RecentActivity() {
             icon={<PublicIcon />}
           />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} sm={4}>
           <VolunteerCard
             cause="Health"
             volunteer="Mask Distribution"
@@ -463,13 +464,13 @@ function RecentActivity() {
             icon={<HealthAndSafetyIcon />}
           />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} sm={4}>
           <VolunteerCard
-            cause="Environment"
-            volunteer="Trash Pickup"
-            description="Help clean up the park and keep it beautiful for all to enjoy!"
-            imageSrc="https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg"
-            icon={<PublicIcon />}
+            cause="ESL"
+            volunteer="English Speaking Volunteers"
+            description="Help people learn English as their Second Language!"
+            imageSrc="https://static.teachaway.com/wp-content/uploads/2020/11/13135238/eslclassroom_354760748.jpg"
+            icon={<TranslateIcon />}
           />
         </Grid>
       </Grid>
@@ -493,7 +494,7 @@ function VolunteerLove() {
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4} alignItems={'center'} textAlign={'center'}>
           <Typography
             variant="h5"
             fontWeight={"bold"}
@@ -502,6 +503,28 @@ function VolunteerLove() {
           >
             Volunteers love us!
           </Typography>
+          <Button
+            variant='contained'
+            sx={{
+              color: color_theme.bgColor,
+              backgroundColor: color_theme.fontHoverColor,
+              height: '50px',
+              maxWidth: '60%',
+              minWidth: '250px',
+              ':hover': {
+                backgroundColor: color_theme.fontColor,
+              },
+            }}
+            size='large'
+          >
+            <Typography
+              variant='body1'
+              fontSize={'20px'}
+              fontWeight={'bold'}
+            >
+              Join Us!
+            </Typography>
+          </Button>
         </Grid>
         <Grid item xs={12} sm={4} justifyContent="center" alignItems="center"  textAlign={"center"}>
           <VolunteerCard

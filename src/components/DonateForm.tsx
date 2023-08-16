@@ -1,17 +1,21 @@
-import { Box, Button, Grid, Stack, TextField, Typography } from '@mui/material';
+// Copied from Ethan
+
+import { Box, Button, Checkbox, FormControlLabel, Grid, Stack, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
 import theme from './Theme2';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MaterialTheme from './MaterialTheme';
+import Separator from './Separator';
 
-const TeamContactForm = () => {
+const DonateForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     emailAddress: '',
     phoneNumber: '',
     message: '',
+    donation: '',
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,10 +33,10 @@ const TeamContactForm = () => {
       <ThemeProvider theme={MaterialTheme}>
         <Grid
           container
-          spacing={{ xs: 10, sm: 10, md: 2, lg: 2, xl: 10 }}
+          spacing={{ xs: 10, sm: 10, md: 10, lg: 10, xl: 10 }}
           paddingY={15}
         >
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+          <Grid item xs={12} sm={12}>
             <Stack gap={2} px={{ xs: 5, sm: 5, md: 5, lg: 2, xl: 0 }}>
               <Stack justifyContent={'center'} alignItems={'center'}>
                 <Typography
@@ -49,36 +53,10 @@ const TeamContactForm = () => {
                   color={theme.primaryColor2}
                   textTransform={'uppercase'}
                 >
-                  Join The Effort
+                  Donate
                 </Typography>
 
-                <Stack
-                  width={'100%'}
-                  alignItems='center'
-                  spacing={2}
-                  direction={'row'}
-                >
-                  <Box
-                    sx={{ width: '100%' }}
-                    borderBottom={`5px solid ${theme.primaryColor2}`}
-                  ></Box>
-
-                  <img
-                    src={'/images/dog_silhouette.png'}
-                    alt='dog'
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      maxWidth: '7rem',
-                      transform: 'scaleX(-1)',
-                    }}
-                  ></img>
-
-                  <Box
-                    sx={{ width: '100%' }}
-                    borderBottom={`5px solid ${theme.primaryColor2}`}
-                  ></Box>
-                </Stack> {/* You can use the separator component instead of this */}
+                <Separator primary={false} />
               </Stack>
               <TextField
                 fullWidth
@@ -88,11 +66,13 @@ const TeamContactForm = () => {
                 name='fullName'
                 value={formData.fullName}
                 onChange={handleChange}
+                color='primary'
               />
               <TextField
                 fullWidth
                 label='Email Address'
                 variant='standard'
+                type='email'
                 InputProps={{ style: { fontSize: '18px' } }}
                 name='emailAddress'
                 value={formData.emailAddress}
@@ -109,7 +89,17 @@ const TeamContactForm = () => {
               />
               <TextField
                 fullWidth
-                label='Multiline'
+                label='Donation Amount'
+                type='number'
+                variant='standard'
+                InputProps={{ style: { fontSize: '18px' } }}
+                name='donation'
+                value={formData.donation}
+                onChange={handleChange}
+              />
+              <TextField
+                fullWidth
+                label='Message'
                 //   variant='standard'
                 multiline
                 rows={4}
@@ -118,13 +108,13 @@ const TeamContactForm = () => {
                 value={formData.message}
                 onChange={handleChange}
               />
+            <FormControlLabel control={<Checkbox />} label="Yes, send me information on your next fundraising event" />
+            <FormControlLabel control={<Checkbox />} label="Yes, contact me to discuss my donation" />
+            <Typography variant="body2">VENMO @samaritan-scout</Typography>
               <Stack
                 alignItems={{
                   xs: 'center',
                   sm: 'center',
-                  md: 'flex-start',
-                  lg: 'flex-start',
-                  xl: 'flex-start',
                 }}
               >
                 <Button
@@ -153,58 +143,11 @@ const TeamContactForm = () => {
               </Stack>
             </Stack>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-            <Stack
-              width={'100%'}
-              height={'100%'}
-              justifyContent={'center'}
-              alignItems={'center'}
-              spacing={5}
-            >
-              <Typography
-                variant={'h3'}
-                fontSize={{
-                  xs: '2.25rem',
-                  sm: '2.25rem',
-                  md: '2.5rem',
-                  lg: '3rem',
-                  xl: '3rem',
-                }}
-                fontWeight={'bold'}
-                color={theme.primaryColor2}
-                textAlign={'center'}
-                textTransform={'uppercase'}
-              >
-                Support Our Work
-              </Typography>
-              <Button
-                variant='contained'
-                sx={{
-                  color: 'black',
-                  backgroundColor: theme.primaryColor1,
-                  height: '50px',
-                  ':hover': {
-                    color: 'white',
-                    backgroundColor: theme.secondaryColor2,
-                  },
-                }}
-                size='large'
-                href='donate'
-              >
-                <Typography
-                  variant='body1'
-                  fontSize={'20px'}
-                  fontWeight={'bold'}
-                >
-                  Make A Donation
-                </Typography>
-              </Button>
-            </Stack>
-          </Grid>
+          
         </Grid>
       </ThemeProvider>
     </div>
   );
 };
 
-export default TeamContactForm;
+export default DonateForm;

@@ -10,6 +10,7 @@ import Search from './pages/Search';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Test from './pages/Test';
+import Donate from './pages/Donate';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/people' element={<People />} />
         <Route path='/search' element={<Search />} />
         <Route path='/test' element={<Test />} />
+        <Route path='/donate' element={<Donate />} />
       </Routes>
 
       <Footer />

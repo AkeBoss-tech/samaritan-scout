@@ -8,7 +8,6 @@ let MaterialTheme = createTheme({
     palette: {
         primary: {
             main: '#273225', // light green
-            contrastText: '#fffdd0', // dark brown
         },
         secondary: {
             main: '#fffdd0', // light brown
@@ -17,7 +16,7 @@ let MaterialTheme = createTheme({
             main: '#f44336', // red
         },
         text: {
-            primary: '#fffdd0', // black
+            primary: '#62B16E', // black
             secondary: '#273225', // white
         }
     },

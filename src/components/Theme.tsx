@@ -7,7 +7,7 @@ const color_theme = {
   fontHoverColor: '#62B16E',
   separatorColor: '#62B16E',
   primaryBgColor: '#62B16E',
-  primaryFontColor: '#27325',
+  primaryFontColor: '#273225',
   accentBgColor: '#a79360',
   paperBgColor: '#fffdd0',
 };
