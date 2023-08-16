@@ -1,7 +1,52 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea, Icon } from '@mui/material';
+import Chip from '@mui/material/Chip';
+import FaceIcon from '@mui/icons-material/Face';
 
-function Card() {
-  return <div>Card</div>;
+interface VolunteerCardProps {
+  cause: string;
+  volunteer: string;
+  imageSrc: string;
+  description: string;
+  icon?: ReactElement;
 }
 
-export default Card;
+const VolunteerCard: React.FC<VolunteerCardProps> = ({ cause, volunteer, imageSrc, description, icon }) => {
+  return (
+    <Card sx={{ maxWidth: "100%" }}>
+      <CardActionArea>
+        {/* Chip with a word in the top left */}
+        <Chip
+          icon={icon}
+          label={cause}
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+          }}
+          color='primary'
+        />
+        <CardMedia
+          component="img"
+          height="140"
+          image={imageSrc}
+          alt={volunteer}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div"  color={'primary'} align='center'>
+            {volunteer}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
+}
+
+export default VolunteerCard;

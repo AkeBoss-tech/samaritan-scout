@@ -8,7 +8,7 @@ function Separator({primary} : {primary: boolean}) {
       <Container
         style={{
           flex: 1,
-          paddingBottom: '50px',
+          paddingBottom: '20px',
         }}
         maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
       >

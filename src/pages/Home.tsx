@@ -28,10 +28,13 @@ import {
   Stack,
   styled,
   Paper,
+  Icon,
 } from "@mui/material";
 import Footer from "../components/Footer";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import PublicIcon from "@mui/icons-material/Public";
+import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 import "./styles.css";
@@ -40,6 +43,7 @@ import color_theme from "../components/Theme";
 import Separator from "../components/Separator";
 import Navbar from "../components/Navbar";
 import MaterialTheme from "../components/MaterialTheme";
+import VolunteerCard from "../components/Card";
 
 // Code from https://mui.com/ with some modifications
 
@@ -56,20 +60,40 @@ const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
   },
 }));
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-
 function Home() {
   return (
     <div className="Home">
       <ThemeProvider theme={MaterialTheme}>
         <ReactHome />
+        <WorkInProgress />
+        <Container
+          style={{
+            paddingTop: "50px",
+            paddingBottom: "50px",
+            flex: 1,
+            color: color_theme.primaryFontColor,
+            backgroundColor: color_theme.paperBgColor,
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+          maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+        >
+          <Typography
+            variant="h5"
+            fontWeight={"bold"}
+            color={color_theme.primaryFontColor}
+            align="center"
+          >
+            WE HAVE EXCITING VOLUNTEER OPPORTUNITIES FOR YOU.
+          </Typography>
+          <Box sx={{ height: "20px " }}></Box>
+          <Button variant="contained" size="large">
+            Volunteer Near You
+          </Button>
+        </Container>
         <RecentActivity />
+        <VolunteerLove />
         <Container
           style={{
             paddingTop: "50px",
@@ -90,6 +114,32 @@ function Home() {
           </Typography>
         </Container>
         <OtherStuff primary={false} />
+        <Container
+          style={{
+            paddingTop: "50px",
+            paddingBottom: "50px",
+            flex: 1,
+            color: color_theme.primaryFontColor,
+            backgroundColor: color_theme.primaryBgColor,
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+          maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+        >
+          <Typography
+            variant="h5"
+            fontWeight={"bold"}
+            color={color_theme.primaryFontColor}
+            align="center"
+          >
+            Meet the People
+          </Typography>
+          <Box sx={{ height: "20px " }}></Box>
+          <Button variant="contained" size="large">
+            Meet the Team
+          </Button>
+        </Container>
       </ThemeProvider>
     </div>
   );
@@ -143,9 +193,16 @@ const ReactHome = () => {
               sx={{ backgroundColor: "#fff", input: { color: "black" } }}
             />
           </Grid>
-          <Grid xs={10} sm={3} md={3} lg={3} xl={3} textAlign={"center"}
+          <Grid
+            xs={10}
+            sm={3}
+            md={3}
+            lg={3}
+            xl={3}
+            textAlign={"center"}
             alignItems={"center"}
-            justifyContent="center">
+            justifyContent="center"
+          >
             <TextField
               variant="outlined"
               placeholder="Enter location..."
@@ -154,9 +211,17 @@ const ReactHome = () => {
               fullWidth={true}
               sx={{ backgroundColor: "#fff", input: { color: "black" } }}
             />
-            
           </Grid>
-          <Grid xs={10} sm={2} md={2} lg={2} xl={2} textAlign={"center"} alignItems={"center"} sx={{ paddingTop: "3px" }}>
+          <Grid
+            xs={10}
+            sm={2}
+            md={2}
+            lg={2}
+            xl={2}
+            textAlign={"center"}
+            alignItems={"center"}
+            sx={{ paddingTop: "3px" }}
+          >
             <Button
               variant="contained"
               color="primary"
@@ -167,12 +232,30 @@ const ReactHome = () => {
               <SearchIcon />
             </Button>
           </Grid>
-          
-          <Grid xs={11} textAlign={"center"} alignItems={"center"} sx={{ paddingTop: "3px" }}>
-          
-            <FormControlLabel control={<Checkbox defaultChecked sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} />} label="In Person" sx={{ fontSize: "24px" }}/>
-            <FormControlLabel control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} />} label="Remote" sx={{ fontSize: "24px" }}/>
-          
+
+          <Grid
+            xs={11}
+            textAlign={"center"}
+            alignItems={"center"}
+            sx={{ paddingTop: "3px" }}
+          >
+            <FormControlLabel
+              control={
+                <Checkbox
+                  defaultChecked
+                  sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                />
+              }
+              label="In Person"
+              sx={{ fontSize: "24px" }}
+            />
+            <FormControlLabel
+              control={
+                <Checkbox sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }} />
+              }
+              label="Remote"
+              sx={{ fontSize: "24px" }}
+            />
           </Grid>
           <Grid xs={12} textAlign={"center"}>
             <Box sx={{ height: 35 }}></Box>
@@ -361,47 +444,110 @@ function RecentActivity() {
         Recent Volunteer Activities
       </Typography>
       <Separator primary={false} />
-      <Grid container spacing={2}>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={4}>
-          <Typography
-            variant="body1"
-            align="left"
-            color={color_theme.fontColor}
-            className="lead"
-            textAlign={"center"}
-          >
-            <a href="https://www.nycgovparks.org/events/2021/10/23/its-my-park-at-east-river-park">
-              It's My Park at East River Park
-            </a>
-          </Typography>
+          <VolunteerCard
+            cause="Environment"
+            volunteer="Trash Pickup"
+            description="Help clean up the park and keep it beautiful for all to enjoy!"
+            imageSrc="https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg"
+            icon={<PublicIcon />}
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          <Typography
-            variant="body1"
-            align="left"
-            color={color_theme.fontColor}
-            className="lead"
-            textAlign={"center"}
-          >
-            <a href="https://www.nycgovparks.org/events/2021/10/23/its-my-park-at-east-river-park">
-              It's My Park at East River Park
-            </a>
-          </Typography>
+          <VolunteerCard
+            cause="Health"
+            volunteer="Mask Distribution"
+            description="Help XXYY distribute masks in schools!"
+            imageSrc="https://media.defense.gov/2020/Oct/01/2002509681/-1/-1/0/200930-Z-DY403-027C.JPG"
+            icon={<HealthAndSafetyIcon />}
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          <Typography
-            variant="body1"
-            align="left"
-            color={color_theme.fontColor}
-            className="lead"
-            textAlign={"center"}
-          >
-            <a href="https://www.nycgovparks.org/events/2021/10/23/its-my-park-at-east-river-park">
-              It's My Park at East River Park
-            </a>
-          </Typography>
+          <VolunteerCard
+            cause="Environment"
+            volunteer="Trash Pickup"
+            description="Help clean up the park and keep it beautiful for all to enjoy!"
+            imageSrc="https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg"
+            icon={<PublicIcon />}
+          />
         </Grid>
       </Grid>
+    </Container>
+  );
+}
+
+function VolunteerLove() {
+  return (
+    <Container
+      style={{
+        paddingTop: "50px",
+        paddingBottom: "50px",
+        flex: 1,
+        color: color_theme.primaryFontColor,
+        backgroundColor: color_theme.paperBgColor,
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+      }}
+      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+    >
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={4}>
+          <Typography
+            variant="h5"
+            fontWeight={"bold"}
+            color={color_theme.primaryFontColor}
+            align="center"
+          >
+            Volunteers love us!
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={4} justifyContent="center" alignItems="center"  textAlign={"center"}>
+          <VolunteerCard
+            cause="Environment"
+            volunteer="Trash Pickup"
+            description="Help clean up the park and keep it beautiful for all to enjoy!"
+            imageSrc="https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg"
+            icon={<PublicIcon />}
+          />
+        </Grid>
+        <Grid item xs={12} sm={4} justifyContent="center" alignItems="center" textAlign={"center"}>
+          <VolunteerCard
+            cause="Environment"
+            volunteer="Trash Pickup"
+            description="Help clean up the park and keep it beautiful for all to enjoy!"
+            imageSrc="https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg"
+            icon={<PublicIcon />}
+          />
+        </Grid>
+      </Grid>
+    </Container>
+  );
+}
+
+function WorkInProgress() {
+  return (
+    <Container
+      style={{
+        paddingTop: "50px",
+        paddingBottom: "50px",
+        flex: 1,
+        color: color_theme.fontColor,
+        backgroundColor: color_theme.bgColor,
+      }}
+      id="recent-activity"
+      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+    >
+      <Typography
+        variant="h4"
+        color={color_theme.fontColor}
+        align="center"
+        sx={{ fontWeight: "bold", m: 1 }}
+      >
+        The web’s first search engine focused exclusively on finding ways we can
+        help nonprofit organizations we care about is COMING SOON.
+      </Typography>
     </Container>
   );
 }

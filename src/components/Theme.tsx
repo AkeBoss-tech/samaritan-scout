@@ -9,6 +9,7 @@ const color_theme = {
   primaryBgColor: '#62B16E',
   primaryFontColor: '#27325',
   accentBgColor: '#a79360',
+  paperBgColor: '#fffdd0',
 };
 
 export default color_theme;
