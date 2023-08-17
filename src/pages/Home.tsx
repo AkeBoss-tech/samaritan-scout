@@ -1,48 +1,30 @@
 // import '../App.css';
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import {
-  createTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 //import { Nav } from "react-bootstrap"
 import {
   TextField,
-  InputAdornment,
-  Toolbar,
   Typography,
-  Divider,
-  FormControl,
   Checkbox,
-  FormGroup,
   FormControlLabel,
   Grid,
   useMediaQuery,
   useTheme,
   IconButton,
-  ButtonGroup,
-  Stack,
   styled,
-  Paper,
-  Icon,
 } from "@mui/material";
-import Footer from "../components/Footer";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import PublicIcon from "@mui/icons-material/Public";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import TranslateIcon from '@mui/icons-material/Translate';
+import TranslateIcon from "@mui/icons-material/Translate";
 
 import "./styles.css";
-import Section from "../components/Section";
 import color_theme from "../components/Theme";
 import Separator from "../components/Separator";
-import Navbar from "../components/Navbar";
 import MaterialTheme from "../components/MaterialTheme";
 import VolunteerCard from "../components/Card";
 
@@ -485,8 +467,8 @@ function VolunteerLove() {
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={4} alignItems={'center'} textAlign={'center'}>
-          <Box sx={{ height: {sm: "25%"} }}></Box>
+        <Grid item xs={12} sm={4} alignItems={"center"} textAlign={"center"}>
+          <Box sx={{ height: { sm: "25%" } }}></Box>
           <Typography
             variant="h2"
             color={color_theme.primaryFontColor}
@@ -496,28 +478,31 @@ function VolunteerLove() {
           </Typography>
           <Box sx={{ height: "10%" }}></Box>
           <Button
-            variant='contained'
+            variant="contained"
             sx={{
               color: color_theme.fontColor,
               backgroundColor: color_theme.fontHoverColor,
-              height: '50px',
-              maxWidth: '60%',
-              minWidth: '180px',
-              ':hover': {
+              height: "50px",
+              maxWidth: "60%",
+              minWidth: "180px",
+              ":hover": {
                 backgroundColor: color_theme.fontColor,
                 color: color_theme.bgColor,
               },
             }}
-            size='large'
+            size="large"
           >
-            <Typography
-              variant='h5'
-            >
-              Join Us!
-            </Typography>
+            <Typography variant="h5">Join Us!</Typography>
           </Button>
         </Grid>
-        <Grid item xs={12} sm={4} justifyContent="center" alignItems="center"  textAlign={"center"}>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          justifyContent="center"
+          alignItems="center"
+          textAlign={"center"}
+        >
           <VolunteerCard
             cause="Environment"
             volunteer="Trash Pickup"
@@ -526,7 +511,14 @@ function VolunteerLove() {
             icon={<PublicIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={4} justifyContent="center" alignItems="center" textAlign={"center"}>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          justifyContent="center"
+          alignItems="center"
+          textAlign={"center"}
+        >
           <VolunteerCard
             cause="Environment"
             volunteer="Trash Pickup"
@@ -553,11 +545,7 @@ function WorkInProgress() {
       id="recent-activity"
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
-      <Typography
-        variant="h2"
-        color={color_theme.fontColor}
-        align="center"
-      >
+      <Typography variant="h2" color={color_theme.fontColor} align="center">
         The web’s first search engine focused exclusively on finding ways we can
         help nonprofit organizations we care about is COMING SOON.
       </Typography>

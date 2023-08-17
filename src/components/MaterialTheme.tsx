@@ -106,6 +106,7 @@ let MaterialTheme = createTheme({
     },
 });
 
-MaterialTheme = responsiveFontSizes(MaterialTheme);
+// may or may not need this
+// MaterialTheme = responsiveFontSizes(MaterialTheme);
 
 export default MaterialTheme;
