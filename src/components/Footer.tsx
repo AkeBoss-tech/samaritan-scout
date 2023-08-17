@@ -8,7 +8,6 @@ import {
   Stack,
   ThemeProvider,
   useMediaQuery,
-  useTheme,
 } from '@mui/material';
 import { Button } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -16,14 +15,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import MaterialTheme from './MaterialTheme';
-
-const theme = {
-  bgColor: '#273225',
-  fontColor: 'white',
-  fontHoverColor: '#62B16E',
-  iconColor: 'white',
-  secondaryFontColor: '#CBCFCB',
-};
 
 function Copyright() {
   return (
@@ -126,16 +117,16 @@ function Footer() {
     ],
   };
 
-  const theme1 = useTheme();
-  const isXs = useMediaQuery(theme1.breakpoints.only('xs'));
-  const isSm = useMediaQuery(theme1.breakpoints.only('sm'));
+  const theme = MaterialTheme;
+  const isXs = useMediaQuery(theme.breakpoints.only('xs'));
+  const isSm = useMediaQuery(theme.breakpoints.only('sm'));
 
   return (
     <ThemeProvider theme={MaterialTheme}>
       <div
         style={{
           width: '100%',
-          backgroundColor: 'primary',
+          backgroundColor: `${theme.palette.primary.main}`,
           color: 'white',
         }}
       >
@@ -170,7 +161,7 @@ function Footer() {
                         xl: '100%',
                       }}
                     >
-                      <Typography color={theme.secondaryFontColor}>
+                      <Typography color='#CBCFCB'>
                         Leveraging cutting-edge technology to connect people
                         with nonprofit organizations, we're a search engine
                         dedicated to creating a better world for all.
