@@ -7,16 +7,19 @@ import createTheme from "@mui/material/styles/createTheme";
 let MaterialTheme = createTheme({
     palette: {
         primary: {
-            main: '#273225', // light green
+            main: '#273225', // dark green
+            light: '#62B16E', // light green
         },
         secondary: {
-            main: '#fffdd0', // light brown
+            main: '#fffdd0', // cream
+            dark: '#A79360', // tan
         },
         error: {
-            main: '#f44336', // red
+            main: '#C20B0B', // red
         },
         text: {
             primary: '#62B16E', // black
+            // TODO: Better change to default black and white color
             secondary: '#273225', // white
         }
     },

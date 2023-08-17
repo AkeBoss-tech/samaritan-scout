@@ -1,6 +1,6 @@
 import React from 'react'
-import Contact from '../components/Contact'
 import '../pages/styles.css'
+import TeamContactForm from '../components/TeamContactForm';
 
 function people () {
 
@@ -180,7 +180,7 @@ function people () {
                         </div>
                     </div>
                 </section>
-                <Contact/>
+                <TeamContactForm/>
         
         </div>
     );

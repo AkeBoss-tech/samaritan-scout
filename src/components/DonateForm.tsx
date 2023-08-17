@@ -1,5 +1,3 @@
-// Copied from Ethan
-
 import { Box, Button, Checkbox, FormControlLabel, Grid, Stack, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
@@ -100,7 +98,6 @@ const DonateForm = () => {
               <TextField
                 fullWidth
                 label='Message'
-                //   variant='standard'
                 multiline
                 rows={4}
                 sx={{ my: 2 }}

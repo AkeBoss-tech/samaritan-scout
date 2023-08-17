@@ -9,18 +9,14 @@ import {
   Box,
   Drawer,
   IconButton,
+  ThemeProvider,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-
-const theme = {
-  bgColor: '#273225',
-  fontColor: 'white',
-  fontHoverColor: '#62B16E',
-};
+import MaterialTheme from './MaterialTheme';
 
 const StyledTypography = styled(Typography)`
   font-size: 16px;
@@ -61,178 +57,171 @@ function Navbar() {
   };
 
   return (
-    <AppBar
-      position='sticky'
-      sx={{ top: 0, zIndex: 999, backgroundColor: theme.bgColor }}
-    >
-      <Container maxWidth='xl' sx={{ height: 75, alignItems: 'center' }}>
-        {isXl || isLg || isMd ? (
-          <Stack
-            direction='row'
-            spacing={2}
-            sx={{
-              height: '100%',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <Stack direction='row' spacing={2} alignItems={'center'}>
-              <Link to='/' style={{ textDecoration: 'none' }}>
-                <img
-                  src={'/images/lacy-dog-square.jpg'}
-                  alt='logo'
-                  style={{
-                    display: 'block',
-                    height: '50px',
-                    width: 'auto',
-                    borderRadius: '50%',
-                  }}
-                />
-              </Link>
-
-              <Link to='/' style={{ textDecoration: 'none' }}>
-                <Typography
-                  variant='h6'
-                  fontWeight={'bold'}
-                  noWrap
-                  color={'#FFFDD0'}
-                  textTransform={'uppercase'}
-                  letterSpacing={2}
-                >
-                  Samaritan Scout
-                </Typography>
-              </Link>
-            </Stack>
-
+    <ThemeProvider theme={MaterialTheme}>
+      <AppBar
+        position='sticky'
+        sx={{ top: 0, zIndex: 999, backgroundColor: 'primary' }}
+      >
+        <Container maxWidth='xl' sx={{ height: 75, alignItems: 'center' }}>
+          {isXl || isLg || isMd ? (
             <Stack
               direction='row'
               spacing={2}
-              sx={{ justifyContent: 'flex-end' }}
+              sx={{
+                height: '100%',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
             >
-              {menuItems.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.link}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <StyledTypography
-                    variant='h6'
-                    noWrap
-                    sx={{
-                      color: isActiveRoute(item.link)
-                        ? theme.bgColor
-                        : theme.fontColor,
-                      bgcolor: isActiveRoute(item.link)
-                        ? theme.fontHoverColor
-                        : 'transparent',
-                      '&:hover': {
-                        color: theme.bgColor,
-                        bgcolor: theme.fontColor,
-                        transition:
-                          'background-color 0.3s ease-out, color 0.3s ease-out',
-                      },
+              <Stack direction='row' spacing={2} alignItems={'center'}>
+                <Link to='/' style={{ textDecoration: 'none' }}>
+                  <img
+                    src={'/images/lacy-dog-square.jpg'}
+                    alt='logo'
+                    style={{
+                      display: 'block',
+                      height: '50px',
+                      width: 'auto',
+                      borderRadius: '50%',
                     }}
-                  >
-                    {item.label}
-                  </StyledTypography>
+                  />
                 </Link>
-              ))}
-            </Stack>
-          </Stack>
-        ) : (
-          <Stack
-            direction='row'
-            spacing={2}
-            sx={{
-              height: '100%',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <StyledTypography
-              variant='h6'
-              fontWeight={'bold'}
-              noWrap
-              color={theme.fontColor}
-            >
-              {isActiveRoute('/')
-                ? 'Search'
-                : isActiveRoute('/about')
-                ? 'About Us'
-                : isActiveRoute('/people')
-                ? 'People'
-                : isActiveRoute('/donate')
-                ? 'Donate'
-                : 'Samaritan Scout'}
-            </StyledTypography>
-            <Stack direction='row' alignItems='center'>
-              <IconButton onClick={toggleDrawer(true)}>
-                <MenuIcon fontSize='large' sx={{ color: theme.fontColor }} />
-              </IconButton>
-              <Drawer
-                anchor={'top'}
-                open={isDrawerOpen}
-                onClose={toggleDrawer(false)}
+
+                <Link to='/' style={{ textDecoration: 'none' }}>
+                  <Typography
+                    variant='h6'
+                    fontWeight={'bold'}
+                    noWrap
+                    color='secondary'
+                    textTransform={'uppercase'}
+                    letterSpacing={2}
+                  >
+                    Samaritan Scout
+                  </Typography>
+                </Link>
+              </Stack>
+
+              <Stack
+                direction='row'
+                spacing={2}
+                sx={{ justifyContent: 'flex-end' }}
               >
-                <Box
-                  width={'auto'}
-                  role='presentation'
-                  onClick={toggleDrawer(false)}
-                  onKeyDown={toggleDrawer(false)}
-                  bgcolor={theme.bgColor}
-                  pl={5}
-                  pr={5}
-                  py={5}
-                >
-                  <Stack direction='row' spacing={2}>
-                    <IconButton
-                      onClick={toggleDrawer(false)}
-                      sx={{ marginLeft: 'auto', marginRight: '0' }}
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.link}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <StyledTypography
+                      noWrap
+                      sx={{
+                        color: isActiveRoute(item.link)
+                          ? 'primary.main'
+                          : 'white',
+                        bgcolor: isActiveRoute(item.link)
+                          ? 'primary.light'
+                          : 'transparent',
+                        '&:hover': {
+                          color: 'primary.main',
+                          bgcolor: 'white',
+                          transition:
+                            'background-color 0.3s ease-out, color 0.3s ease-out',
+                        },
+                      }}
                     >
-                      <CloseIcon
-                        fontSize='large'
-                        sx={{ color: theme.fontColor }}
-                      />
-                    </IconButton>
-                  </Stack>
-                  <Stack direction='column' spacing={2}>
-                    {menuItems.map((item) => (
-                      <Link
-                        key={item.label}
-                        to={item.link}
-                        style={{ textDecoration: 'none' }}
-                      >
-                        <StyledTypography
-                          variant='h6'
-                          noWrap
-                          sx={{
-                            display: 'inline',
-                            color: isActiveRoute(item.link)
-                              ? theme.bgColor
-                              : theme.fontColor,
-                            bgcolor: isActiveRoute(item.link)
-                              ? theme.fontHoverColor
-                              : 'transparent',
-                            '&:hover': {
-                              color: theme.bgColor,
-                              bgcolor: theme.fontColor,
-                              transition:
-                                'background-color 0.3s ease-out, color 0.3s ease-out',
-                            },
-                          }}
-                        >
-                          {item.label}
-                        </StyledTypography>
-                      </Link>
-                    ))}
-                  </Stack>
-                </Box>
-              </Drawer>
+                      {item.label}
+                    </StyledTypography>
+                  </Link>
+                ))}
+              </Stack>
             </Stack>
-          </Stack>
-        )}
-      </Container>
-    </AppBar>
+          ) : (
+            <Stack
+              direction='row'
+              spacing={2}
+              sx={{
+                height: '100%',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <StyledTypography fontWeight={'bold'} noWrap color={'white'}>
+                {isActiveRoute('/')
+                  ? 'Search'
+                  : isActiveRoute('/about')
+                  ? 'About Us'
+                  : isActiveRoute('/people')
+                  ? 'People'
+                  : isActiveRoute('/donate')
+                  ? 'Donate'
+                  : 'Samaritan Scout'}
+              </StyledTypography>
+              <Stack direction='row' alignItems='center'>
+                <IconButton onClick={toggleDrawer(true)}>
+                  <MenuIcon fontSize='large' sx={{ color: 'white' }} />
+                </IconButton>
+                <Drawer
+                  anchor={'top'}
+                  open={isDrawerOpen}
+                  onClose={toggleDrawer(false)}
+                >
+                  <Box
+                    width={'auto'}
+                    role='presentation'
+                    onClick={toggleDrawer(false)}
+                    onKeyDown={toggleDrawer(false)}
+                    bgcolor='primary.main'
+                    pl={5}
+                    pr={5}
+                    py={5}
+                  >
+                    <Stack direction='row' spacing={2}>
+                      <IconButton
+                        onClick={toggleDrawer(false)}
+                        sx={{ marginLeft: 'auto', marginRight: '0' }}
+                      >
+                        <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                      </IconButton>
+                    </Stack>
+                    <Stack direction='column' spacing={2}>
+                      {menuItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          to={item.link}
+                          style={{ textDecoration: 'none' }}
+                        >
+                          <StyledTypography
+                            variant='h6'
+                            noWrap
+                            sx={{
+                              display: 'inline',
+                              color: isActiveRoute(item.link)
+                                ? 'primary.main'
+                                : 'white',
+                              bgcolor: isActiveRoute(item.link)
+                                ? 'primary.light'
+                                : 'transparent',
+                              '&:hover': {
+                                color: 'primary.main',
+                                bgcolor: 'white',
+                                transition:
+                                  'background-color 0.3s ease-out, color 0.3s ease-out',
+                              },
+                            }}
+                          >
+                            {item.label}
+                          </StyledTypography>
+                        </Link>
+                      ))}
+                    </Stack>
+                  </Box>
+                </Drawer>
+              </Stack>
+            </Stack>
+          )}
+        </Container>
+      </AppBar>
+    </ThemeProvider>
   );
 }
 

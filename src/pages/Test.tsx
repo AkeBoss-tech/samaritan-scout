@@ -1,15 +1,16 @@
 import { Container, Stack } from '@mui/material';
 import React from 'react';
 import TeamContactForm from '../components/TeamContactForm';
+import Contact from '../components/Contact';
 
 const Test = () => {
   return (
-    <Container sx={{ height: 'auto' }}>
+    <div>
       <Stack>
-        {/* <Contact /> */}
+        <Contact />
         <TeamContactForm />
       </Stack>
-    </Container>
+    </div>
   );
 };
 
