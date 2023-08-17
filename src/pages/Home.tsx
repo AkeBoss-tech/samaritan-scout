@@ -81,8 +81,7 @@ function Home() {
           maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
         >
           <Typography
-            variant="h5"
-            fontWeight={"bold"}
+            variant="h1"
             color={color_theme.primaryFontColor}
             align="center"
           >
@@ -106,8 +105,7 @@ function Home() {
           maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
         >
           <Typography
-            variant="h5"
-            fontWeight={"bold"}
+            variant="h2"
             color={color_theme.primaryFontColor}
             align="center"
           >
@@ -129,8 +127,7 @@ function Home() {
           maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
         >
           <Typography
-            variant="h5"
-            fontWeight={"bold"}
+            variant="h2"
             color={color_theme.primaryFontColor}
             align="center"
           >
@@ -173,13 +170,13 @@ const ReactHome = () => {
           <Grid xs={12} textAlign={"center"}>
             <Box sx={{ height: 35 }}></Box>
           </Grid>
-          <Grid xs={10} sm={10} md={12} lg={12} xl={12} textAlign={"center"}>
-            <Typography variant="h1" component="h1" gutterBottom>
+          <Grid xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
+            <Typography variant="subtitle2" component="h1" gutterBottom>
               DISCOVER VOLUNTEER OPPORTUNITIES
             </Typography>
           </Grid>
-          <Grid xs={10} sm={10} md={12} lg={12} xl={12} textAlign={"center"}>
-            <Typography variant="body1" gutterBottom>
+          <Grid xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
+            <Typography variant="h3" gutterBottom>
               The web’s first search engine focused exclusively on finding ways
               we can help nonprofit organizations we care about
             </Typography>
@@ -315,10 +312,9 @@ function OtherStuff({ primary }: { primary: boolean }) {
             alignSelf={"center"}
           >
             <Typography
-              variant="h4"
+              variant="h2"
               align="left"
               color={fontColor}
-              className="lead"
               textAlign={"center"}
             >
               Harnessing the latest technology…
@@ -327,7 +323,6 @@ function OtherStuff({ primary }: { primary: boolean }) {
               variant="body1"
               align="left"
               color={fontColor}
-              className="lead"
               textAlign={"center"}
             >
               to connect individuals with meaningful and impactful service
@@ -363,10 +358,9 @@ function OtherStuff({ primary }: { primary: boolean }) {
             alignSelf={"center"}
           >
             <Typography
-              variant="h4"
+              variant="h2"
               align="left"
               color={fontColor}
-              className="lead"
               textAlign={"center"}
             >
               Lightening the load on nonprofitable organizations and charities…
@@ -375,7 +369,6 @@ function OtherStuff({ primary }: { primary: boolean }) {
               variant="body1"
               align="left"
               color={fontColor}
-              className="lead"
               textAlign={"center"}
             >
               Removing the burden of entering volunteer info on 3rd party static
@@ -397,10 +390,9 @@ function OtherStuff({ primary }: { primary: boolean }) {
             alignSelf={"center"}
           >
             <Typography
-              variant="h4"
+              variant="h2"
               align="left"
               color={fontColor}
-              className="lead"
               textAlign={"center"}
             >
               Building community…
@@ -409,7 +401,6 @@ function OtherStuff({ primary }: { primary: boolean }) {
               variant="body1"
               align="left"
               color={fontColor}
-              className="lead"
               textAlign={"center"}
             >
               Rooted in kindness and collaboration
@@ -441,7 +432,7 @@ function RecentActivity() {
       id="recent-activity"
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
-      <Typography variant="h3" color={color_theme.fontColor} align="center">
+      <Typography variant="h1" color={color_theme.fontColor} align="center">
         Recent Volunteer Activities
       </Typography>
       <Separator primary={false} />
@@ -495,32 +486,32 @@ function VolunteerLove() {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={4} alignItems={'center'} textAlign={'center'}>
+          <Box sx={{ height: {sm: "25%"} }}></Box>
           <Typography
-            variant="h5"
-            fontWeight={"bold"}
+            variant="h2"
             color={color_theme.primaryFontColor}
             align="center"
           >
             Volunteers love us!
           </Typography>
+          <Box sx={{ height: "10%" }}></Box>
           <Button
             variant='contained'
             sx={{
-              color: color_theme.bgColor,
+              color: color_theme.fontColor,
               backgroundColor: color_theme.fontHoverColor,
               height: '50px',
               maxWidth: '60%',
-              minWidth: '250px',
+              minWidth: '180px',
               ':hover': {
                 backgroundColor: color_theme.fontColor,
+                color: color_theme.bgColor,
               },
             }}
             size='large'
           >
             <Typography
-              variant='body1'
-              fontSize={'20px'}
-              fontWeight={'bold'}
+              variant='h5'
             >
               Join Us!
             </Typography>
@@ -563,59 +554,13 @@ function WorkInProgress() {
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
       <Typography
-        variant="h4"
+        variant="h2"
         color={color_theme.fontColor}
         align="center"
-        sx={{ fontWeight: "bold", m: 1 }}
       >
         The web’s first search engine focused exclusively on finding ways we can
         help nonprofit organizations we care about is COMING SOON.
       </Typography>
-    </Container>
-  );
-}
-
-function HomeSearch() {
-  return (
-    <Container
-      sx={{
-        backgroundColor: "lightgray",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "text.primary",
-      }}
-    >
-      <img src="/logo.svg" className="Home-logo" alt="logo" width={"100px"} />
-      <h1>Samaritan Scout</h1>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <TextField
-          label="Search"
-          variant="outlined"
-          placeholder="Enter Key Words ..."
-          id="outlined-uncontrolled"
-          color="primary"
-          size="medium"
-          sx={{ width: "auto", mr: "10px" }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <Button
-                  variant="contained"
-                  href="https://samaritanscout.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  size="medium"
-                >
-                  <SendIcon />
-                </Button>
-              </InputAdornment>
-            ),
-          }}
-        />
-      </Box>
     </Container>
   );
 }

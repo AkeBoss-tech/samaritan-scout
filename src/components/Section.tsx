@@ -54,8 +54,7 @@ function Section({title, children, cols, primary, separator} : {title: string, c
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
       <Typography
-        variant='h3'
-        fontWeight={'bold'}
+        variant='h1'
         noWrap
         color={primary ? theme.primaryFontColor : theme.fontColor}
         align='center'
@@ -68,7 +67,7 @@ function Section({title, children, cols, primary, separator} : {title: string, c
       <Grid container spacing={2}>
         {children.map((child) => (
           <Grid item xs={12} md={cols}>
-          <Typography variant="body1" align="left" color={fontColor} className="lead" textAlign={'center'}>
+          <Typography variant="body1" align="left" color={fontColor} textAlign={'center'}>
             { child }
           </Typography>
         </Grid>

@@ -37,7 +37,7 @@ const VolunteerCard: React.FC<VolunteerCardProps> = ({ cause, volunteer, imageSr
           alt={volunteer}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div"  color={'primary'} align='center'>
+          <Typography gutterBottom variant="h3" component="div"  color={'primary'} align='center'>
             {volunteer}
           </Typography>
           <Typography variant="body2" color="text.secondary">
