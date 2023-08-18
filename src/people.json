@@ -1,0 +1,96 @@
+{
+    "Meet Our Board Of Directors": {
+        "Dvora Inwood": {
+            "job": "CO-FOUNDER",
+            "image": "dvora-inwood-headshot.jpg",
+            "linkedin": "linkedin.com/in/dvora-inwood/"
+        },
+        "Rene Ravenel": {
+            "job": "CO-FOUNDER, HEAD OF TECHNOLOGY",
+            "image": "rene-ravenel-headshot.png",
+            "linkedin": "linkedin.com/in/reneravenel/"
+        },
+        "Will Rosenthal": {
+            "job": "CO-FOUNDER, TECH LEAD",
+            "image": "will-rosenthal-headshot-circle.jpeg",
+            "linkedin": "linkedin.com/in/william-rosenthal-77072b247/"
+        },
+        "Scott Thompson": {
+            "job": "CO-FOUNDER, BOARD OF DIRECTORS",
+            "image": "scott-thompson.jpg",
+            "linkedin": "linkedin.com/in/scottthompsonaws/"
+        },
+        "Michelle Milentijevic": {
+            "job": "CO-FOUNDER, BOARD OF DIRECTORS",
+            "image": "michelle-milentijevic.png",
+            "linkedin": "linkedin.com/in/michellebostmilentijevic/"
+        }
+    },
+    "Summer 2023 Interns": {
+        "Aniket Anvekar": {
+            "job": "Software Engineering Lead, Back-End Team",
+            "image": "aniket-anvekar.jpeg",
+            "linkedin": "linkedin.com/in/aniketanvekar/"
+        },
+        "Akash Dubey": {
+            "job": "Front-End Software Developer",
+            "image": "akash-dubey.jpeg",
+            "linkedin": "linkedin.com/in/akash-dubey-your-boss/"
+        },
+        "Jack Greenwald": {
+            "job": "Front-End Software Developer",
+            "image": "jack-greenwald.jpeg",
+            "linkedin": "linkedin.com/in/jack-greenwald-a25052281/"
+        },
+        "Saket": {
+            "job": "Back-End Software Engineer",
+            "image": "lacy-dog-square.jpg",
+            "linkedin": "google.com"
+        },
+        "Dhruvil Mehta": {
+            "job": "Back-End Software Developer",
+            "image": "dhruvil-mehta.jpeg",
+            "linkedin": "linkedin.com/in/mehta-dhruvil28/"
+        },
+        "Shubham Mishra": {
+            "job": "Back-End Software Engineer",
+            "image": "shubham-mishra.jpeg",
+            "linkedin": "linkedin.com/in/bakharia/"
+        },
+        "Sreya Nimmagadda": {
+            "job": "Back-End Software Engineer",
+            "image": "sreya-nimmagadda.jpeg",
+            "linkedin": "linkedin.com/in/sreyanimmagadda/"
+        },
+        "Om Prakash Prajapath": {
+            "job": "Front-End Software Developer",
+            "image": "om-prakash-prajapath.jpeg",
+            "linkedin": "linkedin.com/in/om-prajapath/"
+        },
+        "Deepa Pulugurtha": {
+            "job": "Front-End Software Developer",
+            "image": "deepa-pulugurtha.jpeg",
+            "linkedin": "linkedin.com/in/uma-pulugurtha/"
+        },
+        "Arslan Tariq": {
+            "job": "Back-End Software Developer",
+            "image": "arslan-tariq.jpg",
+            "linkedin": "linkedin.com/in/arslan-tariq-836b65199/"
+        },
+        "Hongzhi (Ethan) Zhao": {
+            "job": "Front-End Software Engineer",
+            "image": "hongzhi-zhao.jpeg",
+            "linkedin": "linkedin.com/in/hongzhi-zhao-631987211/"
+        },
+        "Kavita Mahabaleshwarkar": {
+            "job": "UX Designer",
+            "image": "kavita-mahabaleshwarkar.jpeg",
+            "linkedin": "linkedin.com/in/kavita-mahabaleshwarkar-60932b23/"
+        },
+        "Arav Sachdeva": {
+            "job": "Front-End Software Developer",
+            "image": "lacy-dog-square.jpg",
+            "linkedin": "linkedin.com/in/arav-sachdeva-618b20247/"
+        }
+    }
+}

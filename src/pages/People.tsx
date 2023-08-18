@@ -1,191 +1,218 @@
-import React from 'react'
 import '../pages/styles.css'
-import TeamContactForm from '../components/TeamContactForm';
+import Section from '../components/Section';
+import color_theme from "../components/Theme";
+import styled, { ThemeProvider } from 'styled-components';
+import { Box, Button, Card, Checkbox, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
+import SearchIcon from "@mui/icons-material/Search";
+import MaterialTheme from '../components/MaterialTheme';
+import Seperator from '../components/Separator';
+import PersonCard from '../components/PersonCard';
+import peopleInfo from '../people.json';
+import React from 'react';
+import { JSX } from 'react/jsx-runtime';
 
-function people () {
+const boardMembers: any = [];
+const volunteers: any = [];
 
+interface BoardMember {
+  linkedin: string;
+  job: string;
+  image: string;
+}
+const boardOfDirectors: Record<string, BoardMember> = peopleInfo["Meet Our Board Of Directors"];
+
+Object.keys(boardOfDirectors).forEach((key) => {
+  const value = boardOfDirectors[key];
+  boardMembers.push(
+    <React.Fragment key={key}>
+      <PersonCard
+        type={"boardMember"}
+        job={value.job}
+        name={key}
+        image={value.image}
+      />
+    </React.Fragment>
+  );
+
+  if (boardMembers.length % 3 === 0) {
+    boardMembers.push(<Filler key={`filler-${boardMembers.length}`} />);
+  }
+});
+
+const summerVolunteers: Record<string, BoardMember> = peopleInfo["Summer 2023 Interns"];
+
+Object.keys(summerVolunteers).forEach((key) => {
+  const value = summerVolunteers[key];
+  volunteers.push(
+    <React.Fragment key={key}>
+      <PersonCard
+        type={"volunteer"}
+        job={value.job}
+        name={key}
+        image={value.image}
+        link = {value.linkedin}
+      />
+    </React.Fragment>
+  );
+});
+
+const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
+    backgroundColor: color_theme.primaryBgColor,
+    color: color_theme.primaryFontColor,
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    [theme.breakpoints.up("sm")]: {
+      height: "calc(100vh - 63px)",
+      minHeight: 500,
+      maxHeight: 1300,
+    },
+  }));
+
+const ReactHome = () => {
+  
+    return (
+      <>
+        <ProductHeroLayoutRoot>
+          <Grid
+            container
+            spacing={1}
+            paddingTop={"35px"}
+            justifyContent="center"
+            alignItems="center"
+            sx={{ height: "30vh" }}
+          >
+            <Grid xs={12} textAlign={"center"}>
+              <Box sx={{ height: "35%" }}></Box>
+            </Grid>
+            <Grid xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
+              <Typography variant="h2" component="h1" gutterBottom>
+                DISCOVER VOLUNTEER OPPORTUNITIES
+              </Typography>
+            </Grid>
+            <Grid xs={10} sm={6} md={5} lg={4} xl={4} textAlign={"center"}>
+              <TextField
+                variant="outlined"
+                placeholder="Enter keywords..."
+                color="primary"
+                margin="dense"
+                fullWidth={true}
+                sx={{ backgroundColor: "#fff", input: { color: "black" } }}
+              />
+            </Grid>
+            <Grid
+              xs={10}
+              sm={3}
+              md={3}
+              lg={3}
+              xl={3}
+              textAlign={"center"}
+              alignItems={"center"}
+              justifyContent="center"
+            >
+              <TextField
+                variant="outlined"
+                placeholder="Enter location..."
+                color="primary"
+                margin="dense"
+                fullWidth={true}
+                sx={{ backgroundColor: "#fff", input: { color: "black" } }}
+              />
+            </Grid>
+            <Grid
+              xs={10}
+              sm={2}
+              md={2}
+              lg={2}
+              xl={2}
+              textAlign={"center"}
+              alignItems={"center"}
+              sx={{ paddingTop: "3px" }}
+            >
+              <Button
+                variant="contained"
+                color="primary"
+                id="inPerson"
+                fullWidth={true}
+                sx={{ height: "55%" }}
+              >
+                <SearchIcon />
+              </Button>
+            </Grid>
+  
+            <Grid
+              xs={11}
+              textAlign={"center"}
+              alignItems={"center"}
+              sx={{ paddingTop: "3px" }}
+            >
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    defaultChecked
+                    sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                  />
+                }
+                label="In Person"
+                sx={{ fontSize: "24px" }}
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }} />
+                }
+                label="Remote"
+                sx={{ fontSize: "24px" }}
+              />
+            </Grid>
+            <Grid xs={12} textAlign={"center"}>
+              <Box sx={{ height: "35%" }}></Box>
+            </Grid>
+            
+            
+          </Grid>
+        </ProductHeroLayoutRoot>
+      </>
+    );
+  };
+
+function Filler() {return (<Grid item xs={0} sm={0} md={1.5} lg={1.5} xl={1.5}></Grid>);}
+
+function People () {
     return(
-        <div>
-                <header className="masthead text-center bg-primary text-white h-25" 
-                //*style="background-image: url('resources/randomorg.jpg'); 
-               // background-size: cover; height:1000px; 
-    //padding-top:300px;" */} 
-    >
-                    <div className="container d-flex align-items-center flex-column h-25">
-                       
-                        <h1 className="masthead-heading text-uppercase mb-0">PEOPLE</h1>
-                        
-                        <div className="divider-custom divider-light">
-                            <div className="divider-custom-line"></div>
-                        </div>
-                    </div>
-                </header>
-                
-                <section className="page-section mb-0" id="about">
-                    <div className="container">
-                        
-                        <h2 className="page-section-heading text-center text-uppercase">Meet the People Behind Samaritan Scout</h2>
-                       
-                        <div className="divider-custom divider-dark">
-                            <div className="divider-custom-line"></div>
-                            <div className="divider-custom-icon"><img src="resources/dog_silhouette.png" alt="Doggy" className="img-fluid" 
-                            //style="max-width: 7rem;" 
-                            /></div>
-                            <div className="divider-custom-line"></div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section className="text-white bg-info">
-                    <h2  
-                    //{/*style = "background-image: url(resources/gradient.jpg); background-repeat: repeat;background-size: cover; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 60px; text-align: center; font-weight: bold; helvetica, arial, sans-serif; font-weight: 800;-webkit-font-smoothing: antialiased;"*/}
-                     >
-                        Board of Directors </h2>
-                </section>
-                <section className="page-section mb-0 align-items-center" id="about">
-                    <div className = "align-items-center">
-                        
-                        <div className="row align-items-center" >
-                            <div className="col-lg-3 me-auto card list-group:first-child align-items-center">
-                                <p className="lead">Dvora Inwood </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="150" height="150" />
-                            </div>
-                            <div className="col-lg-3 me-auto card align-items-center">
-                                <p className="lead">Rene Ravenal </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="150" height="150"/>
-                            </div>
-                            <div className="col-lg-3 me-auto card align-items-center">
-                                <p className="lead">Will Rosenthal </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="150" height="150"/>
-                            </div>
-                            <div className="col-lg-3 me-auto card align-items-center">
-                                <p className="lead"> Scott Thompson </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="150" height="150"/>
-                            </div>
-                            <div className="col-lg-3 me-auto card list-group:last-child align-items-center">
-                                <p className="lead">Michelle Milentijevic </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="150" height="150"/>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section className="text-white bg-info" id="envision">
-                    <h2  
-                    //{/*} style = "background-image: url(resources/gradient.jpg); background-repeat: repeat;background-size: cover;-webkit-background-clip: text; -webkit-text-fill-color: transparent;font-size: 60px;text-align: center; font-weight: bold;text-transform: uppercase;font-family: 'Steelfish Rg', 'helvetica neue', helvetica, arial, sans-serif;font-weight: 800;-webkit-font-smoothing: antialiased;" */} 
-                    >Summer 2023 Interns</h2>
-                </section>
-                <section className="page-section mb-0 align-items-center" id="about">
-                    <div className = "align-items-center">
-                        <div className="row" >
-                            <div className="col-lg-2 me-auto card list-group:first-child align-items-center">
-                                <p className="lead">Akash<br />Dubey </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                            </div>
-                            <div className="col-lg-2 me-auto card align-items-center">
-                                <p className="lead">Aniket<br />Anvekar </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                            </div>
-                            <div className="col-lg-2 me-auto card align-items-center">
-                                <p className="lead">Arav<br />Sachdeva </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                            </div>
-                            <div className="col-lg-2 me-auto card align-items-center">
-                                <p className="lead">Arslan<br />Tariq </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                            </div>
-                            <div className="col-lg-2 me-auto card align-items-center">
-                                <p className="lead">Deepa<br />Pulugurtha </p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                            </div>
-                            <div className="col-lg-2 me-auto card list-group:last-child align-items-center">
-                                <p className="lead">Dhruvil<br />Mehta</p>
-                                <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                            </div>
-                        </div>
-                    <br></br>
-                    <div className="row">
-                        <div className="col-lg-2 me-auto card list-group:first-child align-items-center">
-                            <p className="lead">Hongzhi(Ethan)<br />Zhao </p>
-                            <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                        </div>
-                        <div className="col-lg-2 me-auto card align-items-center">
-                            <p className="lead">Jack <br />Greenwald </p>
-                            <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                        </div>
-                        <div className="col-lg-2 me-auto card align-items-center">
-                            <p className="lead">Om Prakash <br />Prajapath</p>
-                            <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                        </div>
-                        <div className="col-lg-2 me-auto card align-items-center">
-                            <p className="lead">Saket<br /> Manolkar</p>
-                            <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                        </div>
-                        <div className="col-lg-2 me-auto card align-items-center">
-                            <p className="lead">S <br />Depaul </p>
-                            <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                        </div>
-                        <div className="col-lg-2 me-auto card list-group:last-child align-items-center">
-                            <p className="lead">Shubham <br />Mishra</p>
-                            <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                        </div>
-                    </div>
-                    <br></br>
-                    <div className="row">
-                        <div className="col-lg-2 me-auto card list-group:first-child align-items-center">
-                            <p className="lead">Sreya <br />Nimmagadda </p>
-                            <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                        </div>
-                        <div className="col-lg-2 me-auto card list-group:last-child align-items-center">
-                            <p className="lead">Yu <br />Gu</p>
-                            <img src="resources/dvora.jpg" alt="Girl in a jacket" width="100" height="100"/>
-                        </div>
-                    </div>
-                    <br></br>
-                    <br></br>
-                    </div>
-                </section>
-                <section className = "page-section bg-secondary text-white mb-0">
-                    <div className="container">
-                    
-                        <h2 className="page-section-heading text-center text-uppercase text-white">Want to Join Us?</h2>
-                        
-                        <div className="text-center mt-4">
-                            <a className="btn btn-xl btn-outline-light" href="contact.html">
-                                <i className="fas fa-person me-2"></i>
-                                Contact Us Here
-                            </a>
-                        </div>
-                        
-                    </div>
-                </section>
-
-                <section className="page-section bg-primary text-white mb-0" id="about">
-                    
-                    <div className = "align-items-center" 
-                    //</section>style = "height: 40vh;width: 100vw; background-color:#62B16E;margin: 0rem;overflow: hidden;"
-                    >
-                    <div className = "align-items-center">
-                        <h1> &emsp; Why volunteer with us? </h1>
-                    </div>
-                
-                        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-                            <img className="image" src="resources/stock1.jpg" draggable="false" />
-                            <img className="image" src="resources/stock2.jpg" draggable="false" />
-                            <img className="image" src="resources/stock3.jpg" draggable="false" />
-                            <img className="image" src="resources/stock4.jpg" draggable="false" />
-                            <img className="image" src="resources/stock5.jpg" draggable="false" />
-                            <img className="image" src="resources/stock1.jpg" draggable="false" />
-                            <img className="image" src="resources/stock2.jpg" draggable="false" />
-                            <img className="image" src="resources/stock3.jpg" draggable="false" />
-                        </div>
-                    </div>
-                </section>
-                <TeamContactForm/>
-        
-        </div>
+        <ThemeProvider theme={MaterialTheme}>
+            <ReactHome />
+            <Section
+          title=""
+          children={["We are committed to optimizing the discovery of volunteer experiences. Together we can have impact, gain, skills, build community, and find joy."]}
+          cols={12}
+          primary={false}
+          separator={false}
+            />
+            <Seperator primary={false}/>
+            <Section
+            title="Meet Our Board Of Directors"
+            children={[]}
+            cols={6}
+            primary={false}
+            separator={false}
+            />
+            <Grid container spacing={10} justifyContent="center" alignItems="center" sx={{}}>
+              {boardMembers}
+            </Grid>
+            <Section
+            title="Summer 2023 Interns"
+            children={[]}
+            cols={6}
+            primary={false}
+            separator={false}
+            />
+            <Grid container spacing={5} justifyContent="center" alignItems="center" sx={{marginBottom: "5%"}}>
+              {volunteers}
+            </Grid>
+        </ThemeProvider>
     );
 }
 
-export default people; 
+export default People; 
 
 

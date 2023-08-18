@@ -11092,3 +11092,7 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+
+.MuiPaper-root {
+  margin: 0 !important
+}
