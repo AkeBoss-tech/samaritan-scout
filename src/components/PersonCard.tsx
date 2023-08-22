@@ -22,7 +22,7 @@ export default function PersonCard({ type, job="", name="", image="", link }: Pe
                                 {name}
                             </Typography>
                         </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom:'25px' }}>
                             <Typography variant="body2" color="text.secondary">
                                 {job}
                             </Typography>
@@ -44,7 +44,7 @@ export default function PersonCard({ type, job="", name="", image="", link }: Pe
                                 {name}
                             </Typography>
                         </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom:'25px' }}>
                             <Typography variant="body2" color="text.secondary">
                                 {job}
                             </Typography>

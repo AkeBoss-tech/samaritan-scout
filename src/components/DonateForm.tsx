@@ -1,20 +1,35 @@
-import { Box, Button, Checkbox, FormControlLabel, Grid, Stack, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import {
+  Card,
+  Stack,
+  TextField,
+  ThemeProvider,
+  Typography,
+  Button,
+  Box,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  FormHelperText,
+  Checkbox,
+  FormControlLabel,
+} from '@mui/material';
+import MaterialTheme from '../components/MaterialTheme';
+import { useState } from 'react';
+import Link from '@mui/material/Link';
+import CaptchaComponent from '../components/CaptchaComponent';
 
-import theme from './Theme2';
-
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import MaterialTheme from './MaterialTheme';
-import Separator from './Separator';
-
-const DonateForm = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    firstName: '',
+    lastName: '',
+    purpose: '',
     emailAddress: '',
     phoneNumber: '',
     message: '',
-    donation: '',
   });
+
+  const [purpose, setPurpose] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -26,105 +41,150 @@ const DonateForm = () => {
     console.log(formData); // For demonstration purposes
   };
 
-  return (
-    <div>
-      <ThemeProvider theme={MaterialTheme}>
-        <Grid
-          container
-          spacing={{ xs: 10, sm: 10, md: 10, lg: 10, xl: 10 }}
-          paddingY={15}
-        >
-          <Grid item xs={12} sm={12}>
-            <Stack gap={2} px={{ xs: 5, sm: 5, md: 5, lg: 2, xl: 0 }}>
-              <Stack justifyContent={'center'} alignItems={'center'}>
-                <Typography
-                  variant='h3'
-                  fontSize={{
-                    xs: '2.25rem',
-                    sm: '2.25rem',
-                    md: '2.5rem',
-                    lg: '3rem',
-                    xl: '3rem',
-                  }}
-                  fontWeight={'bold'}
-                  noWrap
-                  color={theme.primaryColor2}
-                  textTransform={'uppercase'}
-                >
-                  Donate
-                </Typography>
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
 
-                <Separator primary={false} />
-              </Stack>
-              <TextField
-                fullWidth
-                label='Full Name'
-                variant='standard'
-                InputProps={{ style: { fontSize: '18px' } }}
-                name='fullName'
-                value={formData.fullName}
-                onChange={handleChange}
-                color='primary'
-              />
-              <TextField
-                fullWidth
-                label='Email Address'
-                variant='standard'
-                type='email'
-                InputProps={{ style: { fontSize: '18px' } }}
-                name='emailAddress'
-                value={formData.emailAddress}
-                onChange={handleChange}
-              />
-              <TextField
-                fullWidth
-                label='Phone Number'
-                variant='standard'
-                InputProps={{ style: { fontSize: '18px' } }}
-                name='phoneNumber'
-                value={formData.phoneNumber}
-                onChange={handleChange}
-              />
-              <TextField
-                fullWidth
-                label='Donation Amount'
-                type='number'
-                variant='standard'
-                InputProps={{ style: { fontSize: '18px' } }}
-                name='donation'
-                value={formData.donation}
-                onChange={handleChange}
-              />
-              <TextField
-                fullWidth
-                label='Message'
-                multiline
-                rows={4}
-                sx={{ my: 2 }}
-                name='message'
-                value={formData.message}
-                onChange={handleChange}
-              />
-            <FormControlLabel control={<Checkbox />} label="Yes, send me information on your next fundraising event" />
-            <FormControlLabel control={<Checkbox />} label="Yes, contact me to discuss my donation" />
-            <Typography variant="body2">VENMO @samaritan-scout</Typography>
-              <Stack
-                alignItems={{
-                  xs: 'center',
-                  sm: 'center',
-                }}
-              >
+  const handleCaptchaChange = (value: string | null) => {
+    setCaptchaValue(value);
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (captchaValue) {
+      console.log('Captcha validated successfully:', captchaValue);
+    } else {
+      console.log('Please complete the captcha.');
+    }
+  };
+
+  return (
+    <ThemeProvider theme={MaterialTheme}>
+        <Stack alignItems={'center'}>
+          <Stack
+            py={8}
+            width={{
+              xl: '800px',
+              lg: '800px',
+              md: '600px',
+              sm: '70%',
+              xs: '90%',
+            }}
+          >
+            <Box
+              sx={{
+                padding: '30px',
+                boxShadow: '0 15px 40px 5px rgb(0 0 0 / 0.3)',
+                borderRadius: '10px',
+              }}
+            >
+              <Stack spacing={4}>
+                <Stack
+                  direction={{
+                    xl: 'row',
+                    lg: 'row',
+                    md: 'row',
+                    sm: 'row',
+                    xs: 'column',
+                  }}
+                  spacing={4}
+                >
+                  <TextField
+                    fullWidth
+                    label='First Name'
+                    variant='outlined'
+                    name='firstName'
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    size='small'
+                  />
+                  <TextField
+                    fullWidth
+                    label='Last Name'
+                    variant='outlined'
+                    name='lastName'
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    size='small'
+                  />
+                </Stack>
+
+                <FormControl fullWidth size='small'>
+                  <InputLabel id='demo-simple-select-label'>I am...</InputLabel>
+                  <Select
+                    labelId='demo-simple-select-label'
+                    id='demo-simple-select'
+                    value={purpose}
+                    label='purpose'
+                    onChange={(e) => setPurpose(e.target.value)}
+                    size='small'
+                  >
+                    <MenuItem value={'volunteer'}>
+                      Interested in Volunteering
+                    </MenuItem>
+                    <MenuItem value={'donate'}>Interested in Donating</MenuItem>
+                    <MenuItem value={'organization'}>
+                      Representing a non-profit organization
+                    </MenuItem>
+                    <MenuItem value={'press'}>
+                      Press and interested in learning more
+                    </MenuItem>
+                    <MenuItem value={'other'}>Other</MenuItem>
+                  </Select>
+                </FormControl>
+
+                <TextField
+                  fullWidth
+                  label='Email Address'
+                  variant='outlined'
+                  name='emailAddress'
+                  value={formData.emailAddress}
+                  onChange={handleChange}
+                  size='small'
+                />
+                <TextField
+                  fullWidth
+                  label='Phone Number'
+                  variant='outlined'
+                  name='phoneNumber'
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  size='small'
+                />
+                <TextField
+                  fullWidth
+                  label='Message'
+                  multiline
+                  rows={4}
+                  sx={{ my: 2 }}
+                  name='message'
+                  value={formData.message}
+                  onChange={handleChange}
+                  size='small'
+                />
+                <FormControlLabel control={<Checkbox />} label="Yes, send me information on your next fundraising event" />
+                <FormControlLabel control={<Checkbox />} label="Yes, contact me to discuss my donation" />
+                <form onSubmit={handleFormSubmit}>
+                  <CaptchaComponent
+                    siteKey='6LegnLEnAAAAAJmmUCSU8JozUbzH9vzQMvhDwo4I'
+                    onCaptchaChange={handleCaptchaChange}
+                  />
+                  {/* <button type='submit'>Submit</button> */}
+                </form>
+                <Typography
+                  variant='h4'
+                >
+                  VENMO @samaritan-scout 
+                </Typography>
                 <Button
                   onClick={handleSubmit}
                   variant='contained'
                   sx={{
                     color: 'black',
-                    backgroundColor: theme.primaryColor1,
+                    backgroundColor: 'primary.light',
                     height: '50px',
                     width: '160px',
                     ':hover': {
                       color: 'white',
-                      backgroundColor: theme.secondaryColor2,
+                      backgroundColor: 'primary',
                     },
                   }}
                   size='large'
@@ -138,13 +198,11 @@ const DonateForm = () => {
                   </Typography>
                 </Button>
               </Stack>
-            </Stack>
-          </Grid>
-          
-        </Grid>
-      </ThemeProvider>
-    </div>
+            </Box>
+          </Stack>
+        </Stack>
+    </ThemeProvider>
   );
 };
 
-export default DonateForm;
+export default Contact;

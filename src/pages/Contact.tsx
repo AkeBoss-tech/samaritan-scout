@@ -11,6 +11,8 @@ import {
   Select,
   MenuItem,
   FormHelperText,
+  Checkbox,
+  FormControlLabel,
 } from '@mui/material';
 import MaterialTheme from '../components/MaterialTheme';
 import { useState } from 'react';
@@ -198,6 +200,8 @@ const Contact = () => {
                   onChange={handleChange}
                   size='small'
                 />
+                <FormControlLabel control={<Checkbox />} label="Yes, send me information on your next fundraising event" />
+                <FormControlLabel control={<Checkbox />} label="Yes, contact me to discuss my donation" />
                 <form onSubmit={handleFormSubmit}>
                   <CaptchaComponent
                     siteKey='6LegnLEnAAAAAJmmUCSU8JozUbzH9vzQMvhDwo4I'
