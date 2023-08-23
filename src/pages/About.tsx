@@ -24,6 +24,7 @@ function About() {
           cols={12}
           primary={true}
           separator={false}
+          center={true}
         />
         <Section
           title="Our Plan"

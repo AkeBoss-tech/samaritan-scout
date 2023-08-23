@@ -32,7 +32,7 @@ const VolunteerCard: React.FC<VolunteerCardProps> = ({ cause, volunteer, imageSr
         />
         <CardMedia
           component="img"
-          height="140"
+          height="width"  
           image={imageSrc}
           alt={volunteer}
         />

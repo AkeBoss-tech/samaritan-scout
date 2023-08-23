@@ -180,14 +180,10 @@ function Filler() {return (<Grid item xs={0} sm={0} md={1.5} lg={1.5} xl={1.5}><
 function People () {
     return(
         <ThemeProvider theme={MaterialTheme}>
-            <ReactHome />
-            <Section
-          title=""
-          children={["We are committed to optimizing the discovery of volunteer experiences. Together we can have impact, gain, skills, build community, and find joy."]}
-          cols={12}
-          primary={false}
-          separator={false}
-            />
+            
+            <Typography variant="h5" gutterBottom sx={{textAlign: "center"}}>
+              We are committed to optimizing the discovery of volunteer experiences. Together we can have impact, gain, skills, build community, and find joy.
+            </Typography>
             <Seperator primary={false}/>
             <Section
             title="Meet Our Board Of Directors"

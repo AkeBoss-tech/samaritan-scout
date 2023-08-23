@@ -63,11 +63,11 @@ function Home() {
           maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
         >
           <Typography
-            variant="h1"
+            variant="h2"
             color={color_theme.primaryFontColor}
             align="center"
           >
-            WE HAVE EXCITING VOLUNTEER OPPORTUNITIES FOR YOU.
+            We have exciting volunteer opportunities for you!
           </Typography>
           <Box sx={{ height: "20px " }}></Box>
           <Button variant="contained" size="large">
@@ -467,14 +467,15 @@ function VolunteerLove() {
       maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={4} alignItems={"center"} textAlign={"center"}>
+        <Grid item xs={12} sm={4} alignItems={"center"} textAlign={"center"} paddingBottom={{ xs: "50px" }}>
           <Box sx={{ height: { sm: "25%" } }}></Box>
           <Typography
             variant="h2"
             color={color_theme.primaryFontColor}
             align="center"
+            paddingBottom="5px"
           >
-            Volunteers love us!
+            Volunteers Love Us!
           </Typography>
           <Box sx={{ height: "10%" }}></Box>
           <Button

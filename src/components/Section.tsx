@@ -21,12 +21,14 @@ function Section({
   cols,
   primary,
   separator,
+  center
 }: {
   title: string;
   children: Array<string>;
   cols: number;
   primary: boolean;
   separator: boolean;
+  center?: boolean;
 }) {
   const bgColor = primary ? theme.primaryBgColor : theme.bgColor;
   const fontColor = primary ? theme.primaryFontColor : theme.fontColor;
@@ -35,8 +37,8 @@ function Section({
     <ThemeProvider theme={MaterialTheme}>
       <Container
         style={{
-          paddingTop: "50px",
-          paddingBottom: "50px",
+          paddingTop: "75px",
+          paddingBottom: "75px",
           flex: 1,
           color: fontColor,
           backgroundColor: bgColor,
@@ -61,7 +63,7 @@ function Section({
                 variant="body1"
                 align="left"
                 color={fontColor}
-                textAlign={"center"}
+                textAlign={center ? "center" : "left"}
               >
                 {child}
               </Typography>

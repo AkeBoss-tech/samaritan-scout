@@ -1,5 +1,4 @@
 import {
-  Card,
   Stack,
   TextField,
   ThemeProvider,
@@ -9,15 +8,23 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem,
-  FormHelperText,
-  Checkbox,
-  FormControlLabel,
+  MenuItem, Checkbox,
+  FormControlLabel
 } from '@mui/material';
 import MaterialTheme from '../components/MaterialTheme';
 import { useState } from 'react';
 import Link from '@mui/material/Link';
 import CaptchaComponent from '../components/CaptchaComponent';
+
+import { BsPaypal } from "react-icons/bs";
+import { SiZelle } from "react-icons/si";
+import { BiLogoVenmo } from "react-icons/bi";
+import {
+  Container,
+  Grid
+} from "@mui/material";
+import theme from "../components/Theme";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -55,10 +62,13 @@ const Contact = () => {
       console.log('Please complete the captcha.');
     }
   };
+  const bgColor = false ? theme.primaryBgColor : theme.bgColor;
+  const fontColor = false ? theme.primaryFontColor : theme.fontColor;
 
   return (
     <ThemeProvider theme={MaterialTheme}>
         <Stack alignItems={'center'}>
+        
           <Stack
             py={8}
             width={{
@@ -76,6 +86,66 @@ const Contact = () => {
                 borderRadius: '10px',
               }}
             >
+              <Stack>
+            <Container
+              style={{
+                paddingTop: "20px",
+                flex: 1,
+                color: fontColor,
+                backgroundColor: bgColor,
+              }}
+              // maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+            >
+              <Typography variant="h1" noWrap color={fontColor} align="center">
+                Donate
+              </Typography>
+              <Box sx={{ height: '20px' }}></Box>
+              <Typography
+                variant="body1"
+                align="left"
+                color={fontColor}
+                textAlign={"center"}
+              >
+                Contact Us to arrange direct payment or donate through our <Link href="https://www.zeffy.com/en-US/fundraising/483d9853-1c2e-4f73-9a79-65a86eda23d5" target="_blank">Payment Page</Link>
+              </Typography>
+            </Container>
+            <Container
+              style={{
+                paddingTop: "20px",
+                flex: 1,
+                color: theme.primaryFontColor,
+                backgroundColor: bgColor,
+              }}
+              // maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+            >
+              <Typography variant="h3" noWrap color={theme.primaryFontColor} align="center">
+                We also accept:
+              </Typography>
+              <Box sx={{ height: '10px' }}></Box>
+              <Grid container>
+                <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign={{xs:"center", sm: "right"}} paddingBottom={{ xs: '20px' }}>
+                  <Link href='https://www.paypal.com' target="_blank"><Button variant="outlined" size="large"> <BsPaypal /> </Button></Link>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign="center" paddingBottom={{ xs: '20px' }}>
+                  <Link href='https://www.zellepay.com/' target="_blank"><Button variant="outlined" size="large"><SiZelle /></Button></Link>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign={{xs:"center", sm: "left"}} paddingBottom={{ xs: '20px' }}>
+                  <Link href='https://account.venmo.com/u/samaritanscout' target="_blank"><Button variant="outlined" size="large"><BiLogoVenmo /></Button></Link>
+                </Grid>
+              </Grid>
+              <Typography variant="body1" color={theme.primaryFontColor} align="center" paddingBottom={'20px'}>
+                Email: <Link href="mailTo:donate@samaritanscout.org">donate@samaritanscout.org</Link>
+              </Typography>
+              <Typography variant="h5" color={theme.primaryFontColor} align="center" paddingBottom={'20px'}>
+              UPCOMING EVENTS IN NEW YORK CITY, NEW JERSEY, FLORIDA AND CALIFORNIA 
+              </Typography>
+              <Typography variant="body1" color={theme.primaryFontColor} align="center">
+                Please contact us through the form below to attend one of our upcoming in-person events or schedule a conversation about making an impact with your generosity 
+              </Typography>
+
+            </Container>
+            <Box sx={{ height: '40px' }}></Box>
+          </Stack>
               <Stack spacing={4}>
                 <Stack
                   direction={{
@@ -169,11 +239,6 @@ const Contact = () => {
                   />
                   {/* <button type='submit'>Submit</button> */}
                 </form>
-                <Typography
-                  variant='h4'
-                >
-                  VENMO @samaritan-scout 
-                </Typography>
                 <Button
                   onClick={handleSubmit}
                   variant='contained'
