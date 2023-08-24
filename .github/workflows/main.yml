@@ -3,7 +3,7 @@ name: Push Code to Another Repository
 on:
   push:
     branches:
-      - main  # Adjust this to your main branch name
+      - master  # Adjust this to your main branch name
 
 jobs:
   push:
