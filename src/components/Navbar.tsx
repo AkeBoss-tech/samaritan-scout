@@ -158,7 +158,7 @@ function Navbar() {
               </StyledTypography>
               <Stack direction='row' alignItems='center'>
                 <IconButton onClick={toggleDrawer(true)}>
-                  <MenuIcon fontSize='large' sx={{ color: 'white' }} />
+                  <MenuIcon fontSize='medium' sx={{ color: 'white' }} />
                 </IconButton>
                 <Drawer
                   anchor={'top'}
@@ -166,24 +166,22 @@ function Navbar() {
                   onClose={toggleDrawer(false)}
                 >
                   <Box
-                    width={'auto'}
-                    role='presentation'
                     onClick={toggleDrawer(false)}
                     onKeyDown={toggleDrawer(false)}
                     bgcolor='primary.main'
-                    pl={5}
-                    pr={5}
-                    py={5}
+                    px={2}
+                    pt={2}
+                    pb={6}
                   >
-                    <Stack direction='row' spacing={2}>
+                    <Stack>
                       <IconButton
                         onClick={toggleDrawer(false)}
                         sx={{ marginLeft: 'auto', marginRight: '0' }}
                       >
-                        <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                        <CloseIcon fontSize='medium' sx={{ color: 'white' }} />
                       </IconButton>
                     </Stack>
-                    <Stack direction='column' spacing={2}>
+                    <Stack direction='column' spacing={2} alignItems={'center'}>
                       {menuItems.map((item) => (
                         <Link
                           key={item.label}

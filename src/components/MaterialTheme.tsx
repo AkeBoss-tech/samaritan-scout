@@ -15,8 +15,6 @@ let MaterialTheme = createTheme({
         primary: {
             main: '#273225', // dark green
             light: '#62B16E', // light green
-            // dark: '#62B16E', // light green
-            // contrastText: '#fff', // white
         },
         secondary: {
             main: '#fffdd0', // cream
@@ -44,16 +42,10 @@ let MaterialTheme = createTheme({
             // dark: '#62B16E', // light green
             // contrastText: '#fff', // white
         }, */
-        text: {
-            primary: '#62B16E', // black
-            // TODO: Better change to default black and white color
-            secondary: '#273225', // white
-            disabled: '#A79360', // tan
-        },
         background: {
             paper: '#fff', // cream
             default: '#273225', // dark green
-        }
+        },
     },
     typography: {
         fontFamily: [

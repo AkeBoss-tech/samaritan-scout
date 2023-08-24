@@ -119,7 +119,6 @@ function Footer() {
 
   const theme = MaterialTheme;
   const isXs = useMediaQuery(theme.breakpoints.only('xs'));
-  const isSm = useMediaQuery(theme.breakpoints.only('sm'));
 
   return (
     <ThemeProvider theme={MaterialTheme}>
@@ -131,323 +130,177 @@ function Footer() {
         }}
       >
         <Container maxWidth='lg'>
-          <Stack spacing={4} py={5}>
-            <Box>
-              <Grid container spacing={{ xl: 2, lg: 2, md: 2, sm: 5, xs: 2 }}>
-                {/* Intro and Donate Button */}
-                <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-                  <Stack
-                    spacing={{ xl: 3, lg: 3, md: 3, sm: 4, xs: 4 }}
-                    alignItems={isXs || isSm ? 'center' : 'flex-start'}
+          <Stack spacing={4} py={5} px={{ sm: 0, md: 5, lg: 5, xl: 0 }}>
+            {/* Title, Slogan and Donation button */}
+            <Stack
+              spacing={{ xs: 5, sm: 5 }}
+              direction={{
+                xs: 'column',
+                sm: 'column',
+                md: 'row',
+                lg: 'row',
+                xl: 'row',
+              }}
+              justifyContent={'space-between'}
+              alignItems={{
+                xs: 'center',
+                sm: 'center',
+                md: 'flex-start',
+                lg: 'flex-start',
+                xl: 'flex-start',
+              }}
+            >
+              <Stack
+                width={{
+                  xs: '280px',
+                  sm: '470px',
+                  md: '345px',
+                  lg: '345px',
+                  xl: '345px',
+                }}
+                spacing={3}
+              >
+                <Typography
+                  variant='h5'
+                  component={'h1'}
+                  fontWeight={'bold'}
+                  noWrap
+                  textTransform={'uppercase'}
+                  letterSpacing={2}
+                  color='secondary.main'
+                  alignItems={'flex-start'}
+                >
+                  Samaritan Scout
+                </Typography>
+
+                <Typography
+                  color='#CBCFCB'
+                  component={'h3'}
+                  alignItems={'flex-start'}
+                >
+                  Leveraging cutting-edge technology to connect people with
+                  nonprofit organizations, we're a search engine dedicated to
+                  creating a better world for all.
+                </Typography>
+                <Button
+                  variant='contained'
+                  sx={{
+                    color: 'primary.main',
+                    backgroundColor: 'primary.light',
+                    height: '50px',
+                    maxWidth: '60%',
+                    minWidth: '250px',
+                    ':hover': {
+                      backgroundColor: 'white',
+                    },
+                  }}
+                  size='large'
+                >
+                  <Typography
+                    variant='body1'
+                    fontSize={'20px'}
+                    fontWeight={'bold'}
                   >
-                    <Stack direction='row' spacing={2} alignItems={'center'}>
+                    Support Scout
+                  </Typography>
+                </Button>
+              </Stack>
+
+              {/* Site Map */}
+              {isXs ? (
+                // Phone version
+                <Stack direction='row' flexWrap={'wrap'} width={'325px'}>
+                  {Object.keys(siteMap).map((topic) => (
+                    <Stack
+                      direction='column'
+                      m={2}
+                      // width={'180px'}
+                      spacing={2}
+                      key={topic}
+                    >
                       <Typography
-                        variant='h5'
+                        variant='h6'
                         fontWeight={'bold'}
                         noWrap
                         textTransform={'uppercase'}
-                        letterSpacing={2}
-                        color='secondary.main'
                       >
-                        Samaritan Scout
+                        {topic}
                       </Typography>
+                      <Stack direction='column' spacing={1}>
+                        {siteMap[topic].map((link) => (
+                          <Link
+                            href={link.link}
+                            key={link.label}
+                            underline='hover'
+                            color='#CBCFCB'
+                            sx={{
+                              '&:hover': { color: 'secondary.main' },
+                            }}
+                          >
+                            <Typography
+                              variant='body1'
+                              color='inherit'
+                              noWrap
+                              sx={{
+                                '&:hover': { color: 'secondary.main' },
+                              }}
+                            >
+                              {link.label}
+                            </Typography>
+                          </Link>
+                        ))}
+                      </Stack>
                     </Stack>
-                    <Box
-                      width={{
-                        xs: '260px',
-                        sm: '440px',
-                        md: '100%',
-                        lg: '100%',
-                        xl: '100%',
-                      }}
-                    >
-                      <Typography color='#CBCFCB'>
-                        Leveraging cutting-edge technology to connect people
-                        with nonprofit organizations, we're a search engine
-                        dedicated to creating a better world for all.
-                      </Typography>
-                    </Box>
-                    <Button
-                      variant='contained'
-                      sx={{
-                        color: 'primary.main',
-                        backgroundColor: 'primary.light',
-                        height: '50px',
-                        maxWidth: '60%',
-                        minWidth: '250px',
-                        ':hover': {
-                          backgroundColor: 'white',
-                        },
-                      }}
-                      size='large'
+                  ))}
+                </Stack>
+              ) : (
+                // Desktop Version
+                <Stack direction='row' spacing={6}>
+                  {Object.keys(siteMap).map((topic) => (
+                    <Stack
+                      direction='column'
+                      spacing={2}
+                      width={'auto'}
+                      justifyContent={'flex-start'}
+                      key={topic}
                     >
                       <Typography
-                        variant='body1'
-                        fontSize={'20px'}
+                        variant='h6'
                         fontWeight={'bold'}
+                        noWrap
+                        textTransform={'uppercase'}
                       >
-                        Support Scout
+                        {topic}
                       </Typography>
-                    </Button>
-                  </Stack>
-                </Grid>
-
-                {/* Site Map */}
-                <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
-                  {isXs ? (
-                    // Phone version
-                    <Stack
-                      direction='row'
-                      spacing={5}
-                      justifyContent={'center'}
-                      pt={2}
-                    >
-                      {/* Left Column */}
-                      <Stack direction='column' spacing={5}>
-                        {/* Volunteer List */}
-                        <Stack direction='column' spacing={2}>
-                          <Typography
-                            variant='h6'
-                            fontWeight={'bold'}
-                            noWrap
-                            textTransform={'uppercase'}
+                      <Stack direction='column' spacing={1}>
+                        {siteMap[topic].map((link) => (
+                          <Link
+                            href={link.link}
+                            key={link.label}
+                            underline='hover'
+                            color='#CBCFCB'
+                            sx={{
+                              '&:hover': { color: 'secondary.main' },
+                            }}
                           >
-                            Volunteer
-                          </Typography>
-                          <Stack direction='column' spacing={1}>
-                            {siteMap['Volunteer'].map((link) => (
-                              <Link
-                                href={link.link}
-                                key={link.label}
-                                underline='hover'
-                                color='inherit'
-                                sx={{
-                                  '&:hover': { color: 'primary.light' },
-                                }}
-                              >
-                                <Typography
-                                  variant='body1'
-                                  color='inherit'
-                                  noWrap
-                                  sx={{
-                                    '&:hover': { color: 'primary.light' },
-                                  }}
-                                >
-                                  {link.label}
-                                </Typography>
-                              </Link>
-                            ))}
-                          </Stack>
-                        </Stack>
-                        {/* Learn More List */}
-                        <Stack direction='column' spacing={2}>
-                          <Typography
-                            variant='h6'
-                            fontWeight={'bold'}
-                            noWrap
-                            textTransform={'uppercase'}
-                          >
-                            Learn More
-                          </Typography>
-                          <Stack direction='column' spacing={1}>
-                            {siteMap['Learn More'].map((link) => (
-                              <Link
-                                href={link.link}
-                                key={link.label}
-                                underline='hover'
-                                color='inherit'
-                                sx={{
-                                  '&:hover': { color: 'primary.light' },
-                                }}
-                              >
-                                <Typography
-                                  variant='body1'
-                                  color='inherit'
-                                  noWrap
-                                  sx={{
-                                    '&:hover': { color: 'primary.light' },
-                                  }}
-                                >
-                                  {link.label}
-                                </Typography>
-                              </Link>
-                            ))}
-                          </Stack>
-                        </Stack>
-                      </Stack>
-                      {/* Right Column */}
-                      <Stack direction='column'>
-                        {/* Learn More List */}
-                        <Stack direction='column' spacing={2}>
-                          <Typography
-                            variant='h6'
-                            fontWeight={'bold'}
-                            noWrap
-                            textTransform={'uppercase'}
-                          >
-                            About
-                          </Typography>
-                          <Stack direction='column' spacing={1}>
-                            {siteMap['About'].map((link) => (
-                              <Link
-                                href={link.link}
-                                key={link.label}
-                                underline='hover'
-                                color='inherit'
-                                sx={{
-                                  '&:hover': { color: 'primary.light' },
-                                }}
-                              >
-                                <Typography
-                                  variant='body1'
-                                  color='inherit'
-                                  noWrap
-                                  sx={{
-                                    '&:hover': { color: 'primary.light' },
-                                  }}
-                                >
-                                  {link.label}
-                                </Typography>
-                              </Link>
-                            ))}
-                          </Stack>
-                        </Stack>
+                            <Typography
+                              variant='body1'
+                              color='inherit'
+                              noWrap
+                              sx={{
+                                '&:hover': { color: 'secondary.main' },
+                              }}
+                            >
+                              {link.label}
+                            </Typography>
+                          </Link>
+                        ))}
                       </Stack>
                     </Stack>
-                  ) : (
-                    // Desktop Version
-                    <Stack
-                      direction='row'
-                      justifyContent={'center'}
-                      spacing={{ sm: 5, md: 8, lg: 5, xl: 10 }}
-                      p={{ sm: 2, md: 0, lg: 0, xl: 0 }}
-                      pl={{ sm: 0, md: 0, lg: 10, xl: 15 }}
-                    >
-                      {/* Volunteer List */}
-                      <Stack
-                        direction='column'
-                        spacing={2}
-                        width={{ xl: 170, lg: 170, md: 'auto', sm: 'auto' }}
-                        justifyContent={'flex-start'}
-                      >
-                        <Typography
-                          variant='h6'
-                          fontWeight={'bold'}
-                          noWrap
-                          textTransform={'uppercase'}
-                        >
-                          Volunteer
-                        </Typography>
-                        <Stack direction='column' spacing={1}>
-                          {siteMap['Volunteer'].map((link) => (
-                            <Link
-                              href={link.link}
-                              key={link.label}
-                              underline='hover'
-                              color='inherit'
-                              sx={{
-                                '&:hover': { color: 'primary.light' },
-                              }}
-                            >
-                              <Typography
-                                variant='body1'
-                                color='inherit'
-                                noWrap
-                                sx={{
-                                  '&:hover': { color: 'primary.light' },
-                                }}
-                              >
-                                {link.label}
-                              </Typography>
-                            </Link>
-                          ))}
-                        </Stack>
-                      </Stack>
-                      {/* About List */}
-                      <Stack
-                        direction='column'
-                        spacing={2}
-                        width={{ xl: 110, lg: 110, md: 'auto', sm: 'auto' }}
-                        justifyContent={'flex-start'}
-                      >
-                        <Typography
-                          variant='h6'
-                          fontWeight={'bold'}
-                          noWrap
-                          textTransform={'uppercase'}
-                        >
-                          About
-                        </Typography>
-                        <Stack direction='column' spacing={1}>
-                          {siteMap['About'].map((link) => (
-                            <Link
-                              href={link.link}
-                              key={link.label}
-                              underline='hover'
-                              color='inherit'
-                              sx={{
-                                '&:hover': { color: 'primary.light' },
-                              }}
-                            >
-                              <Typography
-                                variant='body1'
-                                color='inherit'
-                                noWrap
-                                sx={{
-                                  '&:hover': { color: 'primary.light' },
-                                }}
-                              >
-                                {link.label}
-                              </Typography>
-                            </Link>
-                          ))}
-                        </Stack>
-                      </Stack>
-                      {/* Learn More List  */}
-                      <Stack
-                        direction='column'
-                        spacing={2}
-                        width={{ xl: 170, lg: 170, md: 'auto', sm: 'auto' }}
-                        justifyContent={'flex-start'}
-                      >
-                        <Typography
-                          variant='h6'
-                          fontWeight={'bold'}
-                          noWrap
-                          textTransform={'uppercase'}
-                        >
-                          Learn More
-                        </Typography>
-                        <Stack direction='column' spacing={1}>
-                          {siteMap['Learn More'].map((link) => (
-                            <Link
-                              href={link.link}
-                              key={link.label}
-                              underline='hover'
-                              color='inherit'
-                              sx={{
-                                '&:hover': { color: 'primary.light' },
-                              }}
-                            >
-                              <Typography
-                                variant='body1'
-                                color='inherit'
-                                noWrap
-                                sx={{
-                                  '&:hover': { color: 'primary.light' },
-                                }}
-                              >
-                                {link.label}
-                              </Typography>
-                            </Link>
-                          ))}
-                        </Stack>
-                      </Stack>
-                    </Stack>
-                  )}
-                </Grid>
-              </Grid>
-            </Box>
+                  ))}
+                </Stack>
+              )}
+            </Stack>
 
             {/* Outside Links and Copyright */}
             <Stack

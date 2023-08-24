@@ -1,16 +1,12 @@
 import {
-  Card,
   Stack,
   TextField,
   ThemeProvider,
   Typography,
   Button,
   Box,
-  FormControl,
-  InputLabel,
   Select,
   MenuItem,
-  FormHelperText,
   Checkbox,
   FormControlLabel,
 } from '@mui/material';
@@ -109,14 +105,9 @@ const Contact = () => {
               xs: '90%',
             }}
           >
-            <Box
-              sx={{
-                padding: '30px',
-                boxShadow: '0 15px 40px 5px rgb(0 0 0 / 0.3)',
-                borderRadius: '10px',
-              }}
-            >
-              <Stack spacing={4}>
+            <Box boxShadow={5} p={4} borderRadius={4}>
+              <Stack spacing={2}>
+                {/* First Name and Last Name */}
                 <Stack
                   direction={{
                     xl: 'row',
@@ -125,35 +116,48 @@ const Contact = () => {
                     sm: 'row',
                     xs: 'column',
                   }}
-                  spacing={4}
+                  spacing={{ xs: 2, sm: 4, md: 4, lg: 4, xl: 4 }}
                 >
-                  <TextField
-                    fullWidth
-                    label='First Name'
-                    variant='outlined'
-                    name='firstName'
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    size='small'
-                  />
-                  <TextField
-                    fullWidth
-                    label='Last Name'
-                    variant='outlined'
-                    name='lastName'
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    size='small'
-                  />
+                  <Stack
+                    width={{
+                      xs: '100%',
+                      sm: '50%',
+                    }}
+                    spacing={1}
+                  >
+                    <Typography variant='body2'>First Name*</Typography>
+                    <TextField
+                    placeholder='Smith'
+                      fullWidth
+                      required
+                      variant='outlined'
+                      name='firstName'
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      size='small'
+                    />
+                  </Stack>
+                  <Stack width={{ xs: '100%', sm: '50%' }} spacing={1}>
+                    <Typography variant='body2'>Last Name*</Typography>
+                    <TextField
+                    placeholder='Davidson'
+                      fullWidth
+                      required
+                      variant='outlined'
+                      name='lastName'
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      size='small'
+                    />
+                  </Stack>
                 </Stack>
 
-                <FormControl fullWidth size='small'>
-                  <InputLabel id='demo-simple-select-label'>I am...</InputLabel>
+                <Stack width={'100%'} spacing={1}>
+                  <Typography variant='body2'>I am</Typography>
                   <Select
                     labelId='demo-simple-select-label'
                     id='demo-simple-select'
                     value={purpose}
-                    label='purpose'
                     onChange={(e) => setPurpose(e.target.value)}
                     size='small'
                   >
@@ -169,39 +173,56 @@ const Contact = () => {
                     </MenuItem>
                     <MenuItem value={'other'}>Other</MenuItem>
                   </Select>
-                </FormControl>
-
-                <TextField
-                  fullWidth
-                  label='Email Address'
-                  variant='outlined'
-                  name='emailAddress'
-                  value={formData.emailAddress}
-                  onChange={handleChange}
-                  size='small'
-                />
-                <TextField
-                  fullWidth
-                  label='Phone Number'
-                  variant='outlined'
-                  name='phoneNumber'
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                  size='small'
-                />
-                <TextField
-                  fullWidth
-                  label='Message'
-                  multiline
-                  rows={4}
-                  sx={{ my: 2 }}
-                  name='message'
-                  value={formData.message}
-                  onChange={handleChange}
-                  size='small'
-                />
-                <FormControlLabel control={<Checkbox />} label="Yes, send me information on your next fundraising event" />
-                <FormControlLabel control={<Checkbox />} label="Yes, contact me to discuss my donation" />
+                </Stack>
+                <Stack width={'100%'} spacing={1}>
+                  <Typography variant='body2'>Email Address*</Typography>
+                  <TextField
+                    placeholder='info@youremail.com'
+                    fullWidth
+                    required
+                    variant='outlined'
+                    name='emailAddress'
+                    value={formData.emailAddress}
+                    onChange={handleChange}
+                    size='small'
+                  />
+                </Stack>
+                <Stack width={'100%'} spacing={1}>
+                  <Typography variant='body2'>Phone Number</Typography>
+                  <TextField
+                    placeholder='xxx-xxx-xxxx'
+                    fullWidth
+                    variant='outlined'
+                    name='phoneNumber'
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    size='small'
+                  />
+                </Stack>
+                <Stack width={'100%'} spacing={1}>
+                  <Typography variant='body2'>Message</Typography>
+                  <TextField
+                    placeholder='Write your message'
+                    fullWidth
+                    multiline
+                    rows={4}
+                    sx={{ my: 2 }}
+                    name='message'
+                    value={formData.message}
+                    onChange={handleChange}
+                    size='small'
+                  />
+                </Stack>
+                <Stack>
+                  <FormControlLabel
+                    control={<Checkbox size='small' />}
+                    label='Yes, send me information on your next fundraising event'
+                  />
+                  <FormControlLabel
+                    control={<Checkbox size='small' />}
+                    label='Yes, contact me to discuss my donation'
+                  />
+                </Stack>
                 <form onSubmit={handleFormSubmit}>
                   <CaptchaComponent
                     siteKey='6LegnLEnAAAAAJmmUCSU8JozUbzH9vzQMvhDwo4I'
