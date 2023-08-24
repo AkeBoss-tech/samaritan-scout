@@ -24,6 +24,7 @@ import {
   Grid
 } from "@mui/material";
 import theme from "../components/Theme";
+import CustomButton from './CustomButton';
 
 
 const Contact = () => {
@@ -124,13 +125,31 @@ const Contact = () => {
               <Box sx={{ height: '10px' }}></Box>
               <Grid container>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign={{xs:"center", sm: "right"}} paddingBottom={{ xs: '20px' }}>
-                  <Link href='https://www.paypal.com' target="_blank"><Button variant="outlined" size="large"> <BsPaypal /> </Button></Link>
+                  <Link href='https://www.paypal.com' target="_blank">
+                  <CustomButton size='small' bgStyle='tertiary' hoverStyle='light' startIcon={<BsPaypal />}>
+                    <Typography variant='body1' color={theme.primaryFontColor}>
+                      PayPal
+                    </Typography>
+                  </CustomButton>
+                  </Link>
                 </Grid>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign="center" paddingBottom={{ xs: '20px' }}>
-                  <Link href='https://www.zellepay.com/' target="_blank"><Button variant="outlined" size="large"><SiZelle /></Button></Link>
+                  <Link href='https://www.zellepay.com/' target="_blank">
+                  <CustomButton size='small' bgStyle='tertiary' hoverStyle='light' startIcon={<SiZelle />}>
+                    <Typography variant='body1' color={theme.primaryFontColor}>
+                      Zelle
+                    </Typography>
+                  </CustomButton>
+                  </Link>
                 </Grid>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign={{xs:"center", sm: "left"}} paddingBottom={{ xs: '20px' }}>
-                  <Link href='https://account.venmo.com/u/samaritanscout' target="_blank"><Button variant="outlined" size="large"><BiLogoVenmo /></Button></Link>
+                  <Link href='https://account.venmo.com/u/samaritanscout' target="_blank">
+                  <CustomButton size='small' bgStyle='tertiary' hoverStyle='light' startIcon={<BiLogoVenmo />}>
+                    <Typography variant='body1' color={theme.primaryFontColor}>
+                      Venmo
+                    </Typography>
+                  </CustomButton>
+                  </Link>
                 </Grid>
               </Grid>
               <Typography variant="body1" color={theme.primaryFontColor} align="center" paddingBottom={'20px'}>

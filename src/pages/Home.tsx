@@ -28,6 +28,7 @@ import color_theme from "../components/Theme";
 import Separator from "../components/Separator";
 import MaterialTheme from "../components/MaterialTheme";
 import VolunteerCard from "../components/Card";
+import CustomButton from "../components/CustomButton";
 
 // Code from https://mui.com/ with some modifications
 
@@ -71,9 +72,17 @@ function Home() {
             We have exciting volunteer opportunities for you!
           </Typography>
           <Box sx={{ height: "20px " }}></Box>
-          <Button variant="contained" size="large">
+          {/* <Button variant="contained" size="large">
             Volunteer Near You
-          </Button>
+          </Button> */}
+          <CustomButton
+            size='medium'
+            bgStyle='secondary'
+            hoverStyle='light'
+            // startIcon={<AddIcon />}
+          >
+            <Typography fontWeight={'bold'}>Volunteer Near You</Typography>
+          </CustomButton>
         </Container>
         <RecentActivity />
         <VolunteerLove />
@@ -117,9 +126,14 @@ function Home() {
             Meet the People making this Vision a Reality
           </Typography>
           <Box sx={{ height: "20px " }}></Box>
-          <Button variant="contained" size="large">
-            Our Team
-          </Button>
+          <CustomButton
+            size='medium'
+            bgStyle='secondary'
+            hoverStyle='light'
+            // startIcon={<AddIcon />}
+          >
+            <Typography fontWeight={'bold'}>Our Team</Typography>
+          </CustomButton>
         </Container>
       </ThemeProvider>
     </div>
@@ -481,23 +495,14 @@ function VolunteerLove() {
             Volunteers Love Us!
           </Typography>
           <Box sx={{ height: "10%" }}></Box>
-          <Button
-            variant="contained"
-            sx={{
-              color: color_theme.fontColor,
-              backgroundColor: color_theme.fontHoverColor,
-              height: "50px",
-              maxWidth: "60%",
-              minWidth: "180px",
-              ":hover": {
-                backgroundColor: color_theme.fontColor,
-                color: color_theme.bgColor,
-              },
-            }}
-            size="large"
+          <CustomButton
+            size='medium'
+            bgStyle='primary'
+            hoverStyle='dark'
+            // startIcon={<AddIcon />}
           >
-            <Typography variant="h5">Join Us!</Typography>
-          </Button>
+            <Typography fontWeight={'bold'}>Join Us!</Typography>
+          </CustomButton>
         </Grid>
         <Grid
           item
