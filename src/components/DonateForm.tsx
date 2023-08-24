@@ -124,8 +124,8 @@ const Contact = () => {
               </Typography>
               <Box sx={{ height: '10px' }}></Box>
               <Grid container>
-                <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign={{xs:"center", sm: "right"}} paddingBottom={{ xs: '20px' }}>
-                  <Link href='https://www.paypal.com' target="_blank">
+                <Grid item xs={12} sm={6} md={6} lg={6} xl={6} justifyContent="center" alignItems="center" textAlign={{xs:"center", sm: "center"}} paddingBottom={{ xs: '20px' }}>
+                  <Link href='https://www.paypal.com/fundraiser/charity/4894555' target="_blank">
                   <CustomButton size='small' bgStyle='tertiary' hoverStyle='light' startIcon={<BsPaypal />}>
                     <Typography variant='body1' color={theme.primaryFontColor}>
                       PayPal
@@ -133,7 +133,7 @@ const Contact = () => {
                   </CustomButton>
                   </Link>
                 </Grid>
-                <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign="center" paddingBottom={{ xs: '20px' }}>
+                {/* <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign="center" paddingBottom={{ xs: '20px' }}>
                   <Link href='https://www.zellepay.com/' target="_blank">
                   <CustomButton size='small' bgStyle='tertiary' hoverStyle='light' startIcon={<SiZelle />}>
                     <Typography variant='body1' color={theme.primaryFontColor}>
@@ -141,8 +141,8 @@ const Contact = () => {
                     </Typography>
                   </CustomButton>
                   </Link>
-                </Grid>
-                <Grid item xs={12} sm={4} md={4} lg={4} xl={4} justifyContent="center" alignItems="center" textAlign={{xs:"center", sm: "left"}} paddingBottom={{ xs: '20px' }}>
+                </Grid> */}
+                <Grid item xs={12} sm={6} md={6} lg={6} xl={6} justifyContent="center" alignItems="center" textAlign={{xs:"center", sm: "center"}} paddingBottom={{ xs: '20px' }}>
                   <Link href='https://account.venmo.com/u/samaritanscout' target="_blank">
                   <CustomButton size='small' bgStyle='tertiary' hoverStyle='light' startIcon={<BiLogoVenmo />}>
                     <Typography variant='body1' color={theme.primaryFontColor}>
@@ -287,6 +287,7 @@ const Contact = () => {
                   />
                   {/* <button type='submit'>Submit</button> */}
                 </form>
+                * Your donation is 100% tax-deductible and will be applied exclusively to covering our technology-related expenses that are essential to building and maintaining the Scout Platform. You will receive all relevant paperwork to confirm your donation.
                 <Button
                   onClick={handleSubmit}
                   variant='contained'
