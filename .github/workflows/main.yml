@@ -1,0 +1,34 @@
+name: Push Code to Another Repository
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your main branch name
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v2
+
+      - name: Clone Destination Repository
+        run: git clone https://github.com/samaritanscout/dev-AkeBoss-tech.git destination-repo
+
+      - name: Copy Code to Destination Repository
+        run: cp -r * destination-repo/
+
+      - name: Configure Git
+        run: |
+          cd destination-repo
+          git config user.name "AkeBoss-tech"
+          git config user.email "akashdub06@gmail.com"
+          git config --global credential.helper store
+
+      - name: Commit and Push Changes
+        run: |
+          cd destination-repo
+          git add .
+          git commit -m "Update code from source repository"
+          git push origin main  # Adjust the branch name if needed
