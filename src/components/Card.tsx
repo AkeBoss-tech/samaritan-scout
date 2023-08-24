@@ -17,7 +17,7 @@ interface VolunteerCardProps {
 
 const VolunteerCard: React.FC<VolunteerCardProps> = ({ cause, volunteer, imageSrc, description, icon }) => {
   return (
-    <Card sx={{ maxWidth: "100%" }}>
+    <Card sx={{ maxWidth: "100%", height: "100%" }}>
       <CardActionArea>
         {/* Chip with a word in the top left */}
         <Chip
@@ -32,9 +32,10 @@ const VolunteerCard: React.FC<VolunteerCardProps> = ({ cause, volunteer, imageSr
         />
         <CardMedia
           component="img"
-          height="width"  
+          height="300vw"
           image={imageSrc}
           alt={volunteer}
+          sx={{  }}
         />
         <CardContent>
           <Typography gutterBottom variant="h3" component="div"  color={'primary'} align='center'>

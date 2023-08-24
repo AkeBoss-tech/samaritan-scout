@@ -15,6 +15,7 @@ import {
   useTheme,
   IconButton,
   styled,
+  MobileStepper,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PublicIcon from "@mui/icons-material/Public";
@@ -170,6 +171,7 @@ const ReactHome = () => {
               color="primary"
               margin="dense"
               fullWidth={true}
+              disabled={true} // TODO: Enable this when we have the backend
               sx={{ backgroundColor: "#fff", input: { color: "black" } }}
             />
           </Grid>
@@ -189,6 +191,7 @@ const ReactHome = () => {
               color="primary"
               margin="dense"
               fullWidth={true}
+              disabled={true} // TODO: Enable this when we have the backend
               sx={{ backgroundColor: "#fff", input: { color: "black" } }}
             />
           </Grid>
@@ -244,7 +247,7 @@ const ReactHome = () => {
             <IconButton aria-label="delete" size="large">
               <ArrowDownwardIcon
                 fontSize="inherit"
-                style={{ color: "white" }}
+                style={{ }}
               />
             </IconButton>
           </Grid>

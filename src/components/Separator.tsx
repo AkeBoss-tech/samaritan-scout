@@ -19,7 +19,8 @@ function Separator({ primary }: { primary: boolean }) {
         <Grid item xs={3} md={3} color={fontColor}>
           <Box
             sx={{ width: "100%" }}
-            borderBottom={`5px solid ${fontColor}`}
+            borderBottom={`0.2rem solid ${fontColor}`}
+            borderRadius={2}
           ></Box>
         </Grid>
         <Grid item xs={2} md={2} textAlign={"center"}>
@@ -37,7 +38,8 @@ function Separator({ primary }: { primary: boolean }) {
         <Grid item xs={3} md={3} color={fontColor}>
           <Box
             sx={{ width: "100%" }}
-            borderBottom={`5px solid ${fontColor}`}
+            borderBottom={`0.2rem solid ${fontColor}`}
+            borderRadius={2}
           ></Box>
         </Grid>
       </Grid>

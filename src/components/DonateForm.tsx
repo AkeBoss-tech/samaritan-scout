@@ -82,7 +82,7 @@ const Contact = () => {
             <Box
               sx={{
                 padding: '30px',
-                boxShadow: '0 15px 40px 5px rgb(0 0 0 / 0.3)',
+                boxShadow: '0 5px 7px 5px rgb(0 0 0 / 0.3)',
                 borderRadius: '10px',
               }}
             >
