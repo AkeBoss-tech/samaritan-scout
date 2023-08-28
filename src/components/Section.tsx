@@ -13,6 +13,7 @@ import {
   ThemeProvider
 } from "@mui/material/styles";
 import MaterialTheme from "./MaterialTheme";
+import margins from "./ThemeMargins";
 
 
 function Section({
@@ -45,6 +46,10 @@ function Section({
         }}
         maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
       >
+        <Box 
+          mr={margins}
+          ml={margins}
+        >
         <Typography
           variant="h1"
           noWrap
@@ -70,6 +75,7 @@ function Section({
             </Grid>
           ))}
         </Grid>
+        </Box>
       </Container>
     </ThemeProvider>
   );

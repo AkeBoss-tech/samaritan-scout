@@ -180,10 +180,10 @@ const PhaseText = ({ step }: { step: number }) => {
           </Typography>
           <Typography component="div" textAlign="center">
             <ul>
-              <li>Build database of nonprofit websites</li>
-              <li>Leverage AI to organize data in support of keyword search and filtering</li>
-              <li>Insert geolocation capabilities to support geographic parameters</li>
-              <li>Optimize search experience</li>
+              <p>Build database of nonprofit websites</p>
+              <p>Leverage AI to organize data in support of keyword search and filtering</p>
+              <p>Insert geolocation capabilities to support geographic parameters</p>
+              <p>Optimize search experience</p>
             </ul>
           </Typography>
           
@@ -198,9 +198,9 @@ const PhaseText = ({ step }: { step: number }) => {
           </Typography>
           <Typography component="div" textAlign="center">
             <ul>
-              <li>Support account creation</li>
-              <li>Launch social-media platform that supports relationships and documenting/sharing media and posts</li>
-              <li>Enhance nonprofit organizations’ presence and information</li>
+              <p>Support account creation</p>
+              <p>Launch social-media platform that supports relationships and documenting/sharing media and posts</p>
+              <p>Enhance nonprofit organizations’ presence and information</p>
             </ul>
           </Typography>
         </div>
@@ -214,9 +214,9 @@ const PhaseText = ({ step }: { step: number }) => {
           </Typography>
           <Typography component="div" textAlign="center">
             <ul>
-              <li>Offer AI conversational experience to render appropriate volunteer opportunities</li>
-              <li>Inject AI to provide volunteers with ‘intelligent’ customized recommendations of volunteer experiences</li>
-              <li>Integrate attendance and registration tools for volunteer opportunities</li>
+              <p>Offer AI conversational experience to render appropriate volunteer opportunities</p>
+              <p>Inject AI to provide volunteers with ‘intelligent’ customized recommendations of volunteer experiences</p>
+              <p>Integrate attendance and registration tools for volunteer opportunities</p>
             </ul>
           </Typography>
         </div>
@@ -230,9 +230,9 @@ const PhaseText = ({ step }: { step: number }) => {
           </Typography>
           <Typography component="div" textAlign="center">
             <ul>
-              <li>Build database of nonprofits at additional target regions</li>
-              <li>Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database</li>
-              <li>Raise funds to ensure ongoing optimal site performance and scale functionality</li>
+              <p>Build database of nonprofits at additional target regions</p>
+              <p>Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database</p>
+              <p>Raise funds to ensure ongoing optimal site performance and scale functionality</p>
             </ul>
           </Typography>
 

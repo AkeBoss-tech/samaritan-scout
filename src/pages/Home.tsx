@@ -29,6 +29,8 @@ import Separator from "../components/Separator";
 import MaterialTheme from "../components/MaterialTheme";
 import VolunteerCard from "../components/Card";
 import CustomButton from "../components/CustomButton";
+import margins from "../components/ThemeMargins";
+import CustomContainer from "../components/CustomSection";
 
 // Code from https://mui.com/ with some modifications
 
@@ -51,19 +53,7 @@ function Home() {
       <ThemeProvider theme={MaterialTheme}>
         <ReactHome />
         <WorkInProgress />
-        <Container
-          style={{
-            paddingTop: "50px",
-            paddingBottom: "50px",
-            flex: 1,
-            color: color_theme.primaryFontColor,
-            backgroundColor: color_theme.paperBgColor,
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-          maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
-        >
+        <CustomContainer bgStyle="paper" padding="large">
           <Typography
             variant="h2"
             color={color_theme.primaryFontColor}
@@ -76,26 +66,17 @@ function Home() {
             Volunteer Near You
           </Button> */}
           <CustomButton
-            size='medium'
-            bgStyle='secondary'
-            hoverStyle='light'
+            size="medium"
+            bgStyle="secondary"
+            hoverStyle="light"
             // startIcon={<AddIcon />}
           >
-            <Typography fontWeight={'bold'}>Volunteer Near You</Typography>
+            <Typography fontWeight={"bold"}>Volunteer Near You</Typography>
           </CustomButton>
-        </Container>
+        </CustomContainer>
         <RecentActivity />
         <VolunteerLove />
-        <Container
-          style={{
-            paddingTop: "50px",
-            paddingBottom: "50px",
-            flex: 1,
-            color: color_theme.primaryFontColor,
-            backgroundColor: color_theme.accentBgColor,
-          }}
-          maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
-        >
+        <CustomContainer bgStyle="accent" padding="medium">
           <Typography
             variant="h2"
             color={color_theme.primaryFontColor}
@@ -103,21 +84,9 @@ function Home() {
           >
             We’re making it easier for people and organizations to DO GOOD
           </Typography>
-        </Container>
+        </CustomContainer>
         <OtherStuff primary={false} />
-        <Container
-          style={{
-            paddingTop: "50px",
-            paddingBottom: "50px",
-            flex: 1,
-            color: color_theme.primaryFontColor,
-            backgroundColor: color_theme.primaryBgColor,
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-          maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
-        >
+        <CustomContainer bgStyle="primary" padding="large">
           <Typography
             variant="h2"
             color={color_theme.primaryFontColor}
@@ -127,14 +96,14 @@ function Home() {
           </Typography>
           <Box sx={{ height: "20px " }}></Box>
           <CustomButton
-            size='medium'
-            bgStyle='secondary'
-            hoverStyle='light'
+            size="medium"
+            bgStyle="secondary"
+            hoverStyle="light"
             // startIcon={<AddIcon />}
           >
-            <Typography fontWeight={'bold'}>Our Team</Typography>
+            <Typography fontWeight={"bold"}>Our Team</Typography>
           </CustomButton>
-        </Container>
+        </CustomContainer>
       </ThemeProvider>
     </div>
   );
@@ -259,10 +228,7 @@ const ReactHome = () => {
           </Grid>
           <Grid xs={12} textAlign={"center"}>
             <IconButton aria-label="delete" size="large">
-              <ArrowDownwardIcon
-                fontSize="inherit"
-                style={{ }}
-              />
+              <ArrowDownwardIcon fontSize="inherit" style={{}} />
             </IconButton>
           </Grid>
           <Grid xs={12} textAlign={"center"}>
@@ -298,10 +264,7 @@ function OtherStuff({ primary }: { primary: boolean }) {
 
   return (
     <>
-      <Container
-        style={containerStyle}
-        maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
-      >
+      <CustomContainer bgStyle="white" padding="medium">
         <Grid container spacing={2}>
           <Grid
             item
@@ -336,11 +299,8 @@ function OtherStuff({ primary }: { primary: boolean }) {
             />
           </Grid>
         </Grid>
-      </Container>
-      <Container
-        style={containerStyle}
-        maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
-      >
+      </CustomContainer>
+      <CustomContainer bgStyle="white" padding="medium">
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} alignSelf={"center"} maxWidth={"5"}>
             <img
@@ -375,11 +335,8 @@ function OtherStuff({ primary }: { primary: boolean }) {
             </Typography>
           </Grid>
         </Grid>
-      </Container>
-      <Container
-        style={containerStyle}
-        maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
-      >
+      </CustomContainer>
+      <CustomContainer bgStyle="white" padding="medium">
         <Grid container spacing={2} alignItems={"center"}>
           <Grid
             item
@@ -413,23 +370,17 @@ function OtherStuff({ primary }: { primary: boolean }) {
             />
           </Grid>
         </Grid>
-      </Container>
+      </CustomContainer>
     </>
   );
 }
 
 function RecentActivity() {
   return (
-    <Container
-      style={{
-        paddingTop: "50px",
-        paddingBottom: "50px",
-        flex: 1,
-        color: color_theme.fontColor,
-        backgroundColor: color_theme.bgColor,
-      }}
-      id="recent-activity"
-      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+    <CustomContainer
+      bgStyle="white"
+      padding="medium"
+      marginStyle="narrow"
     >
       <Typography variant="h1" color={color_theme.fontColor} align="center">
         Recent Volunteer Activities
@@ -464,27 +415,26 @@ function RecentActivity() {
           />
         </Grid>
       </Grid>
-    </Container>
+    </CustomContainer>
   );
 }
 
 function VolunteerLove() {
   return (
-    <Container
-      style={{
-        paddingTop: "50px",
-        paddingBottom: "50px",
-        flex: 1,
-        color: color_theme.primaryFontColor,
-        backgroundColor: color_theme.paperBgColor,
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-      }}
-      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+    <CustomContainer
+      bgStyle="paper"
+      padding="medium"
+      marginStyle="narrow"
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={4} alignItems={"center"} textAlign={"center"} paddingBottom={{ xs: "50px" }}>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          alignItems={"center"}
+          textAlign={"center"}
+          paddingBottom={{ xs: "50px" }}
+        >
           <Box sx={{ height: { sm: "25%" } }}></Box>
           <Typography
             variant="h2"
@@ -496,12 +446,12 @@ function VolunteerLove() {
           </Typography>
           <Box sx={{ height: "10%" }}></Box>
           <CustomButton
-            size='medium'
-            bgStyle='primary'
-            hoverStyle='dark'
+            size="medium"
+            bgStyle="primary"
+            hoverStyle="dark"
             // startIcon={<AddIcon />}
           >
-            <Typography fontWeight={'bold'}>Join Us!</Typography>
+            <Typography fontWeight={"bold"}>Join Us!</Typography>
           </CustomButton>
         </Grid>
         <Grid
@@ -537,28 +487,22 @@ function VolunteerLove() {
           />
         </Grid>
       </Grid>
-    </Container>
+    </CustomContainer>
   );
 }
 
 function WorkInProgress() {
   return (
-    <Container
-      style={{
-        paddingTop: "50px",
-        paddingBottom: "50px",
-        flex: 1,
-        color: color_theme.fontColor,
-        backgroundColor: color_theme.bgColor,
-      }}
-      id="recent-activity"
-      maxWidth={false} // Set maxWidth to 'false' to fill the width of the screen
+    <CustomContainer
+      bgStyle="white"
+      padding="medium"
+      marginStyle="wide"
     >
       <Typography variant="h2" color={color_theme.fontColor} align="center">
         The web’s first search engine focused exclusively on finding ways we can
         help nonprofit organizations we care about is COMING SOON.
       </Typography>
-    </Container>
+    </CustomContainer>
   );
 }
 
