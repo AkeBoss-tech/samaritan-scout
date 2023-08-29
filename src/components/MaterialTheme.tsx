@@ -82,6 +82,10 @@ let MaterialTheme = createTheme({
             fontSize: '36px',
             fontWeight: 900,
         },
+        subtitle1: { // Display in the Figma file
+            fontSize: '17px',
+            fontWeight: 100,
+        },
         body1: {
             fontSize: '18px',
             fontWeight: 400,

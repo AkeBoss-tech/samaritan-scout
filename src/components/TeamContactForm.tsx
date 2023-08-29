@@ -42,21 +42,21 @@ const TeamContactForm = () => {
           <Grid
             container
             spacing={10}
-            paddingY={15}
+            paddingY={10}
             paddingX={{ xs: 5, sm: 10, md: 10, lg: 10, xl: 15 }}
           >
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
               <Stack gap={2}>
                 <Stack justifyContent={'center'} alignItems={'center'}>
                   <Typography
-                    variant='h3'
-                    fontSize={{
+                    variant='h1'
+                    /* fontSize={{
                       xs: '2.25rem',
                       sm: '2.25rem',
                       md: '2.5rem',
                       lg: '3rem',
                       xl: '3rem',
-                    }}
+                    }} */ // not sure why this is here
                     fontWeight={'bold'}
                     noWrap
                     color='primary'
@@ -144,17 +144,17 @@ const TeamContactForm = () => {
                 height={'100%'}
                 justifyContent={'center'}
                 alignItems={'center'}
-                spacing={5}
+                spacing={2}
               >
                 <Typography
-                  variant={'h3'}
-                  fontSize={{
+                  variant={'h1'}
+                  /* fontSize={{
                     xs: '2.25rem',
                     sm: '2.25rem',
                     md: '2.5rem',
                     lg: '3rem',
                     xl: '3rem',
-                  }}
+                  }} */ // again not supposed to be here
                   fontWeight={'bold'}
                   color='primary'
                   textAlign={'center'}

@@ -1,5 +1,5 @@
 // import '../App.css';
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -46,6 +46,7 @@ const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
     maxHeight: 1300,
   },
 }));
+
 
 function Home() {
   return (
@@ -122,6 +123,14 @@ const ReactHome = () => {
     console.log("Remote: ", remote);
   };
 
+  const targetRef = useRef<HTMLDivElement | null>(null);;
+  const handleScrollToElement = () => {
+    // Scroll to the target element
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
       <ProductHeroLayoutRoot>
@@ -194,6 +203,7 @@ const ReactHome = () => {
               id="inPerson"
               fullWidth={true}
               sx={{ height: 55 }}
+              onClick={handleScrollToElement}
             >
               <SearchIcon />
             </Button>
@@ -227,7 +237,7 @@ const ReactHome = () => {
             <Box sx={{ height: 35 }}></Box>
           </Grid>
           <Grid xs={12} textAlign={"center"}>
-            <IconButton aria-label="delete" size="large">
+            <IconButton aria-label="delete" size="large" onClick={handleScrollToElement}>
               <ArrowDownwardIcon fontSize="inherit" style={{}} />
             </IconButton>
           </Grid>
@@ -236,6 +246,7 @@ const ReactHome = () => {
           </Grid>
         </Grid>
       </ProductHeroLayoutRoot>
+      <div ref={targetRef}></div>
     </>
   );
 };
@@ -264,7 +275,7 @@ function OtherStuff({ primary }: { primary: boolean }) {
 
   return (
     <>
-      <CustomContainer bgStyle="white" padding="medium">
+      <CustomContainer bgStyle="white" padding="small">
         <Grid container spacing={2}>
           <Grid
             item
@@ -296,17 +307,19 @@ function OtherStuff({ primary }: { primary: boolean }) {
               src="https://media.istockphoto.com/id/1299624974/photo/futuristic-city-vr-wire-frame-with-group-of-people.jpg?s=612x612&w=0&k=20&c=Wf0Zroz23XgI-aDsF4bYNuRew_Jql-XjvECAGE0IIDo="
               alt="Image that shows tech and people"
               style={{ maxWidth: imageWidth }}
+              width={"80%"}
             />
           </Grid>
         </Grid>
       </CustomContainer>
-      <CustomContainer bgStyle="white" padding="medium">
+      <CustomContainer bgStyle="white" padding="small">
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} alignSelf={"center"} maxWidth={"5"}>
             <img
               src="https://www.cio.com/wp-content/uploads/2023/05/iStock-654187068.jpg?quality=50&strip=all"
               alt="overburdened"
               style={{ maxWidth: imageWidth }}
+              width={"80%"}
             />
           </Grid>
           <Grid
@@ -336,7 +349,7 @@ function OtherStuff({ primary }: { primary: boolean }) {
           </Grid>
         </Grid>
       </CustomContainer>
-      <CustomContainer bgStyle="white" padding="medium">
+      <CustomContainer bgStyle="white" padding="small">
         <Grid container spacing={2} alignItems={"center"}>
           <Grid
             item
@@ -367,6 +380,7 @@ function OtherStuff({ primary }: { primary: boolean }) {
               src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
               alt="Image that shows tech and people"
               style={{ maxWidth: imageWidth, alignSelf: "center" }}
+              width={"80%"}
             />
           </Grid>
         </Grid>
@@ -493,16 +507,16 @@ function VolunteerLove() {
 
 function WorkInProgress() {
   return (
-    <CustomContainer
+    <><CustomContainer
       bgStyle="white"
       padding="medium"
       marginStyle="wide"
     >
-      <Typography variant="h2" color={color_theme.fontColor} align="center">
-        The web’s first search engine focused exclusively on finding ways we can
-        help nonprofit organizations we care about is COMING SOON.
-      </Typography>
-    </CustomContainer>
+        <Typography variant="h2" color={color_theme.fontColor} align="center">
+          The web’s first search engine focused exclusively on finding ways we can
+          help nonprofit organizations we care about is COMING SOON.
+        </Typography>
+      </CustomContainer></>
   );
 }
 

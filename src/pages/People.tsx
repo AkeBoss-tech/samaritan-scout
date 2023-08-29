@@ -1,7 +1,7 @@
 import "../pages/styles.css";
 import Section from "../components/Section";
 import color_theme from "../components/Theme";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider, styled } from "@mui/material/styles";
 import {
   Box,
   Button,
@@ -18,8 +18,9 @@ import Seperator from "../components/Separator";
 import PersonCard from "../components/PersonCard";
 import peopleInfo from "../people.json";
 import React from "react";
-import { JSX } from "react/jsx-runtime";
 import CustomContainer from "../components/CustomSection";
+import TeamContactForm from "../components/TeamContactForm";
+import CustomSection from "../components/CustomSection";
 
 const boardMembers: any = [];
 const volunteers: any = [];
@@ -28,6 +29,7 @@ interface BoardMember {
   linkedin: string;
   job: string;
   image: string;
+  description: string;
 }
 const boardOfDirectors: Record<string, BoardMember> =
   peopleInfo["Meet Our Board Of Directors"];
@@ -41,6 +43,7 @@ Object.keys(boardOfDirectors).forEach((key) => {
         job={value.job}
         name={key}
         image={value.image}
+        description={value.description}
       />
     </React.Fragment>
   );
@@ -61,6 +64,7 @@ Object.keys(summerVolunteers).forEach((key) => {
         type={"volunteer"}
         job={value.job}
         name={key}
+        description={value.description}
         image={value.image}
         link={value.linkedin}
       />
@@ -74,6 +78,7 @@ function Filler() {
 
 function People() {
   return (
+    <>
     <ThemeProvider theme={MaterialTheme}>
       <Box sx={{ height: "30px " }}></Box>
       <CustomContainer bgStyle="white" padding="medium">
@@ -105,7 +110,7 @@ function People() {
       </Grid>
       <CustomContainer bgStyle="white" padding="medium" marginStyle="narrow">
         <Typography
-          variant="h3"
+          variant="h1"
           align="center"
           sx={{ marginBottom: "3%", marginTop: "5%" }}
         >
@@ -121,7 +126,63 @@ function People() {
           {volunteers}
         </Grid>
       </CustomContainer>
+      <TeamContactForm />
+      <CustomSection
+        bgStyle="white"
+      >
+        <Typography variant="h1" align="center">
+          Why volunteer with us?
+        </Typography>
+        <Box sx={{ height: "30px " }}></Box>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h3" align="center" paddingBottom={2}>
+              Effect a scalable impact 
+            </Typography>
+            <Typography variant="body1" align="left">
+              "Here is where the quote goes"
+            </Typography>
+            <Typography variant="subtitle1" align="right">
+              - Akash Dubey
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h3" align="center" paddingBottom={2}>
+            Get inspired and inspire others
+            </Typography>
+            <Typography variant="body1" align="left">
+              "Here is where the quote goes"
+            </Typography>
+            <Typography variant="subtitle1" align="right">
+              - Akash Dubey
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h3" align="center" paddingBottom={2}>
+            Develop skills to advance your career
+            </Typography>
+            <Typography variant="body1" align="left">
+              "Here is where the quote goes"
+            </Typography>
+            <Typography variant="subtitle1" align="right">
+              - Akash Dubey
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h3" align="center" paddingBottom={2}>
+            Collaborate with kind people
+            </Typography>
+            <Typography variant="body1" align="left">
+              "Here is where the quote goes"
+            </Typography>
+            <Typography variant="subtitle1" align="right">
+              - Akash Dubey
+            </Typography>
+          </Grid>
+        </Grid>
+      </CustomSection>
     </ThemeProvider>
+    </>
   );
 }
 

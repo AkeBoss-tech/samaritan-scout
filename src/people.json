@@ -3,94 +3,112 @@
         "Dvora Inwood": {
             "job": "CO-FOUNDER",
             "image": "dvora-inwood-headshot.jpg",
-            "linkedin": "linkedin.com/in/dvora-inwood/"
+            "linkedin": "linkedin.com/in/dvora-inwood/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Rene Ravenel": {
             "job": "CO-FOUNDER, HEAD OF TECHNOLOGY",
             "image": "rene-ravenel-headshot.png",
-            "linkedin": "linkedin.com/in/reneravenel/"
+            "linkedin": "linkedin.com/in/reneravenel/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Will Rosenthal": {
             "job": "CO-FOUNDER, TECH LEAD",
             "image": "will-rosenthal-headshot-circle.jpeg",
-            "linkedin": "linkedin.com/in/william-rosenthal-77072b247/"
+            "linkedin": "linkedin.com/in/william-rosenthal-77072b247/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Scott Thompson": {
             "job": "CO-FOUNDER, BOARD OF DIRECTORS",
             "image": "scott-thompson.jpg",
-            "linkedin": "linkedin.com/in/scottthompsonaws/"
+            "linkedin": "linkedin.com/in/scottthompsonaws/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Michelle Milentijevic": {
             "job": "CO-FOUNDER, BOARD OF DIRECTORS",
             "image": "michelle-milentijevic.png",
-            "linkedin": "linkedin.com/in/michellebostmilentijevic/"
+            "linkedin": "linkedin.com/in/michellebostmilentijevic/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         }
     },
     "Summer 2023 Interns": {
         "Aniket Anvekar": {
             "job": "Software Engineering Lead, Back-End Team",
             "image": "aniket-anvekar.jpeg",
-            "linkedin": "linkedin.com/in/aniketanvekar/"
+            "linkedin": "linkedin.com/in/aniketanvekar/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Akash Dubey": {
             "job": "Front-End Software Developer",
             "image": "akash-dubey.jpeg",
-            "linkedin": "linkedin.com/in/akash-dubey-your-boss/"
+            "linkedin": "linkedin.com/in/akash-dubey-your-boss/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Jack Greenwald": {
             "job": "Front-End Software Developer",
             "image": "jack-greenwald.jpeg",
-            "linkedin": "linkedin.com/in/jack-greenwald-a25052281/"
+            "linkedin": "linkedin.com/in/jack-greenwald-a25052281/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Saket": {
             "job": "Back-End Software Engineer",
             "image": "lacy-dog-square.jpg",
-            "linkedin": "google.com"
+            "linkedin": "google.com",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Dhruvil Mehta": {
             "job": "Back-End Software Developer",
             "image": "dhruvil-mehta.jpeg",
-            "linkedin": "linkedin.com/in/mehta-dhruvil28/"
+            "linkedin": "linkedin.com/in/mehta-dhruvil28/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Shubham Mishra": {
             "job": "Back-End Software Engineer",
             "image": "shubham-mishra.jpeg",
-            "linkedin": "linkedin.com/in/bakharia/"
+            "linkedin": "linkedin.com/in/bakharia/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Sreya Nimmagadda": {
             "job": "Back-End Software Engineer",
             "image": "sreya-nimmagadda.jpeg",
-            "linkedin": "linkedin.com/in/sreyanimmagadda/"
+            "linkedin": "linkedin.com/in/sreyanimmagadda/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Om Prakash Prajapath": {
             "job": "Front-End Software Developer",
             "image": "om-prakash-prajapath.jpeg",
-            "linkedin": "linkedin.com/in/om-prajapath/"
+            "linkedin": "linkedin.com/in/om-prajapath/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Deepa Pulugurtha": {
             "job": "Front-End Software Developer",
             "image": "deepa-pulugurtha.jpeg",
-            "linkedin": "linkedin.com/in/uma-pulugurtha/"
+            "linkedin": "linkedin.com/in/uma-pulugurtha/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Arslan Tariq": {
             "job": "Back-End Software Developer",
             "image": "arslan-tariq.jpg",
-            "linkedin": "linkedin.com/in/arslan-tariq-836b65199/"
+            "linkedin": "linkedin.com/in/arslan-tariq-836b65199/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Hongzhi (Ethan) Zhao": {
             "job": "Front-End Software Engineer",
             "image": "hongzhi-zhao.jpeg",
-            "linkedin": "linkedin.com/in/hongzhi-zhao-631987211/"
+            "linkedin": "linkedin.com/in/hongzhi-zhao-631987211/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Kavita Mahabaleshwarkar": {
             "job": "UX Designer",
             "image": "kavita-mahabaleshwarkar.jpeg",
-            "linkedin": "linkedin.com/in/kavita-mahabaleshwarkar-60932b23/"
+            "linkedin": "linkedin.com/in/kavita-mahabaleshwarkar-60932b23/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         },
         "Arav Sachdeva": {
             "job": "Front-End Software Developer",
             "image": "lacy-dog-square.jpg",
-            "linkedin": "linkedin.com/in/arav-sachdeva-618b20247/"
+            "linkedin": "linkedin.com/in/arav-sachdeva-618b20247/",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
         }
     }
 }

@@ -7,14 +7,14 @@ import { Box } from "@mui/material";
 import color_theme from "./Theme";
 
 interface StyledContainerProps {
-  bgStyle: "white" | "paper" | "accent" | "primary";
-  padding?: "small" | "medium" | "large";
+  bgStyle: "white" | "paper" | "accent" | "dark" | "primary";
+  padding?: "small" | "medium" | "none" | "large";
   maxWidth: boolean,
 }
 
 interface ContainerProps {
-  bgStyle: "white" | "paper" | "accent" | "primary";
-  padding?: "small" | "large" | "medium";
+  bgStyle: "white" | "paper" | "accent" | "dark" | "primary";
+  padding?: "small" | "large" | "none" | "medium";
   marginStyle?: "narrow" | "wide" | "normal";
   children?: React.ReactNode;
 }
@@ -32,22 +32,28 @@ const StyledContainer = styled(Container)<StyledContainerProps>(
         ? color_theme.accentBgColor
         : bgStyle === "primary"
         ? color_theme.primaryBgColor
+        : bgStyle === "dark"
+        ? color_theme.coverBg
         : theme.palette.background.default,
     color:
-      bgStyle === "paper"
-        ? theme.palette.primary.main
-        : theme.palette.text.primary,
+      bgStyle === "dark"
+        ? theme.palette.common.white
+        : theme.palette.primary.main,
     paddingTop:
       padding === "small"
-        ? "10px"
+        ? "25px"
         : padding === "medium"
         ? "50px"
+        : padding === "none"
+        ? "0px"
         : "75px",
     paddingBottom:
       padding === "small"
-        ? "10px"
+        ? "25px"
         : padding === "medium"
         ? "50px"
+        : padding === "none"
+        ? "0px"
         : "75px",
     flex: 1,
     alignItems: "center",
