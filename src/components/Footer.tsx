@@ -182,6 +182,7 @@ function Footer() {
                   nonprofit organizations, we're a search engine dedicated to
                   creating a better world for all.
                 </Typography>
+                <Link href='/donate'>
                 <Button
                   variant='contained'
                   sx={{
@@ -204,6 +205,7 @@ function Footer() {
                     Support Scout
                   </Typography>
                 </Button>
+                </Link>
               </Stack>
 
               {/* Site Map */}

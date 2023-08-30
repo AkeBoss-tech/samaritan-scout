@@ -11,7 +11,7 @@ import {
   TimelineContent,
   TimelineDot,
 } from "@mui/lab";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Link, Typography, useTheme } from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
 import { MdOutlineVolunteerActivism } from "react-icons/md";
@@ -116,14 +116,16 @@ function About() {
             Meet the People making this Vision a Reality
           </Typography>
           <Box sx={{ height: "20px " }}></Box>
-          <CustomButton
-            size="medium"
-            bgStyle="secondary"
-            hoverStyle="light"
-            // startIcon={<AddIcon />}
-          >
-            <Typography fontWeight={"bold"}>Our Team</Typography>
-          </CustomButton>
+          <Link href="/people">
+            <CustomButton
+              size="medium"
+              bgStyle="secondary"
+              hoverStyle="light"
+              // startIcon={<AddIcon />}
+            >
+              <Typography fontWeight={"bold"}>Our Team</Typography>
+            </CustomButton>
+          </Link>
         </CustomContainer>
       </ThemeProvider>
     </>

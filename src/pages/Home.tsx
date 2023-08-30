@@ -16,6 +16,7 @@ import {
   IconButton,
   styled,
   MobileStepper,
+  Link,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PublicIcon from "@mui/icons-material/Public";
@@ -67,17 +68,16 @@ function Home() {
             We have exciting volunteer opportunities for you!
           </Typography>
           <Box sx={{ height: "20px " }}></Box>
-          {/* <Button variant="contained" size="large">
-            Volunteer Near You
-          </Button> */}
-          <CustomButton
-            size="medium"
-            bgStyle="secondary"
-            hoverStyle="light"
-            // startIcon={<AddIcon />}
-          >
-            <Typography fontWeight={"bold"}>Volunteer Near You</Typography>
-          </CustomButton>
+          <Link href="/search">
+            <CustomButton
+              size="medium"
+              bgStyle="secondary"
+              hoverStyle="light"
+              // startIcon={<AddIcon />}
+            >
+              <Typography fontWeight={"bold"}>Volunteer Near You</Typography>
+            </CustomButton>
+          </Link>
         </CustomContainer>
         <RecentActivity />
         <VolunteerLove />
@@ -100,14 +100,16 @@ function Home() {
             Meet the People making this Vision a Reality
           </Typography>
           <Box sx={{ height: "20px " }}></Box>
-          <CustomButton
-            size="medium"
-            bgStyle="secondary"
-            hoverStyle="light"
-            // startIcon={<AddIcon />}
-          >
-            <Typography fontWeight={"bold"}>Our Team</Typography>
-          </CustomButton>
+          <Link href="/people">
+            <CustomButton
+              size="medium"
+              bgStyle="secondary"
+              hoverStyle="light"
+              // startIcon={<AddIcon />}
+            >
+              <Typography fontWeight={"bold"}>Our Team</Typography>
+            </CustomButton>
+          </Link>
         </CustomContainer>
       </ThemeProvider>
     </div>
@@ -498,14 +500,16 @@ function VolunteerLove() {
             Volunteers Love Us!
           </Typography>
           <Box sx={{ height: "10%" }}></Box>
-          <CustomButton
-            size="medium"
-            bgStyle="primary"
-            hoverStyle="dark"
-            // startIcon={<AddIcon />}
-          >
-            <Typography fontWeight={"bold"}>Join Us!</Typography>
-          </CustomButton>
+          <Link href="people">
+            <CustomButton
+              size="medium"
+              bgStyle="primary"
+              hoverStyle="dark"
+              // startIcon={<AddIcon />}
+            >
+              <Typography fontWeight={"bold"}>Join Us!</Typography>
+            </CustomButton>
+          </Link>
         </Grid>
         <Grid
           item
