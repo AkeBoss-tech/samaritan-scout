@@ -31,6 +31,11 @@ import VolunteerCard from "../components/Card";
 import CustomButton from "../components/CustomButton";
 import margins from "../components/ThemeMargins";
 import CustomContainer from "../components/CustomSection";
+import Carousel from "react-material-ui-carousel";
+
+import opportunities from "../opportunities.json";
+import React from "react";
+import { BiHome } from "react-icons/bi";
 
 // Code from https://mui.com/ with some modifications
 
@@ -46,7 +51,6 @@ const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
     maxHeight: 1300,
   },
 }));
-
 
 function Home() {
   return (
@@ -123,7 +127,7 @@ const ReactHome = () => {
     console.log("Remote: ", remote);
   };
 
-  const targetRef = useRef<HTMLDivElement | null>(null);;
+  const targetRef = useRef<HTMLDivElement | null>(null);
   const handleScrollToElement = () => {
     // Scroll to the target element
     if (targetRef.current) {
@@ -237,7 +241,11 @@ const ReactHome = () => {
             <Box sx={{ height: 35 }}></Box>
           </Grid>
           <Grid xs={12} textAlign={"center"}>
-            <IconButton aria-label="delete" size="large" onClick={handleScrollToElement}>
+            <IconButton
+              aria-label="delete"
+              size="large"
+              onClick={handleScrollToElement}
+            >
               <ArrowDownwardIcon fontSize="inherit" style={{}} />
             </IconButton>
           </Grid>
@@ -389,57 +397,88 @@ function OtherStuff({ primary }: { primary: boolean }) {
   );
 }
 
+function getIcon(icon: string) {
+  switch (icon) {
+    /* case "food":
+      return <FastfoodIcon />;
+    case "home":
+      return <HomeIcon />;
+    case "nature":
+      return <NatureIcon />;
+    case "people":
+      return <PeopleIcon />; */
+    case "Public":
+      return <PublicIcon />;
+    case "Health":
+      return <HealthAndSafetyIcon />;
+    case "Translate":
+      return <TranslateIcon />;
+    default:
+      return <BiHome />;
+  }
+}
+
 function RecentActivity() {
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const oppList: any = [];
+  Object.keys(opportunities).forEach((key: string) => {
+    const value = opportunities[key as keyof typeof opportunities];
+    oppList.push(
+      <React.Fragment key={key}>
+        <VolunteerCard
+          volunteer={key}
+          cause={value.cause}
+          description={value.description}
+          imageSrc={value.imageSrc}
+          icon={getIcon(value.icon)}
+        />
+      </React.Fragment>
+    );
+  });
+
   return (
-    <CustomContainer
-      bgStyle="white"
-      padding="medium"
-      marginStyle="narrow"
-    >
+    <CustomContainer bgStyle="white" padding="medium" marginStyle="narrow">
       <Typography variant="h1" color={color_theme.fontColor} align="center">
         Recent Volunteer Activities
       </Typography>
       <Separator primary={false} />
-      <Grid container spacing={4}>
-        <Grid item xs={12} sm={4}>
-          <VolunteerCard
-            cause="Environment"
-            volunteer="Trash Pickup"
-            description="Help clean up the park and keep it beautiful for all to enjoy!"
-            imageSrc="https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg"
-            icon={<PublicIcon />}
-          />
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <VolunteerCard
-            cause="Health"
-            volunteer="Mask Distribution"
-            description="Help XXYY distribute masks in schools!"
-            imageSrc="https://media.defense.gov/2020/Oct/01/2002509681/-1/-1/0/200930-Z-DY403-027C.JPG"
-            icon={<HealthAndSafetyIcon />}
-          />
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <VolunteerCard
-            cause="ESL"
-            volunteer="English Speaking Volunteers"
-            description="Help people learn English as their Second Language!"
-            imageSrc="https://static.teachaway.com/wp-content/uploads/2020/11/13135238/eslclassroom_354760748.jpg"
-            icon={<TranslateIcon />}
-          />
-        </Grid>
-      </Grid>
+
+      <Carousel animation="slide" stopAutoPlayOnHover={true}>
+        {(() => {
+          if (isXs) {
+            return oppList;
+          }
+
+          const trios: any = [];
+
+          for (let i = 0; i < oppList.length; i += 3) {
+            trios.push(
+              <Grid container spacing={2} key={i}>
+                <Grid item xs={12} sm={4}>
+                  {oppList[i]}
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                  {oppList[i + 1]}
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                  {oppList[i + 2]}
+                </Grid>
+              </Grid>
+            );
+          }
+
+          return trios;
+        })()}
+      </Carousel>
     </CustomContainer>
   );
 }
 
 function VolunteerLove() {
   return (
-    <CustomContainer
-      bgStyle="paper"
-      padding="medium"
-      marginStyle="narrow"
-    >
+    <CustomContainer bgStyle="paper" padding="medium" marginStyle="narrow">
       <Grid container spacing={2}>
         <Grid
           item
@@ -507,16 +546,14 @@ function VolunteerLove() {
 
 function WorkInProgress() {
   return (
-    <><CustomContainer
-      bgStyle="white"
-      padding="medium"
-      marginStyle="wide"
-    >
+    <>
+      <CustomContainer bgStyle="white" padding="medium" marginStyle="wide">
         <Typography variant="h2" color={color_theme.fontColor} align="center">
-          The web’s first search engine focused exclusively on finding ways we can
-          help nonprofit organizations we care about is COMING SOON.
+          The web’s first search engine focused exclusively on finding ways we
+          can help nonprofit organizations we care about is COMING SOON.
         </Typography>
-      </CustomContainer></>
+      </CustomContainer>
+    </>
   );
 }
 

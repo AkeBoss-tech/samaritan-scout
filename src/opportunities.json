@@ -1,0 +1,56 @@
+{
+    "Trash Pickup": {
+        "cause": "Environment",
+        "description": "Help clean up the park and keep it beautiful for all to enjoy!",
+        "imageSrc": "https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg",
+        "icon": "Public"
+    },
+    "Mask Distribution": {
+        "cause": "Health",
+        "description": "Help distribute masks to those in need.",
+        "imageSrc": "https://media.defense.gov/2020/Oct/01/2002509681/-1/-1/0/200930-Z-DY403-027C.JPG",
+        "icon": "Health"
+    },
+    "English Speaking Volunteers": {
+        "cause": "ESL",
+        "description": "Help teach English to those who need it.",
+        "imageSrc": "https://static.teachaway.com/wp-content/uploads/2020/11/13135238/eslclassroom_354760748.jpg",
+        "icon": "Translate"
+    },
+    "Trash Pickup1": {
+        "cause": "Environment",
+        "description": "Help clean up the park and keep it beautiful for all to enjoy!",
+        "imageSrc": "https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg",
+        "icon": "Public"
+    },
+    "Mask Distribution1": {
+        "cause": "Health",
+        "description": "Help distribute masks to those in need.",
+        "imageSrc": "https://media.defense.gov/2020/Oct/01/2002509681/-1/-1/0/200930-Z-DY403-027C.JPG",
+        "icon": "Health"
+    },
+    "English Speaking Volunteers1": {
+        "cause": "ESL",
+        "description": "Help teach English to those who need it.",
+        "imageSrc": "https://static.teachaway.com/wp-content/uploads/2020/11/13135238/eslclassroom_354760748.jpg",
+        "icon": "Translate"
+    },
+    "Trash Pickup2": {
+        "cause": "Environment",
+        "description": "Help clean up the park and keep it beautiful for all to enjoy!",
+        "imageSrc": "https://westernelite.com/wp-content/uploads/2022/04/historytrash-Large-1080x675.jpeg",
+        "icon": "Public"
+    },
+    "Mask Distribution2": {
+        "cause": "Health",
+        "description": "Help distribute masks to those in need.",
+        "imageSrc": "https://media.defense.gov/2020/Oct/01/2002509681/-1/-1/0/200930-Z-DY403-027C.JPG",
+        "icon": "Health"
+    },
+    "English Speaking Volunteers2": {
+        "cause": "ESL",
+        "description": "Help teach English to those who need it.",
+        "imageSrc": "https://static.teachaway.com/wp-content/uploads/2020/11/13135238/eslclassroom_354760748.jpg",
+        "icon": "Translate"
+    }
+}
