@@ -7,13 +7,13 @@ import { Box } from "@mui/material";
 import color_theme from "./Theme";
 
 interface StyledContainerProps {
-  bgStyle: "white" | "paper" | "accent" | "dark" | "primary";
+  bgStyle: "white" | "paper" | "accent" | "dark" | "transparent" | "gray" | "primary";
   padding?: "small" | "medium" | "none" | "large";
   maxWidth: boolean,
 }
 
 interface ContainerProps {
-  bgStyle: "white" | "paper" | "accent" | "dark" | "primary";
+  bgStyle: "white" | "paper" | "accent" | "dark" | "transparent" | "gray" | "primary";
   padding?: "small" | "large" | "none" | "medium";
   marginStyle?: "narrow" | "wide" | "normal";
   children?: React.ReactNode;
@@ -28,6 +28,10 @@ const StyledContainer = styled(Container)<StyledContainerProps>(
         ? theme.palette.background.paper
         : bgStyle === "paper"
         ? color_theme.paperBgColor
+        : bgStyle === "transparent"
+        ? "transparent"
+        : bgStyle === "gray"
+        ? color_theme.grayBgColor
         : bgStyle === "accent"
         ? color_theme.accentBgColor
         : bgStyle === "primary"

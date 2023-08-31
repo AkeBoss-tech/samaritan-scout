@@ -11,7 +11,7 @@ import {
   TimelineContent,
   TimelineDot,
 } from "@mui/lab";
-import { Box, Link, Typography, useTheme } from "@mui/material";
+import { Avatar, Box, Card, CardContent, Link, Typography, useTheme } from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
 import { MdOutlineVolunteerActivism } from "react-icons/md";
@@ -31,18 +31,21 @@ import TeamContactForm from "../components/TeamContactForm";
 import CustomButton from "../components/CustomButton";
 import color_theme from "../components/Theme";
 import CustomContainer from "../components/CustomSection";
+import CustomBackgroundSection from "../components/CustomBackgroundSection";
+import { green } from "@mui/material/colors";
+import { IconContext } from "react-icons/lib";
 
 function About() {
   return (
     <>
       <ThemeProvider theme={MaterialTheme}>
-        <CustomSection bgStyle="primary" padding="large" marginStyle="wide">
+        <CustomBackgroundSection image="https://www.metrolibrary.org/sites/default/files/2019-03/Support-us-banner.jpg" transparency={0.7}>
+        <CustomSection bgStyle="transparent" padding="large" marginStyle="wide">
           <Typography variant="subtitle2" align="center" gutterBottom>
             About Us
           </Typography>
-        </CustomSection>
-        <CustomSection bgStyle="white" padding="medium" marginStyle="wide">
-          <Typography variant="body1" align="center" gutterBottom>
+          <Box sx={{ height: "2rem" }} />
+          <Typography variant="h6" align="center" gutterBottom>
             We live in a world filled with kind people who have enthusiasm and
             skills to share.
           </Typography>
@@ -50,13 +53,14 @@ function About() {
             We’re here to empower them.
           </Typography>
         </CustomSection>
-        <CustomSection bgStyle="paper" padding="small" marginStyle="wide">
+        </CustomBackgroundSection>
+        <CustomSection bgStyle="gray" marginStyle="wide">
           <Typography variant="body1" align="left" gutterBottom>
             <strong>Modern technology</strong> suggests products to buy, shows
             to stream, and acquaintances to follow,
           </Typography>
           <Box sx={{ height: "1rem" }} />
-          <Typography variant="body1" align="right" gutterBottom>
+          <Typography variant="body1" align="left" gutterBottom>
             But it has not been harnessed to{" "}
             <strong>match us to nearby service experiences</strong> that best
             fit our abilities or interests.
@@ -84,7 +88,7 @@ function About() {
           separator={false}
           center={true}
         /> */}
-        <CustomSection bgStyle="paper" padding="medium" marginStyle="wide">
+        <CustomSection bgStyle="accent" padding="medium" marginStyle="wide">
           <Typography variant="h1" align="center" gutterBottom>
             We Envision
           </Typography>
@@ -101,11 +105,12 @@ function About() {
             "The team is currently building the proof of concept in the New York/New Jersey area and will select additional regions for future expansion.",
           ]}
           cols={4}
-          primary={true}
+          primary={false}
           separator={true}
         />
         {/* <TimelineComponent /> */}
-        <Timeline2Component />
+        {/* <Timeline2Component /> */}
+        <Phases />
         <TeamContactForm />
         <CustomContainer bgStyle="primary" padding="large">
           <Typography
@@ -354,6 +359,121 @@ const PhaseText = ({ step }: { step: number }) => {
       return null;
   }
 };
+
+const Phases = () => {
+  return (
+    <CustomSection
+      bgStyle="gray"
+    >
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6} md={3}>
+          <PhaseCard
+            title="Phase 1"
+            icon={<SearchIcon fontSize="inherit" />}
+            main="Search Engine in greater NY region"
+            goals={[
+              "Build database of nonprofit websites",
+              "Leverage AI to organize data in support of keyword search and filtering",
+              "Insert geolocation capabilities to support geographic parameters",
+              "Optimize search experience",
+            ]}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <PhaseCard
+            title="Phase 2"
+            icon={<VolunteerActivismIcon fontSize="inherit" />}
+            main="Community Platform for Volunteers"
+            goals={[
+              "Support account creation",
+              "Launch social-media platform that supports relationships and documenting/sharing media and posts",
+              "Enhance nonprofit organizations’ presence and information",
+            ]}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <PhaseCard
+            title="Phase 3"
+            icon={<SmartToyIcon fontSize="inherit" />}
+            main="Non-Search Search Experience"
+            goals={[
+              "Offer AI conversational experience to render appropriate volunteer opportunities",
+              "Inject AI to provide volunteers with ‘intelligent’ customized recommendations of volunteer experiences",
+              "Integrate attendance and registration tools for volunteer opportunities",
+            ]}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <PhaseCard
+            title="Phase 4"
+            icon={<SouthAmericaIcon fontSize="inherit" />}
+            main="Develop additional regions"
+            goals={[
+              "Build database of nonprofits at additional target regions",
+              "Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database",
+              "Raise funds to ensure ongoing optimal site performance and scale functionality",
+            ]}
+          />
+        </Grid>
+      </Grid>
+    </CustomSection>
+  );
+};
+
+const PhaseCard = ({
+  title,
+  main,
+  icon,
+  goals,
+}: {
+  title: string;
+  main: string;
+  icon: React.ReactNode;
+  goals: string[];
+}) => {
+  return (
+    // big green icon
+    <>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          paddingBottom: 2,
+        }}
+      >
+        <Avatar
+          sx={{
+            width: 80,
+            height: 80,
+            backgroundColor: green[500],
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '50px',
+            color: 'rgb(255, 255, 255, 0.9)',
+          }}
+        >
+          {icon}
+        </Avatar>
+      </Box>
+      <Typography variant="h3">{title}</Typography>
+      <Typography variant="h5" sx={{ paddingBottom: 2 }}>{main}</Typography>
+      <Card sx={{
+        justifyContent: 'left',
+        alignItems: 'left',
+        textAlign: 'left',
+      }}>
+        <CardContent>
+          <ul>
+            {goals.map((goal) => (<li>{goal}</li>))}
+          </ul>
+        </CardContent>
+      </Card>
+      <Box sx={{paddingBottom: 4}} />
+    </>
+  );
+}
 
 const Timeline2Component = () => {
   const theme = useTheme();
