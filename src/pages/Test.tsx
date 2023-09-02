@@ -2,6 +2,7 @@ import { Stack, Typography } from '@mui/material';
 import TeamContactForm from '../components/TeamContactForm';
 import CustomButton from '../components/CustomButton';
 import AddIcon from '@mui/icons-material/Add';
+// import GridTag from '../components/GridTag';
 const Test = () => {
   return (
     <div>
@@ -28,6 +29,7 @@ const Test = () => {
           </Typography>
         </CustomButton>
       </Stack>
+      <Stack>{/* <GridTag /> */}</Stack>
     </div>
   );
 };

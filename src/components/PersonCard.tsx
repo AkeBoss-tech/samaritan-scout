@@ -1,151 +1,94 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography,
-} from "@mui/material";
-import { useState } from "react";
+import { Grid, Stack, Typography } from '@mui/material';
+import { useState } from 'react';
+import MaterialTheme from './MaterialTheme';
+import PersonModal from './PersonModal';
 
 interface PersonCardProps {
-  type: string;
-  job?: string;
-  name?: string;
-  description?: string;
-  image?: string;
+  type: 'boardMember' | 'volunteer';
+  title: string;
+  name: string;
+  description: string;
+  image: string;
   link?: string;
 }
 
 export default function PersonCard({
   type,
-  job = "",
-  name = "",
-  description = "",
-  image = "",
+  title,
+  name,
+  description,
+  image,
   link,
 }: PersonCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  if (type === "boardMember") {
-    return (
-      <Grid
-        item
-        xs={12}
-        sm={6}
-        md={3}
-        lg={3}
-        xl={3}
-        justifyContent="center"
-        alignItems="center"
-        textAlign="center"
-      >
-        <a href={"https://www." + link}>
-          <Card sx={{ textDecoration: "none" }}>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 300,
-              }}
-            >
-              <img
-                src={"/images/" + image}
-                alt="Avatar"
-                style={{ maxHeight: "80%" }}
-              />
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: 0,
-                textDecoration: "none !important",
-              }}
-              style={{}}
-            >
-              <Typography variant="h5" component="div">
-                {name}
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                paddingBottom: "25px",
-              }}
-            >
-              <Typography variant="body2" color="text.secondary">
-                {job}
-              </Typography>
-            </Box>
-          </Card>
-        </a>
-      </Grid>
-    );
-  } else if (type === "volunteer") {
-    return (
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const theme = MaterialTheme;
+
+  return (
+    <>
+      <PersonModal
+        open={isModalOpen}
+        title={title}
+        name={name}
+        description={description}
+        image={image}
+        link={link}
+        onClose={closeModal}
+      ></PersonModal>
       <Grid
         item
         xs={6}
         sm={4}
-        md={4}
-        lg={2}
-        xl={2}
-        justifyContent="center"
-        alignItems="center"
-        textAlign="center"
+        md={3}
+        lg={type === 'boardMember' ? 2.4 : 2}
+        xl={type === 'boardMember' ? 2.4 : 2}
       >
-        <a href={"https://www." + link}>
-          <Card
-            sx={{
-              height: {
-                xs: "55vh",
-                sm: "50vh",
-                md: "50vh",
-                lg: "50vh",
-                xl: "45vh",
-              },
-              maxWidth: "100%",
-              transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover effect
-              "&:hover": {
-                backgroundColor: "#B2BEB5",
-                color: "black",
-              },
+        <Stack
+          gap={2}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          sx={{ cursor: 'pointer' }}
+          onClick={() => {
+            openModal();
+          }}
+        >
+          <img
+            src={'/images/' + image}
+            alt={name}
+            style={{
+              width: '100%',
+              objectFit: 'cover',
+              borderRadius: theme.shape.borderRadius,
+              aspectRatio: '1/1',
             }}
-            className={`card ${isHovered ? "hovered" : ""}`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {isHovered ? (
-              <CardContent>
-                <Typography variant="body2">{description}</Typography>
-              </CardContent>
-            ) : (
-              <>
-                <CardMedia
-                  component="img"
-                  height="200vh"
-                  image={"/images/" + image}
-                  alt="Peron"
-                  sx={{}}
-                />
-                <CardContent>
-                  <Typography variant="h6" component="div">
-                    {name}
-                  </Typography>
-                  <Typography variant="body2">{job}</Typography>
-                </CardContent>
-              </>
-            )}
-          </Card>
-        </a>
+          />
+          <Stack>
+            <Typography
+              gutterBottom
+              variant='h5'
+              component='div'
+              sx={{
+                textDecoration: isHovered ? 'underline' : 'none',
+                color: isHovered ? 'primary.light' : 'text.primary',
+              }}
+            >
+              {name}
+            </Typography>
+            <Typography variant='body2' color='text.secondary'>
+              {title}
+            </Typography>
+          </Stack>
+        </Stack>
       </Grid>
-    );
-  } else {
-    return <div>Error no type</div>;
-  }
+    </>
+  );
 }

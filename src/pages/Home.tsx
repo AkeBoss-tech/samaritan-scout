@@ -1,10 +1,7 @@
-// import '../App.css';
 import { useRef, useState } from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import { ThemeProvider } from "@mui/material/styles";
-//import { Nav } from "react-bootstrap"
 import {
   TextField,
   Typography,
@@ -15,7 +12,6 @@ import {
   useTheme,
   IconButton,
   styled,
-  MobileStepper,
   Link,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -30,15 +26,13 @@ import Separator from "../components/Separator";
 import MaterialTheme from "../components/MaterialTheme";
 import VolunteerCard from "../components/Card";
 import CustomButton from "../components/CustomButton";
-import margins from "../components/ThemeMargins";
 import CustomContainer from "../components/CustomSection";
 import Carousel from "react-material-ui-carousel";
 
-import opportunities from "../opportunities.json";
+import opportunities from "../data/opportunities.json";
 import React from "react";
 import { BiHome } from "react-icons/bi";
 
-// Code from https://mui.com/ with some modifications
 
 const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
   backgroundColor: color_theme.primaryBgColor,

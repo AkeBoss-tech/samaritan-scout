@@ -1,68 +1,48 @@
-import "../pages/styles.css";
-import Section from "../components/Section";
-import color_theme from "../components/Theme";
-import { ThemeProvider, styled } from "@mui/material/styles";
-import {
-  Box,
-  Button,
-  Card,
-  Checkbox,
-  FormControlLabel,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import MaterialTheme from "../components/MaterialTheme";
-import Seperator from "../components/Separator";
-import PersonCard from "../components/PersonCard";
-import peopleInfo from "../people.json";
-import React from "react";
-import CustomContainer from "../components/CustomSection";
-import TeamContactForm from "../components/TeamContactForm";
-import CustomSection from "../components/CustomSection";
+import '../pages/styles.css';
+import { ThemeProvider } from '@mui/material/styles';
+import { Box, Container, Grid, Stack, Typography } from '@mui/material';
+import MaterialTheme from '../components/MaterialTheme';
+import PersonCard from '../components/PersonCard';
+import peopleInfo from '../data/people.json';
+import React from 'react';
+import TeamContactForm from '../components/TeamContactForm';
+import CustomSection from '../components/CustomSection';
 
 const boardMembers: any = [];
 const volunteers: any = [];
 
 interface BoardMember {
+  title: string;
   linkedin: string;
-  job: string;
   image: string;
   description: string;
 }
-const boardOfDirectors: Record<string, BoardMember> =
-  peopleInfo["Meet Our Board Of Directors"];
+const boardOfDirectors: Record<string, BoardMember> = peopleInfo['boardMember'];
 
-Object.keys(boardOfDirectors).forEach((key) => {
-  const value = boardOfDirectors[key];
+Object.keys(boardOfDirectors).forEach((name) => {
+  const person = boardOfDirectors[name];
   boardMembers.push(
-    <React.Fragment key={key}>
+    <React.Fragment key={name}>
       <PersonCard
-        type={"boardMember"}
-        job={value.job}
-        name={key}
-        image={value.image}
-        description={value.description}
+        type='boardMember'
+        title={person.title}
+        name={name}
+        image={person.image}
+        description={person.description}
       />
     </React.Fragment>
   );
-
-  if (boardMembers.length % 3 === 0) {
-    boardMembers.push(<Filler key={`filler-${boardMembers.length}`} />);
-  }
 });
 
-const summerVolunteers: Record<string, BoardMember> =
-  peopleInfo["Summer 2023 Interns"];
+const summerVolunteers: Record<string, BoardMember> = peopleInfo['volunteer'];
 
 Object.keys(summerVolunteers).forEach((key) => {
   const value = summerVolunteers[key];
   volunteers.push(
     <React.Fragment key={key}>
       <PersonCard
-        type={"volunteer"}
-        job={value.job}
+        type={'volunteer'}
+        title={value.title}
         name={key}
         description={value.description}
         image={value.image}
@@ -72,116 +52,150 @@ Object.keys(summerVolunteers).forEach((key) => {
   );
 });
 
-function Filler() {
-  return <Grid item xs={0} sm={0} md={1.5} lg={1.5} xl={1.5}></Grid>;
-}
-
 function People() {
+  // const theme1 = MaterialTheme;
+
+  // const isXs = theme1.breakpoints.only('xs');
+  // const isSm = theme1.breakpoints.only('sm');
+
+  // const isMd = theme1.breakpoints.only('md');
+
+  // const isLg = theme1.breakpoints.only('lg');
+
+  // let imgHeight;
+
+  // if (isXs) {
+  //   imgHeight = '200px';
+  // } else if (isSm) {
+  //   imgHeight = '400px';
+  // } else if (isMd) {
+  //   imgHeight = '20rem';
+  // } else if (isLg) {
+  //   imgHeight = '500px';
+  // } else {
+  //   imgHeight = '500px';
+  // }
   return (
     <>
-    <ThemeProvider theme={MaterialTheme}>
-      <Box sx={{ height: "30px " }}></Box>
-      <CustomContainer bgStyle="white" padding="medium">
-        <Typography variant="h2" gutterBottom sx={{ textAlign: "center" }}>
-          Meet Our Team
-        </Typography>
-        <Typography variant="h5" gutterBottom sx={{ textAlign: "center" }}>
-          We are committed to optimizing the discovery of volunteer experiences.
-          Together we can have impact, gain, skills, build community, and find
-          joy.
-        </Typography>
-      </CustomContainer>
-      <Section
-        title="Meet Our Board Of Directors"
-        children={[]}
-        cols={6}
-        primary={false}
-        separator={false}
-      />
+      <ThemeProvider theme={MaterialTheme}>
+        <img
+          style={{
+            filter: 'brightness(0.9)',
+            width: '100%',
+            height: '20rem',
+            objectFit: 'cover',
+          }}
+          src='/images/hero-images/people-page-hero.jpeg'
+          alt='a group of volunteers cheering'
+        />
+        <Container maxWidth='xl' sx={{ paddingTop: '100px' }}>
+          <Stack gap={{ xs: 10, sm: 10, md: 15, lg: 15, xl: 15 }}>
+            <Stack>
+              <Typography
+                variant='h2'
+                gutterBottom
+                sx={{
+                  textAlign: 'start',
+                  paddingX: {
+                    xs: '5%',
+                    md: '10%',
+                    lg: '18%',
+                    xl: '18%',
+                  },
+                }}
+              >
+                We are committed to optimizing the discovery of volunteer
+                experiences. Together we can have impact, gain, skills, build
+                community, and find joy.
+              </Typography>
+            </Stack>
 
-      <Grid
-        container
-        spacing={10}
-        justifyContent="center"
-        alignItems="center"
-        sx={{}}
-      >
-        {boardMembers}
-      </Grid>
-      <CustomContainer bgStyle="white" padding="medium" marginStyle="narrow">
-        <Typography
-          variant="h1"
-          align="center"
-          sx={{ marginBottom: "3%", marginTop: "5%" }}
-        >
-          Meet Our Summer 2023 Interns
-        </Typography>
-        <Grid
-          container
-          spacing={5}
-          justifyContent="center"
-          alignItems="center"
-          sx={{ marginBottom: "5%" }}
-        >
-          {volunteers}
-        </Grid>
-      </CustomContainer>
-      <TeamContactForm />
-      <CustomSection
-        bgStyle="white"
-      >
-        <Typography variant="h1" align="center">
-          Why volunteer with us?
-        </Typography>
-        <Box sx={{ height: "30px " }}></Box>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h3" align="center" paddingBottom={2}>
-              Effect a scalable impact 
-            </Typography>
-            <Typography variant="body1" align="left">
-              "Here is where the quote goes"
-            </Typography>
-            <Typography variant="subtitle1" align="right">
-              - Akash Dubey
-            </Typography>
+            <Stack alignItems={'center'} gap={4}>
+              <Typography
+                variant='h1'
+                gutterBottom
+                sx={{
+                  textAlign: 'center',
+                }}
+              >
+                Meet Our Board of Directors
+              </Typography>
+              <Grid container spacing={{ xs: 1, sm: 2, md: 2, lg: 4, xl: 4 }}>
+                {boardMembers}
+              </Grid>
+            </Stack>
+
+            <Stack alignItems={'center'} gap={4}>
+              <Typography
+                variant='h1'
+                gutterBottom
+                sx={{
+                  textAlign: 'center',
+                }}
+              >
+                Meet Our Summer 2023 Interns
+              </Typography>
+              <Grid container spacing={{ xs: 1, sm: 2, md: 2, lg: 4, xl: 4 }}>
+                {volunteers}
+              </Grid>
+            </Stack>
+          </Stack>
+        </Container>
+
+        <TeamContactForm />
+        <CustomSection bgStyle='white'>
+          <Typography variant='h1' align='center'>
+            Why volunteer with us?
+          </Typography>
+          <Box sx={{ height: '30px ' }}></Box>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant='h3' align='center' paddingBottom={2}>
+                Effect a scalable impact
+              </Typography>
+              <Typography variant='body1' align='left'>
+                "Here is where the quote goes"
+              </Typography>
+              <Typography variant='subtitle1' align='right'>
+                - Akash Dubey
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant='h3' align='center' paddingBottom={2}>
+                Get inspired and inspire others
+              </Typography>
+              <Typography variant='body1' align='left'>
+                "Here is where the quote goes"
+              </Typography>
+              <Typography variant='subtitle1' align='right'>
+                - Akash Dubey
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant='h3' align='center' paddingBottom={2}>
+                Develop skills to advance your career
+              </Typography>
+              <Typography variant='body1' align='left'>
+                "Here is where the quote goes"
+              </Typography>
+              <Typography variant='subtitle1' align='right'>
+                - Akash Dubey
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant='h3' align='center' paddingBottom={2}>
+                Collaborate with kind people
+              </Typography>
+              <Typography variant='body1' align='left'>
+                "Here is where the quote goes"
+              </Typography>
+              <Typography variant='subtitle1' align='right'>
+                - Akash Dubey
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h3" align="center" paddingBottom={2}>
-            Get inspired and inspire others
-            </Typography>
-            <Typography variant="body1" align="left">
-              "Here is where the quote goes"
-            </Typography>
-            <Typography variant="subtitle1" align="right">
-              - Akash Dubey
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h3" align="center" paddingBottom={2}>
-            Develop skills to advance your career
-            </Typography>
-            <Typography variant="body1" align="left">
-              "Here is where the quote goes"
-            </Typography>
-            <Typography variant="subtitle1" align="right">
-              - Akash Dubey
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h3" align="center" paddingBottom={2}>
-            Collaborate with kind people
-            </Typography>
-            <Typography variant="body1" align="left">
-              "Here is where the quote goes"
-            </Typography>
-            <Typography variant="subtitle1" align="right">
-              - Akash Dubey
-            </Typography>
-          </Grid>
-        </Grid>
-      </CustomSection>
-    </ThemeProvider>
+        </CustomSection>
+      </ThemeProvider>
     </>
   );
 }

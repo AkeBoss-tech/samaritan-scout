@@ -37,7 +37,7 @@ function Navbar() {
     };
 
   // Get breakpoints for responsive design
-  const theme1 = useTheme();
+  const theme1 = MaterialTheme;
   const isMd = useMediaQuery(theme1.breakpoints.only('md'));
   const isLg = useMediaQuery(theme1.breakpoints.only('lg'));
   const isXl = useMediaQuery(theme1.breakpoints.only('xl'));
