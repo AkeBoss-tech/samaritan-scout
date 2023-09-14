@@ -53,7 +53,7 @@ function Home() {
       <ThemeProvider theme={MaterialTheme}>
         <ReactHome />
         <WorkInProgress />
-        <CustomContainer bgStyle="paper" padding="large">
+        <CustomContainer bgStyle="paper" paddingY="large">
           <Typography
             variant="h2"
             color={color_theme.primaryFontColor}
@@ -75,7 +75,7 @@ function Home() {
         </CustomContainer>
         <RecentActivity />
         <VolunteerLove />
-        <CustomContainer bgStyle="accent" padding="medium">
+        <CustomContainer bgStyle="accent" paddingY="medium">
           <Typography
             variant="h2"
             color={color_theme.primaryFontColor}
@@ -85,7 +85,7 @@ function Home() {
           </Typography>
         </CustomContainer>
         <OtherStuff primary={false} />
-        <CustomContainer bgStyle="primary" padding="large">
+        <CustomContainer bgStyle="primary" paddingY="large">
           <Typography
             variant="h2"
             color={color_theme.primaryFontColor}
@@ -142,21 +142,21 @@ const ReactHome = () => {
           alignItems="center"
           sx={{ height: "100%" }}
         >
-          <Grid xs={12} textAlign={"center"}>
+          <Grid item xs={12} textAlign={"center"}>
             <Box sx={{ height: 35 }}></Box>
           </Grid>
-          <Grid xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
+          <Grid item xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
             <Typography variant="subtitle2" component="h1" gutterBottom>
               DISCOVER VOLUNTEER OPPORTUNITIES
             </Typography>
           </Grid>
-          <Grid xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
+          <Grid item xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
             <Typography variant="h3" gutterBottom>
               The web’s first search engine focused exclusively on finding ways
               we can help nonprofit organizations we care about
             </Typography>
           </Grid>
-          <Grid xs={10} sm={6} md={5} lg={4} xl={4} textAlign={"center"}>
+          <Grid item xs={10} sm={6} md={5} lg={4} xl={4} textAlign={"center"}>
             <TextField
               variant="outlined"
               placeholder="Enter keywords..."
@@ -164,10 +164,10 @@ const ReactHome = () => {
               margin="dense"
               fullWidth={true}
               disabled={true} // TODO: Enable this when we have the backend
-              sx={{ backgroundColor: "#fff", input: { color: "black" } }}
+              sx={{ borderRadius: "10px", backgroundColor: "#fff", input: { color: "black" } }}
             />
           </Grid>
-          <Grid
+          <Grid item
             xs={10}
             sm={3}
             md={3}
@@ -184,10 +184,10 @@ const ReactHome = () => {
               margin="dense"
               fullWidth={true}
               disabled={true} // TODO: Enable this when we have the backend
-              sx={{ backgroundColor: "#fff", input: { color: "black" } }}
+              sx={{ borderRadius: "10px", backgroundColor: "#fff", input: { color: "black" } }}
             />
           </Grid>
-          <Grid
+          <Grid item
             xs={10}
             sm={2}
             md={2}
@@ -202,14 +202,14 @@ const ReactHome = () => {
               color="primary"
               id="inPerson"
               fullWidth={true}
-              sx={{ height: 55 }}
+              sx={{ height: 60 }}
               onClick={handleScrollToElement}
             >
               <SearchIcon />
             </Button>
           </Grid>
 
-          <Grid
+          <Grid item
             xs={11}
             textAlign={"center"}
             alignItems={"center"}
@@ -233,10 +233,10 @@ const ReactHome = () => {
               sx={{ fontSize: "24px" }}
             />
           </Grid>
-          <Grid xs={12} textAlign={"center"}>
+          <Grid item xs={12} textAlign={"center"}>
             <Box sx={{ height: 35 }}></Box>
           </Grid>
-          <Grid xs={12} textAlign={"center"}>
+          <Grid item xs={12} textAlign={"center"}>
             <IconButton
               aria-label="delete"
               size="large"
@@ -245,7 +245,7 @@ const ReactHome = () => {
               <ArrowDownwardIcon fontSize="inherit" style={{}} />
             </IconButton>
           </Grid>
-          <Grid xs={12} textAlign={"center"}>
+          <Grid item xs={12} textAlign={"center"}>
             <Box sx={{ height: 35 }}></Box>
           </Grid>
         </Grid>
@@ -279,7 +279,7 @@ function OtherStuff({ primary }: { primary: boolean }) {
 
   return (
     <>
-      <CustomContainer bgStyle="white" padding="small">
+      <CustomContainer bgStyle="white" paddingY="small">
         <Grid container spacing={2}>
           <Grid
             item
@@ -316,7 +316,7 @@ function OtherStuff({ primary }: { primary: boolean }) {
           </Grid>
         </Grid>
       </CustomContainer>
-      <CustomContainer bgStyle="white" padding="small">
+      <CustomContainer bgStyle="white" paddingY="small">
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} alignSelf={"center"} maxWidth={"5"}>
             <img
@@ -353,7 +353,7 @@ function OtherStuff({ primary }: { primary: boolean }) {
           </Grid>
         </Grid>
       </CustomContainer>
-      <CustomContainer bgStyle="white" padding="small">
+      <CustomContainer bgStyle="white" paddingY="small">
         <Grid container spacing={2} alignItems={"center"}>
           <Grid
             item
@@ -435,7 +435,7 @@ function RecentActivity() {
   });
 
   return (
-    <CustomContainer bgStyle="white" padding="medium" marginStyle="narrow">
+    <CustomContainer bgStyle="white" paddingY="medium" marginStyle="narrow">
       <Typography variant="h1" color={color_theme.fontColor} align="center">
         Recent Volunteer Activities
       </Typography>
@@ -474,7 +474,7 @@ function RecentActivity() {
 
 function VolunteerLove() {
   return (
-    <CustomContainer bgStyle="paper" padding="medium" marginStyle="narrow">
+    <CustomContainer bgStyle="paper" paddingY="medium" marginStyle="narrow">
       <Grid container spacing={2}>
         <Grid
           item
@@ -545,7 +545,7 @@ function VolunteerLove() {
 function WorkInProgress() {
   return (
     <>
-      <CustomContainer bgStyle="white" padding="medium" marginStyle="wide">
+      <CustomContainer bgStyle="white" paddingY="medium" marginStyle="wide">
         <Typography variant="h2" color={color_theme.fontColor} align="center">
           The web’s first search engine focused exclusively on finding ways we
           can help nonprofit organizations we care about is COMING SOON.

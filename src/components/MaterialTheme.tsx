@@ -23,25 +23,6 @@ let MaterialTheme = createTheme({
         error: {
             main: '#C20B0B', // red
         },
-        // change the following later
-        /* warning: {
-            // main: '#273225', // dark green
-            // light: '#62B16E', // light green
-            // dark: '#62B16E', // light green
-            // contrastText: '#fff', // white
-        },
-        info: {
-            // main: '#273225', // dark green
-            // light: '#62B16E', // light green
-            // dark: '#62B16E', // light green
-            // contrastText: '#fff', // white
-        },
-        success: {
-            // main: '#273225', // dark green
-            // light: '#62B16E', // light green
-            // dark: '#62B16E', // light green
-            // contrastText: '#fff', // white
-        }, */
         background: {
             paper: '#fff', // cream
             default: '#273225', // dark green
@@ -100,6 +81,9 @@ let MaterialTheme = createTheme({
             xl: 1500,
         },
     },
+    shape: {
+        borderRadius: 10,
+    }
 });
 
 // may or may not need this

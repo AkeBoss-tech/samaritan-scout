@@ -99,7 +99,7 @@ const PersonModal = ({
           <Icons.Close />
         </IconButton>
         <img
-          src={'/images/' + image}
+          src={'/images/team-images/' + image}
           alt={name}
           style={{
             width: imgSize,

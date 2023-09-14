@@ -63,7 +63,7 @@ function Section({
 
         <Grid container spacing={2}>
           {children.map((child) => (
-            <Grid item xs={12} md={cols}>
+            <Grid item xs={12} md={cols} key={child}>
               <Typography
                 variant="body1"
                 align="left"

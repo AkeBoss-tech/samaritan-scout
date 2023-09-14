@@ -3,42 +3,43 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import MaterialTheme from './MaterialTheme';
 
-interface StyledButtonProps {
-  bgStyle: 'primary' | 'secondary' | 'tertiary';
-  hoverStyle: 'dark' | 'light';
+type StyledButtonProps = {
+  bgstyle: 'primary' | 'secondary' | 'tertiary';
+  hoverstyle: 'dark' | 'light';
   size: 'small' | 'medium' | 'large';
-}
+};
 
-interface ButtonProps {
+type ButtonProps = {
   size: 'small' | 'medium' | 'large';
   bgStyle: 'primary' | 'secondary' | 'tertiary';
   hoverStyle: 'dark' | 'light';
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   children?: React.ReactNode;
-}
+  onClick?: () => void;
+};
 
 const theme = MaterialTheme;
 
 const StyledButton = styled(Button)<StyledButtonProps>(
-  ({ size, bgStyle, hoverStyle }) => ({
+  ({ size, bgstyle, hoverstyle }) => ({
     width: 'fit-content',
     boxShadow: theme.shadows[4],
     border: `solid 1px ${
-      bgStyle === 'primary'
+      bgstyle === 'primary'
         ? theme.palette.primary.light
-        : bgStyle === 'secondary'
+        : bgstyle === 'secondary'
         ? theme.palette.primary.main
         : theme.palette.secondary.main
     }`,
     backgroundColor:
-      bgStyle === 'primary'
+      bgstyle === 'primary'
         ? theme.palette.primary.light
-        : bgStyle === 'secondary'
+        : bgstyle === 'secondary'
         ? theme.palette.primary.main
         : theme.palette.secondary.main,
     color:
-      bgStyle === 'secondary'
+      bgstyle === 'secondary'
         ? theme.palette.secondary.main
         : theme.palette.primary.main,
     padding:
@@ -50,8 +51,8 @@ const StyledButton = styled(Button)<StyledButtonProps>(
     fontSize: size === 'small' ? '12px' : size === 'medium' ? '14px' : '16px',
     '&:hover': {
       backgroundColor:
-        hoverStyle === 'dark' ? theme.palette.primary.main : '#fff',
-      color: hoverStyle === 'dark' ? '#fff' : theme.palette.primary.main,
+        hoverstyle === 'dark' ? theme.palette.primary.main : '#fff',
+      color: hoverstyle === 'dark' ? '#fff' : theme.palette.primary.main,
       border: 'solid 1px gray',
     },
   })
@@ -64,16 +65,18 @@ const CustomButton: React.FC<ButtonProps> = ({
   startIcon,
   endIcon,
   children,
+  onClick,
   ...otherProps
 }) => {
   return (
     <StyledButton
       {...otherProps}
       size={size}
-      bgStyle={bgStyle}
-      hoverStyle={hoverStyle}
+      bgstyle={bgStyle}
+      hoverstyle={hoverStyle}
       startIcon={startIcon}
       endIcon={endIcon}
+      onClick={onClick}
     >
       {children}
     </StyledButton>

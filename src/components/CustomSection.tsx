@@ -7,14 +7,14 @@ import { Box } from "@mui/material";
 import color_theme from "./Theme";
 
 interface StyledContainerProps {
-  bgStyle: "white" | "paper" | "accent" | "dark" | "transparent" | "gray" | "primary";
-  padding?: "small" | "medium" | "none" | "large";
+  bgstyle: "white" | "paper" | "accent" | "dark" | "transparent" | "gray" | "primary";
+  paddingy?: "small" | "medium" | "none" | "large";
   maxWidth: boolean,
 }
 
 interface ContainerProps {
   bgStyle: "white" | "paper" | "accent" | "dark" | "transparent" | "gray" | "primary";
-  padding?: "small" | "large" | "none" | "medium";
+  paddingY?: "small" | "large" | "none" | "medium";
   marginStyle?: "narrow" | "wide" | "normal";
   children?: React.ReactNode;
 }
@@ -22,41 +22,41 @@ interface ContainerProps {
 const theme = MaterialTheme;
 
 const StyledContainer = styled(Container)<StyledContainerProps>(
-  ({ bgStyle, padding, maxWidth }) => ({
+  ({ bgstyle, paddingy, maxWidth }) => ({
     backgroundColor:
-      bgStyle === "white"
+      bgstyle === "white"
         ? theme.palette.background.paper
-        : bgStyle === "paper"
+        : bgstyle === "paper"
         ? color_theme.paperBgColor
-        : bgStyle === "transparent"
+        : bgstyle === "transparent"
         ? "transparent"
-        : bgStyle === "gray"
+        : bgstyle === "gray"
         ? color_theme.grayBgColor
-        : bgStyle === "accent"
+        : bgstyle === "accent"
         ? color_theme.accentBgColor
-        : bgStyle === "primary"
+        : bgstyle === "primary"
         ? color_theme.primaryBgColor
-        : bgStyle === "dark"
+        : bgstyle === "dark"
         ? color_theme.coverBg
         : theme.palette.background.default,
     color:
-      bgStyle === "dark"
+      bgstyle === "dark"
         ? theme.palette.common.white
         : theme.palette.primary.main,
     paddingTop:
-      padding === "small"
+      paddingy === "small"
         ? "25px"
-        : padding === "medium"
+        : paddingy === "medium"
         ? "50px"
-        : padding === "none"
+        : paddingy === "none"
         ? "0px"
         : "75px",
     paddingBottom:
-      padding === "small"
+      paddingy === "small"
         ? "25px"
-        : padding === "medium"
+        : paddingy === "medium"
         ? "50px"
-        : padding === "none"
+        : paddingy === "none"
         ? "0px"
         : "75px",
     flex: 1,
@@ -69,7 +69,7 @@ const StyledContainer = styled(Container)<StyledContainerProps>(
 
 const CustomContainer: React.FC<ContainerProps> = ({
   bgStyle,
-  padding,
+  paddingY,
   children,
     marginStyle,
   ...otherProps
@@ -93,8 +93,8 @@ const CustomContainer: React.FC<ContainerProps> = ({
   return (
     <StyledContainer
       {...otherProps}
-      bgStyle={bgStyle}
-      padding={padding}
+      bgstyle={bgStyle}
+      paddingy={paddingY}
         maxWidth={false}
     >
       <Box mr={margin} ml={margin}>

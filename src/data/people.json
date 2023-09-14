@@ -1,5 +1,5 @@
 {
-  "boardMember": {
+  "boardMembers": {
     "Scott Thompson": {
       "title": "Co-Founder, Board of Directors",
       "image": "scott-thompson.jpg",
@@ -31,7 +31,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     }
   },
-  "volunteer": {
+  "volunteers": {
     "Aniket Anvekar": {
       "title": "Software Engineering Lead, Back-End Team",
       "image": "aniket-anvekar.jpeg",
@@ -52,7 +52,7 @@
     },
     "Saket": {
       "title": "Back-End Software Engineer",
-      "image": "lacy-dog-square.jpg",
+      "image": "saket-manolkar.jpeg",
       "linkedin": "google.com",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
@@ -109,6 +109,28 @@
       "image": "lacy-dog-square.jpg",
       "linkedin": "https://www.linkedin.com/in/arav-sachdeva-618b20247/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
+    }
+  },
+  "quotes": {
+    "quote1": {
+      "title": "Effect a scalable impact",
+      "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "author": "Lorem Ipsum"
+    },
+    "quote2": {
+      "title": "Effect a scalable impact",
+      "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "author": "Lorem Ipsum"
+    },
+    "quote3": {
+      "title": "Effect a scalable impact",
+      "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "author": "Lorem Ipsum"
+    },
+    "quote4": {
+      "title": "Effect a scalable impact",
+      "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "author": "Lorem Ipsum"
     }
   }
 }
