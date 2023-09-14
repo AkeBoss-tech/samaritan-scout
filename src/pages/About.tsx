@@ -37,6 +37,7 @@ import CustomContainer from '../components/CustomSection';
 import CustomBackgroundSection from '../components/CustomBackgroundSection';
 import { green } from '@mui/material/colors';
 import DuoLinks from '../components/DuoLinks';
+import Separator from '../components/Separator';
 
 function About() {
   return (
@@ -80,7 +81,7 @@ function About() {
             <strong>UNTIL NOW</strong>
           </Typography>
         </CustomSection>
-        <Section
+        {/* <Section
           title='Our Mission'
           children={[
             'Samaritan Scout utilizes a program developed with natural language processing, crawling and scraping functionality, and database management, which serves as the basis for the search engine.',
@@ -89,7 +90,24 @@ function About() {
           cols={6}
           primary={false}
           separator={true}
-        />
+        /> */}
+        <CustomSection bgStyle='white' paddingY='large'>
+          <Typography
+            variant='h2'
+            color={color_theme.primaryFontColor}
+            align='center'
+          >
+            Our Mission
+          </Typography>
+          <Separator primary={false} />
+          <Typography
+            variant='body1'
+            color={color_theme.primaryFontColor}
+            align='center'
+          >
+            We harness cutting-edge technology to connect individuals with meaningful and impactful service activities. 
+          </Typography>
+        </CustomSection>
         {/* <Section
           title="We Envision"
           children={["a brighter tomorrow"]}
@@ -100,24 +118,39 @@ function About() {
         /> */}
         <CustomSection bgStyle='accent' paddingY='medium' marginStyle='wide'>
           <Typography variant='h1' align='center' gutterBottom>
-            We Envision
+            Our Vision
           </Typography>
+          <Box sx={{ height: '20px ' }}></Box>
           <Typography variant='body1' align='center' gutterBottom>
-            a world where people can easily find opportunities to make a
-            difference.
+          We aim to create a better world by inspiring a culture of service and enabling individuals everywhere to contribute positively to their community and beyond.
           </Typography>
         </CustomSection>
         <Section
           title='Our Plan'
           children={[
-            'Samaritan Scout [a 501(c)3] is developing a back-end Search Engine and front-end Community Platform to help people easily discover experiences where they can have an impact, apply skills, build community, and find joy.',
-            'The underlying web crawler and criterion-specific search experience (developed by Rene Ravenal, Will Rosenthal, and a team of volunteers) will let you specify location and dates, causes, and activities. The front-end platform will support account creation, ‘favorite-ing’ of search results, and posting/sharing your activities.',
-            'The team is currently building the proof of concept in the New York/New Jersey area and will select additional regions for future expansion.',
+            'We’re developing a program with natural language processing, crawling/scraping functionality, and database management to serve as the basis of our search engine.'
           ]}
-          cols={4}
+          cols={12}
           primary={false}
           separator={true}
         />
+        <CustomSection bgStyle='white' paddingY='large'>
+          <Typography
+            variant='h2'
+            color={color_theme.primaryFontColor}
+            align='center'
+          >
+            Our Plan
+          </Typography>
+          <Separator primary={false} />
+          <Typography
+            variant='body1'
+            color={color_theme.primaryFontColor}
+            align='center'
+          >
+            We’re developing a program with natural language processing, crawling/scraping functionality, and database management to serve as the basis of our search engine.
+          </Typography>
+        </CustomSection>
         {/* <TimelineComponent /> */}
         {/* <Timeline2Component /> */}
         <Phases />
