@@ -14,6 +14,8 @@ import PeoplePageData from '../data/people.json';
 import CustomButton from '../components/CustomButton';
 import DuoLinks from '../components/DuoLinks';
 import JoinTheTeamForm from '../components/JoinTheTeamForm';
+import HeroImage from '../components/HeroImage';
+import HeroImageContent from '../components/HeroImageContent';
 
 interface PersonInfo {
   title: string;
@@ -39,46 +41,31 @@ function People() {
     <>
       <ThemeProvider theme={MaterialTheme}>
         <Stack>
-          <Box
-            sx={{
-              backgroundImage: 'url(/images/hero-images/people-page.jpeg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              objectFit: 'cover',
-              position: 'relative',
-            }}
-            height={{
-              xs: '40vh',
-              sm: '50vh',
-              md: '50vh',
-              lg: '60vh',
-              xl: '60vh',
-            }}
+          <HeroImage
+            imageSrc='https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzc2lvbiUyMGxlZCUyMHVzJTIwaGVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'
           >
-            <Stack
-              position={'absolute'}
-              left={'50%'}
-              width={{ xs: '90%', sm: '80%', md: '60%', lg: '70%', xl: '55%' }}
-              bottom={0}
-              bgcolor={'primary.light'}
-              sx={{ transform: 'translate(-50%, 50%)' }}
-              borderRadius={1}
-              padding={{ xs: 3, sm: 3, md: 5, lg: 5, xl: 5 }}
-              color={'common.black'}
+            <HeroImageContent
+              color='primary.light'
+              xPosition='center'
+              yPosition='bottom'
+              width='wide'
             >
               <Typography
-                variant={'h2'}
-                gutterBottom
-                sx={{
-                  textAlign: 'start',
-                }}
+                variant='h3'
+                textAlign={'center'}
               >
-                We are committed to optimizing the discovery of volunteer
-                experiences. Together we can have impact, gain, skills, build
-                community, and find joy.
+                We are a group of passionate students who are dedicated to making a difference in our community.
               </Typography>
-            </Stack>
-          </Box>
+              <Box sx={{ height: '20px' }}></Box>
+              <Typography
+                variant='h3'
+                textAlign={'center'}
+                color={'common.white'}
+              >
+                We're here to empower them.
+              </Typography>
+            </HeroImageContent>
+          </HeroImage>
           <Container
             maxWidth='xl'
             sx={{ paddingBottom: '100px', paddingTop: '200px' }}

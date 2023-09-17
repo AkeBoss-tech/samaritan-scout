@@ -13,6 +13,7 @@ import {
   IconButton,
   styled,
   Link,
+  Stack,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PublicIcon from "@mui/icons-material/Public";
@@ -32,6 +33,8 @@ import Carousel from "react-material-ui-carousel";
 import opportunities from "../data/opportunities.json";
 import React from "react";
 import { BiHome } from "react-icons/bi";
+import HeroImage from "../components/HeroImage";
+import HeroImageContent from "../components/HeroImageContent";
 
 
 const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
@@ -51,28 +54,57 @@ function Home() {
   return (
     <div className="Home">
       <ThemeProvider theme={MaterialTheme}>
-        <ReactHome />
-        <WorkInProgress />
-        <CustomContainer bgStyle="paper" paddingY="large">
-          <Typography
-            variant="h2"
-            color={color_theme.primaryFontColor}
-            align="center"
+        {/* <ReactHome /> */}
+        <HeroImage
+          imageSrc="https://dailytrojan.com/wp-content/uploads/2022/09/kelly-sikkema-XX2WTbLr3r8-unsplash-scaled.jpeg"
+          fullScreen={true}
+        >
+          <HeroImageContent
+            color="rgb(255,255,255, 0.5)"
+            xPosition="center"
+            yPosition="top"
+            width="wide"
           >
-            We have exciting volunteer opportunities for you!
-          </Typography>
-          <Box sx={{ height: "20px " }}></Box>
-          <Link href="/search">
-            <CustomButton
-              size="medium"
-              bgStyle="secondary"
-              hoverStyle="light"
-              // startIcon={<AddIcon />}
+            <Typography variant="h1" textAlign={"center"}>
+            The web’s first search engine focused exclusively on finding ways we can help nonprofit organizations we care about is COMING SOON.
+            </Typography>
+          </HeroImageContent>
+          <HeroImageContent
+            color={'primary.light'}
+            xPosition='center'
+            yPosition='bottom'
+            width='wide'
+          >
+            <Typography
+              variant="h2"
+              color={color_theme.primaryFontColor}
+              align="center"
             >
-              <Typography fontWeight={"bold"}>Volunteer Near You</Typography>
-            </CustomButton>
-          </Link>
-        </CustomContainer>
+              We have exciting volunteer opportunities for you!
+            </Typography>
+            <Box sx={{ height: "20px " }}></Box>
+            <Stack
+              textAlign="center"
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              spacing={2}
+            >
+              <Link href="/search">
+              <CustomButton
+                size="medium"
+                bgStyle="secondary"
+                hoverStyle="light"
+                // startIcon={<AddIcon />}
+              >
+                <Typography fontWeight={"bold"}>Volunteer Near You</Typography>
+              </CustomButton>
+            </Link>
+            </Stack>
+            
+          </HeroImageContent>
+        </HeroImage>
+        <Box sx={{ height: '20vh' }} />
         <RecentActivity />
         <VolunteerLove />
         <CustomContainer bgStyle="accent" paddingY="medium">
@@ -109,151 +141,6 @@ function Home() {
     </div>
   );
 }
-
-const ReactHome = () => {
-  const [keywords, setKeywords] = useState("");
-  const [location, setLocation] = useState("");
-  const [inPerson, setInPerson] = useState(true);
-  const [remote, setRemote] = useState(false);
-
-  const handleSubmit = () => {
-    console.log("Keywords: ", keywords);
-    console.log("Location: ", location);
-    console.log("In-Person: ", inPerson);
-    console.log("Remote: ", remote);
-  };
-
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const handleScrollToElement = () => {
-    // Scroll to the target element
-    if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  return (
-    <>
-      <ProductHeroLayoutRoot>
-        <Grid
-          container
-          spacing={1}
-          paddingTop={"35px"}
-          justifyContent="center"
-          alignItems="center"
-          sx={{ height: "100%" }}
-        >
-          <Grid item xs={12} textAlign={"center"}>
-            <Box sx={{ height: 35 }}></Box>
-          </Grid>
-          <Grid item xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
-            <Typography variant="subtitle2" component="h1" gutterBottom>
-              DISCOVER VOLUNTEER OPPORTUNITIES
-            </Typography>
-          </Grid>
-          <Grid item xs={10} sm={10} md={11} lg={11} xl={11} textAlign={"center"}>
-            <Typography variant="h3" gutterBottom>
-              The web’s first search engine focused exclusively on finding ways
-              we can help nonprofit organizations we care about
-            </Typography>
-          </Grid>
-          <Grid item xs={10} sm={6} md={5} lg={4} xl={4} textAlign={"center"}>
-            <TextField
-              variant="outlined"
-              placeholder="Enter keywords..."
-              color="primary"
-              margin="dense"
-              fullWidth={true}
-              disabled={true} // TODO: Enable this when we have the backend
-              sx={{ borderRadius: "10px", backgroundColor: "#fff", input: { color: "black" } }}
-            />
-          </Grid>
-          <Grid item
-            xs={10}
-            sm={3}
-            md={3}
-            lg={3}
-            xl={3}
-            textAlign={"center"}
-            alignItems={"center"}
-            justifyContent="center"
-          >
-            <TextField
-              variant="outlined"
-              placeholder="Enter location..."
-              color="primary"
-              margin="dense"
-              fullWidth={true}
-              disabled={true} // TODO: Enable this when we have the backend
-              sx={{ borderRadius: "10px", backgroundColor: "#fff", input: { color: "black" } }}
-            />
-          </Grid>
-          <Grid item
-            xs={10}
-            sm={2}
-            md={2}
-            lg={2}
-            xl={2}
-            textAlign={"center"}
-            alignItems={"center"}
-            sx={{ paddingTop: "3px" }}
-          >
-            <Button
-              variant="contained"
-              color="primary"
-              id="inPerson"
-              fullWidth={true}
-              sx={{ height: 60 }}
-              onClick={handleScrollToElement}
-            >
-              <SearchIcon />
-            </Button>
-          </Grid>
-
-          <Grid item
-            xs={11}
-            textAlign={"center"}
-            alignItems={"center"}
-            sx={{ paddingTop: "3px" }}
-          >
-            <FormControlLabel
-              control={
-                <Checkbox
-                  defaultChecked
-                  sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
-                />
-              }
-              label="In Person"
-              sx={{ fontSize: "24px" }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }} />
-              }
-              label="Remote"
-              sx={{ fontSize: "24px" }}
-            />
-          </Grid>
-          <Grid item xs={12} textAlign={"center"}>
-            <Box sx={{ height: 35 }}></Box>
-          </Grid>
-          <Grid item xs={12} textAlign={"center"}>
-            <IconButton
-              aria-label="delete"
-              size="large"
-              onClick={handleScrollToElement}
-            >
-              <ArrowDownwardIcon fontSize="inherit" style={{}} />
-            </IconButton>
-          </Grid>
-          <Grid item xs={12} textAlign={"center"}>
-            <Box sx={{ height: 35 }}></Box>
-          </Grid>
-        </Grid>
-      </ProductHeroLayoutRoot>
-      <div ref={targetRef}></div>
-    </>
-  );
-};
 
 function OtherStuff({ primary }: { primary: boolean }) {
   const bgColor = primary ? color_theme.primaryBgColor : color_theme.bgColor;
