@@ -265,7 +265,7 @@ const PhaseCarousel = () => {
       </Typography>
       <Separator primary={false} />
 
-      <Carousel animation="slide" autoPlay={false}>
+      <Carousel animation="fade" autoPlay={false}>
         {(() => {
           if (isXs) {
             return oppList;
@@ -276,7 +276,9 @@ const PhaseCarousel = () => {
 
             for (let i = 0; i < oppList.length; i += 2) {
               duos.push(
-                <Grid container spacing={2} key={i}>
+                <Grid container spacing={2} key={i} >
+                  <Grid item xs={12} sm={1}>
+                  </Grid>
                   <Grid item xs={12} sm={5}>
                     {oppList[i]}
                   </Grid>
