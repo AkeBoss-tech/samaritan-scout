@@ -40,19 +40,23 @@ import { green } from "@mui/material/colors";
 import DuoLinks from "../components/DuoLinks";
 import Separator from "../components/Separator";
 import React from "react";
+import HeroImage from "../components/HeroImage";
+import HeroImageContent from "../components/HeroImageContent";
 
 function About() {
   return (
     <>
       <ThemeProvider theme={MaterialTheme}>
-        <CustomBackgroundSection
-          image="https://www.metrolibrary.org/sites/default/files/2019-03/Support-us-banner.jpg"
-          transparency={0.7}
+        <HeroImage 
+          imageSrc="https://www.metrolibrary.org/sites/default/files/2019-03/Support-us-banner.jpg"
+          fullScreen={true}
+          backgroundColor="rgb(255,255,255, 0.2)"
         >
-          <CustomSection
-            bgStyle="transparent"
-            paddingY="large"
-            marginStyle="wide"
+          <HeroImageContent
+            color="rgb(255,255,255, 0.5)"
+            xPosition="center"
+            yPosition="top"
+            width="wide"
           >
             <Typography variant="subtitle2" align="center" gutterBottom>
               About Us
@@ -65,8 +69,8 @@ function About() {
             <Typography variant="h3" align="center" gutterBottom>
               We’re here to empower them.
             </Typography>
-          </CustomSection>
-        </CustomBackgroundSection>
+          </HeroImageContent>
+        </HeroImage>
         <CustomSection bgStyle="gray" marginStyle="wide">
           <Typography variant="body1" align="left" gutterBottom>
             <strong>Modern technology</strong> suggests products to buy, shows
@@ -83,16 +87,6 @@ function About() {
             <strong>UNTIL NOW</strong>
           </Typography>
         </CustomSection>
-        {/* <Section
-          title='Our Mission'
-          children={[
-            'Samaritan Scout utilizes a program developed with natural language processing, crawling and scraping functionality, and database management, which serves as the basis for the search engine.',
-            'To identify the websites of nonprofit organizations that seek volunteers, we are leveraging both technologies – using a diverse range of libraries and repositories – and human expertise. We are automating searches to help build our library, while also finding new websites and organizations from volunteer researchers and partners.',
-          ]}
-          cols={6}
-          primary={false}
-          separator={true}
-        /> */}
         <CustomSection bgStyle="white" paddingY="large">
           <Typography
             variant="h2"
@@ -111,14 +105,6 @@ function About() {
             meaningful and impactful service activities.
           </Typography>
         </CustomSection>
-        {/* <Section
-          title="We Envision"
-          children={["a brighter tomorrow"]}
-          cols={12}
-          primary={true}
-          separator={false}
-          center={true}
-        /> */}
         <CustomSection bgStyle="accent" paddingY="medium" marginStyle="wide">
           <Typography variant="h1" align="center" gutterBottom>
             Our Vision
@@ -130,15 +116,6 @@ function About() {
             their community and beyond.
           </Typography>
         </CustomSection>
-        <Section
-          title="Our Plan"
-          children={[
-            "We’re developing a program with natural language processing, crawling/scraping functionality, and database management to serve as the basis of our search engine.",
-          ]}
-          cols={12}
-          primary={false}
-          separator={true}
-        />
         <CustomSection bgStyle="white" paddingY="large">
           <Typography
             variant="h2"
@@ -158,10 +135,7 @@ function About() {
             the basis of our search engine.
           </Typography>
         </CustomSection>
-        {/* <TimelineComponent /> */}
-        {/* <Timeline2Component /> */}
         <PhaseCarousel />
-        <Phases />
         <Container maxWidth={"xl"} sx={{ paddingY: 10 }}>
           <DuoLinks />
         </Container>
@@ -258,63 +232,26 @@ const PhaseCarousel = () => {
     );
   });
 
+  let contentToShow: JSX.Element;
+  if (isXs) {
+    contentToShow = (
+      <Carousel animation="fade" autoPlay={false} swipe={true}>
+        {oppList}
+      </Carousel>
+    );
+  } else {
+    contentToShow = (
+      <Phases />
+    );
+  }
+
   return (
-    <CustomContainer bgStyle="white" paddingY="medium" marginStyle="narrow">
+    <CustomContainer bgStyle="gray" paddingY="medium" marginStyle="narrow">
       <Typography variant="h1" color={color_theme.fontColor} align="center">
-        Recent Volunteer Activities
+        Our Phases of Release
       </Typography>
       <Separator primary={false} />
-
-      <Carousel animation="fade" autoPlay={false}>
-        {(() => {
-          if (isXs) {
-            return oppList;
-          }
-
-          if (isLg || !isXs) {
-            const duos: any = [];
-
-            for (let i = 0; i < oppList.length; i += 2) {
-              duos.push(
-                <Grid container spacing={2} key={i} >
-                  <Grid item xs={12} sm={1}>
-                  </Grid>
-                  <Grid item xs={12} sm={5}>
-                    {oppList[i]}
-                  </Grid>
-                  <Grid item xs={12} sm={5}>
-                    {oppList[i + 1]}
-                  </Grid>
-                </Grid>
-              );
-            }
-
-            return duos;
-          }
-          if (isXl) {
-            const quads: any = [];
-            for (let i = 0; i < oppList.length; i += 4) {
-              quads.push(
-                <Grid container spacing={2} key={i}>
-                  <Grid item xs={12} sm={3}>
-                    {oppList[i]}
-                  </Grid>
-                  <Grid item xs={12} sm={3}>
-                    {oppList[i + 1]}
-                  </Grid>
-                  <Grid item xs={12} sm={3}>
-                    {oppList[i + 2]}
-                  </Grid>
-                  <Grid item xs={12} sm={3}>
-                    {oppList[i + 3]}
-                  </Grid>
-                </Grid>
-              );
-            }
-            return quads;
-          }
-        })()}
-      </Carousel>
+      {contentToShow}
     </CustomContainer>
   );
 };
@@ -544,7 +481,6 @@ const PhaseText = ({ step }: { step: number }) => {
 
 const Phases = () => {
   return (
-    <CustomSection bgStyle="gray">
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={3}>
           <PhaseCard
@@ -596,7 +532,6 @@ const Phases = () => {
           />
         </Grid>
       </Grid>
-    </CustomSection>
   );
 };
 

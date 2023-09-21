@@ -9,6 +9,7 @@ import Chip from "@mui/material/Chip";
 interface HeroImageProps {
   imageSrc: string;
   adjustBackground?: string;
+  backgroundColor?: string;
   fullScreen?: boolean;
   children?: ReactNode;
 }
@@ -16,12 +17,14 @@ interface HeroImageProps {
 const HeroImage: React.FC<HeroImageProps> = ({
   imageSrc,
   adjustBackground,
+  backgroundColor,
   fullScreen,
   children,
 }) => {
   return (
     <Box
       sx={{
+        backgroundColor: "rgba(255,255,255,0.5)",
         backgroundImage: `url(${imageSrc})`,
         backgroundSize: "cover",
         backgroundPosition: adjustBackground ? adjustBackground : "25% 75%",
@@ -37,7 +40,19 @@ const HeroImage: React.FC<HeroImageProps> = ({
       }}
       alignContent={"center"}
     >
-      {children}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: backgroundColor // "rgba(0,0,0,0.5)"
+        }}
+      >
+        {children}
+      </div>
+      
     </Box>
   );
 };
