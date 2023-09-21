@@ -146,8 +146,8 @@ const JoinTheTeamForm = () => {
           width={{
             xl: '800px',
             lg: '800px',
-            md: '600px',
-            sm: '70%',
+            md: '800px',
+            sm: '90%',
             xs: '90%',
           }}
           spacing={4}
@@ -348,8 +348,7 @@ const JoinTheTeamForm = () => {
               </FormGroup>
               <Stack width={'100%'} spacing={1}>
                 <Typography variant='body2' fontWeight={'bold'}>
-                  How would yould you like to help Samaritan Scout to grow and
-                  thrive?
+                  How would you like to help Samaritan Scout to grow and thrive?
                 </Typography>
                 <TextField
                   placeholder='Share your thoughts and inspirations with us'
@@ -370,29 +369,38 @@ const JoinTheTeamForm = () => {
                 />
                 {/* <button type='submit'>Submit</button> */}
               </form>
-              <Button
-                onClick={handleSubmit}
-                variant='contained'
-                sx={{
-                  color: 'black',
-                  backgroundColor: 'primary.light',
-                  height: '50px',
-                  width: '160px',
-                  ':hover': {
-                    color: 'white',
-                    backgroundColor: 'primary',
-                  },
-                }}
-                size='large'
-              >
-                <Typography
-                  variant='body1'
-                  fontSize={'20px'}
-                  fontWeight={'bold'}
+              <Stack direction={'row'} spacing={4}>
+                <Button
+                  onClick={handleSubmit}
+                  variant='contained'
+                  sx={{
+                    color: 'black',
+                    backgroundColor: 'primary.light',
+                    height: '50px',
+                    width: '160px',
+                    ':hover': {
+                      color: 'white',
+                      backgroundColor: 'primary',
+                    },
+                  }}
+                  size='large'
                 >
-                  Send
-                </Typography>
-              </Button>
+                  <Typography
+                    variant='body1'
+                    fontSize={'20px'}
+                    fontWeight={'bold'}
+                  >
+                    Send
+                  </Typography>
+                </Button>
+                {firstNameError || lastNameError || emailError ? (
+                  <Typography variant='body1' color='red'>
+                    Some fields are required
+                  </Typography>
+                ) : (
+                  <></>
+                )}
+              </Stack>
             </Stack>
           </Box>
         </Stack>

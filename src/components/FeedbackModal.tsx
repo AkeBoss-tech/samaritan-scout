@@ -43,7 +43,29 @@ const FeedbackModal = ({
         sx: { backgroundColor: 'rgba(213, 210, 210, 0.5)' },
       }}
     >
-      <Box width={800} height={400}>
+      <Box
+        width={{ xs: '80%', sm: '70%', md: 800 }}
+        height={{ xs: 400, md: 400 }}
+        position={'relative'}
+      >
+        <IconButton
+          onClick={onClose}
+          sx={{
+            position: 'absolute',
+            top: '10px',
+            right: '10px',
+            color: 'white',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            '&:hover': {
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              transition: 'all',
+              color: 'white',
+            },
+            zIndex: 1,
+          }}
+        >
+          <Icons.Close />
+        </IconButton>
         <Grid
           container
           //   spacing={2}
@@ -74,20 +96,20 @@ const FeedbackModal = ({
           <Grid item xs={12} md={6}>
             <Box
               sx={{
-                backgroundImage: 'url(/images/join-the-team.jpeg)',
+                backgroundImage: `url(/images/${image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 objectFit: 'cover',
                 position: 'relative',
                 borderRadius: 1,
               }}
-              height={'100%'}
+              height={{ xs: '160px', md: '100%' }}
               width={'100%'}
               pr={2}
             ></Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Stack spacing={2} pl={2}>
+            <Stack spacing={2} pl={2} height={'100%'} justifyContent={'center'}>
               <Typography
                 gutterBottom
                 variant={isXs ? 'h2' : 'h1'}

@@ -113,22 +113,26 @@
   },
   "quotes": {
     "quote1": {
+      "imagePath": "quote1.png",
       "title": "Effect a scalable impact",
       "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "author": "Lorem Ipsum"
     },
     "quote2": {
-      "title": "Effect a scalable impact",
+      "imagePath": "quote2.png",
+      "title": "Get inspired and inspire others",
       "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "author": "Lorem Ipsum"
     },
     "quote3": {
-      "title": "Effect a scalable impact",
+      "imagePath": "quote3.png",
+      "title": "Develop skills to advance your career",
       "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "author": "Lorem Ipsum"
     },
     "quote4": {
-      "title": "Effect a scalable impact",
+      "imagePath": "quote4.png",
+      "title": "Collaborate with kind people",
       "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "author": "Lorem Ipsum"
     }

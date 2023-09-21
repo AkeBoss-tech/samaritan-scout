@@ -43,13 +43,13 @@ export default function PersonCard({
         link={link}
         onClose={closeModal}
       ></PersonModal>
-      {/* <Stack
+      <Stack
         gap={2}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         sx={{
           cursor: 'pointer',
-          bgcolor: isHovered ? '#62B16E' : 'white',
+          border: isHovered ? '2px solid #cbcfcb' : '2px solid white',
           transition: 'all 0.2s ease-in-out',
           borderRadius: 1.5,
         }}
@@ -76,47 +76,8 @@ export default function PersonCard({
             component='div'
             sx={{
               textDecoration: isHovered ? 'underline' : 'none',
+              transition: 'all 0.2s ease-in-out',
               // color: isHovered ? 'primary.light' : 'text.primary',
-            }}
-          >
-            {name}
-          </Typography>
-          <Typography variant='body2' color='text.secondary'>
-            {title}
-          </Typography>
-        </Stack>
-      </Stack> */}
-
-      <Stack
-        gap={2}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        sx={{
-          cursor: 'pointer',
-        }}
-        onClick={() => {
-          openModal();
-        }}
-        height={'100%'}
-      >
-        <img
-          src={'/images/team-images/' + image}
-          alt={name}
-          style={{
-            width: '100%',
-            objectFit: 'cover',
-            borderRadius: theme.shape.borderRadius,
-            aspectRatio: '1/1',
-          }}
-        />
-        <Stack>
-          <Typography
-            gutterBottom
-            variant='h5'
-            component='div'
-            sx={{
-              textDecoration: isHovered ? 'underline' : 'none',
-              color: isHovered ? 'primary.light' : 'text.primary',
             }}
           >
             {name}

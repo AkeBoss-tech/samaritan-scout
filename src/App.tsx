@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Test from './pages/Test';
 import Donate from './pages/Donate';
 import Contact from './pages/Contact';
+import JoinUs from './pages/JoinUs';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path='/test' element={<Test />} />
         <Route path='/donate' element={<Donate />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/joinus' element={<JoinUs />} />
       </Routes>
 
       <Footer />

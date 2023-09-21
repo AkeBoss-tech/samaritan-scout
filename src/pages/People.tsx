@@ -41,20 +41,16 @@ function People() {
     <>
       <ThemeProvider theme={MaterialTheme}>
         <Stack>
-          <HeroImage
-            imageSrc='https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzc2lvbiUyMGxlZCUyMHVzJTIwaGVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'
-          >
+          <HeroImage imageSrc='https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzc2lvbiUyMGxlZCUyMHVzJTIwaGVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'>
             <HeroImageContent
               color='primary.light'
               xPosition='center'
               yPosition='bottom'
               width='wide'
             >
-              <Typography
-                variant='h3'
-                textAlign={'center'}
-              >
-                We are a group of passionate students who are dedicated to making a difference in our community.
+              <Typography variant='h3' textAlign={'center'}>
+                We are a group of passionate students who are dedicated to
+                making a difference in our community.
               </Typography>
               <Box sx={{ height: '20px' }}></Box>
               <Typography
@@ -84,31 +80,30 @@ function People() {
                   >
                     Meet Our Board of Directors
                   </Typography>
-                  <Grid
-                    container
-                    spacing={{ xs: 1, sm: 2, md: 2, lg: 4, xl: 4 }}
-                  >
-                    {Object.keys(boardMembersObject).map((key) => (
-                      <Grid
-                        item
-                        xs={6}
-                        sm={4}
-                        md={3}
-                        lg={2.4}
-                        xl={2.4}
-                        key={key}
-                      >
-                        <PersonCard
-                          type={'boardMembers'}
-                          title={boardMembersObject[key].title}
-                          name={key}
-                          description={boardMembersObject[key].description}
-                          image={boardMembersObject[key].image}
-                          link={boardMembersObject[key].linkedin}
-                        />
-                      </Grid>
-                    ))}
-                  </Grid>
+                  <Box>
+                    <Grid container spacing={1}>
+                      {Object.keys(boardMembersObject).map((key) => (
+                        <Grid
+                          item
+                          xs={6}
+                          sm={4}
+                          md={3}
+                          lg={2.4}
+                          xl={2.4}
+                          key={key}
+                        >
+                          <PersonCard
+                            type={'boardMembers'}
+                            title={boardMembersObject[key].title}
+                            name={key}
+                            description={boardMembersObject[key].description}
+                            image={boardMembersObject[key].image}
+                            link={boardMembersObject[key].linkedin}
+                          />
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Box>
                 </Stack>
 
                 {/* Interns */}
@@ -122,23 +117,22 @@ function People() {
                   >
                     Meet Our Summer 2023 Interns
                   </Typography>
-                  <Grid
-                    container
-                    spacing={{ xs: 1, sm: 2, md: 2, lg: 2, xl: 2 }}
-                  >
-                    {Object.keys(volunteersObject).map((key) => (
-                      <Grid item xs={6} sm={4} md={3} lg={2} xl={2} key={key}>
-                        <PersonCard
-                          type={'volunteers'}
-                          title={volunteersObject[key].title}
-                          name={key}
-                          description={volunteersObject[key].description}
-                          image={volunteersObject[key].image}
-                          link={volunteersObject[key].linkedin}
-                        />
-                      </Grid>
-                    ))}
-                  </Grid>
+                  <Box>
+                    <Grid container spacing={1}>
+                      {Object.keys(volunteersObject).map((key) => (
+                        <Grid item xs={6} sm={4} md={3} lg={2} xl={2} key={key}>
+                          <PersonCard
+                            type={'volunteers'}
+                            title={volunteersObject[key].title}
+                            name={key}
+                            description={volunteersObject[key].description}
+                            image={volunteersObject[key].image}
+                            link={volunteersObject[key].linkedin}
+                          />
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Box>
                 </Stack>
               </Stack>
 
@@ -154,7 +148,11 @@ function People() {
                   <Grid container spacing={4} paddingX={{ xs: 2, sm: 0 }}>
                     {Object.keys(quotesObject).map((key) => (
                       <Grid item xs={12} sm={6} md={3} key={key}>
-                        <Stack spacing={4}>
+                        <Stack
+                          spacing={5}
+                          height={{ sm: '100%', lg: '220px' }}
+                          justifyContent={'space-between'}
+                        >
                           <Typography variant='h3' align='left'>
                             {quotesObject[key].title}
                           </Typography>
@@ -176,9 +174,6 @@ function People() {
                   </Grid>
                 </Box>
               </Stack>
-
-              {/* Join the Team Form */}
-              <JoinTheTeamForm />
             </Stack>
           </Container>
         </Stack>

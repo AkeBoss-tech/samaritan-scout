@@ -34,7 +34,12 @@ const DuoLinks = () => {
               height={'100%'}
               width={'100%'}
             ></Box>
-            <CustomButton size='large' bgStyle='primary' hoverStyle='dark'>
+            <CustomButton
+              size='large'
+              bgStyle='primary'
+              hoverStyle='dark'
+              onClick={() => navigate('/joinus')}
+            >
               <Typography
                 variant={isSm ? 'body1' : 'h3'}
                 fontWeight={'bold'}
