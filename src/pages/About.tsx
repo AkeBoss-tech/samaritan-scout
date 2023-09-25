@@ -19,6 +19,7 @@ import {
   CardContent,
   Container,
   Link,
+  Stack,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -39,15 +40,17 @@ import CustomBackgroundSection from "../components/CustomBackgroundSection";
 import { green } from "@mui/material/colors";
 import DuoLinks from "../components/DuoLinks";
 import Separator from "../components/Separator";
-import React from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import HeroImage from "../components/HeroImage";
 import HeroImageContent from "../components/HeroImageContent";
+import { BsFillHandThumbsUpFill } from "react-icons/bs";
+import { FaSearchLocation } from "react-icons/fa";
 
 function About() {
   return (
     <>
       <ThemeProvider theme={MaterialTheme}>
-        <HeroImage 
+        {/* <HeroImage 
           imageSrc="https://www.metrolibrary.org/sites/default/files/2019-03/Support-us-banner.jpg"
           fullScreen={true}
           backgroundColor="rgb(255,255,255, 0.2)"
@@ -70,18 +73,69 @@ function About() {
               We’re here to empower them.
             </Typography>
           </HeroImageContent>
+        </HeroImage> */}
+        <HeroImage imageSrc="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzc2lvbiUyMGxlZCUyMHVzJTIwaGVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80">
+          <HeroImageContent
+            color="primary.light"
+            xPosition="center"
+            yPosition="bottom"
+            width="wide"
+          >
+            <Typography variant="h3" textAlign={"center"}>
+              We are a group of passionate students who are dedicated to making
+              a difference in our community.
+            </Typography>
+            <Box sx={{ height: "20px" }}></Box>
+            <Typography
+              variant="h3"
+              textAlign={"center"}
+              color={"common.white"}
+            >
+              We're here to empower them.
+            </Typography>
+          </HeroImageContent>
         </HeroImage>
+        <Box
+          sx={{ height: "10vh", backgroundColor: color_theme.grayBgColor }}
+        ></Box>
         <CustomSection bgStyle="gray" marginStyle="wide">
-          <Typography variant="body1" align="left" gutterBottom>
-            <strong>Modern technology</strong> suggests products to buy, shows
-            to stream, and acquaintances to follow,
-          </Typography>
-          <Box sx={{ height: "1rem" }} />
-          <Typography variant="body1" align="left" gutterBottom>
-            But it has not been harnessed to{" "}
-            <strong>match us to nearby service experiences</strong> that best
-            fit our abilities or interests.
-          </Typography>
+          <Grid container alignItems="center">
+          <Grid item xs={12} sm={6} justifyContent={"left"}>
+            <Typography
+              variant="body1"
+              align="left"
+              gutterBottom
+              justifyItems={"center"}
+              paddingTop={"10vh"}
+            >
+              <strong>Modern technology</strong> suggests products to buy, shows
+              to stream, and acquaintances to follow,
+            </Typography>
+            </Grid>
+            <Grid item xs={7} sm={2}></Grid>
+            <Grid item xs={4} sm={3}><BsFillHandThumbsUpFill size={"100%"} /></Grid>
+          </Grid>
+          <Grid container alignItems="center">
+            <Grid item xs={4} sm={3}>
+              <FaSearchLocation size={"100%"} />
+            </Grid>
+            <Grid item xs={0} sm={2}></Grid>
+            <Grid item xs={12} sm={6} justifyContent={"right"}>
+              <Typography
+                variant="body1"
+                align="right"
+                gutterBottom
+                justifyContent={"center"}
+                paddingTop={"8vh"}
+                style={{ wordWrap: "break-word" }}
+              >
+                But it has not been harnessed to{" "}
+                <strong>match us to nearby service experiences</strong> that
+                best fit our abilities or interests.
+              </Typography>
+            </Grid>
+          </Grid>
+
           <Box sx={{ height: "1rem" }} />
           <Typography variant="h5" align="center" gutterBottom>
             <strong>UNTIL NOW</strong>
@@ -114,25 +168,6 @@ function About() {
             We aim to create a better world by inspiring a culture of service
             and enabling individuals everywhere to contribute positively to
             their community and beyond.
-          </Typography>
-        </CustomSection>
-        <CustomSection bgStyle="white" paddingY="large">
-          <Typography
-            variant="h2"
-            color={color_theme.primaryFontColor}
-            align="center"
-          >
-            Our Plan
-          </Typography>
-          <Separator primary={false} />
-          <Typography
-            variant="body1"
-            color={color_theme.primaryFontColor}
-            align="center"
-          >
-            We’re developing a program with natural language processing,
-            crawling/scraping functionality, and database management to serve as
-            the basis of our search engine.
           </Typography>
         </CustomSection>
         <PhaseCarousel />
@@ -240,17 +275,26 @@ const PhaseCarousel = () => {
       </Carousel>
     );
   } else {
-    contentToShow = (
-      <Phases />
-    );
+    contentToShow = <Phases />;
   }
 
   return (
     <CustomContainer bgStyle="gray" paddingY="medium" marginStyle="narrow">
       <Typography variant="h1" color={color_theme.fontColor} align="center">
-        Our Phases of Release
+        Our Plan
       </Typography>
       <Separator primary={false} />
+      <Typography
+        variant="body1"
+        color={color_theme.primaryFontColor}
+        align="center"
+      >
+        We’re developing a program with natural language processing,
+        crawling/scraping functionality, and database management to serve as the
+        basis of our search engine.
+      </Typography>
+      <Box sx={{ height: "5vh " }}></Box>
+
       {contentToShow}
     </CustomContainer>
   );
@@ -480,58 +524,97 @@ const PhaseText = ({ step }: { step: number }) => {
 };
 
 const Phases = () => {
+  const [maxHeight, setMaxHeight] = useState<number | string | null>(null);
+
+  useEffect(() => {
+    const calculateMaxHeight = () => {
+      const phaseCardElements = document.querySelectorAll(".phase-card");
+      let maxCardHeight = 0;
+
+      phaseCardElements.forEach((element) => {
+        maxCardHeight = Math.max(maxCardHeight, element.clientHeight);
+      });
+
+      setMaxHeight(maxCardHeight);
+    };
+
+    // Initial calculation
+    calculateMaxHeight();
+
+    const handleResize = () => {
+      // Recalculate max height when the window is resized
+      calculateMaxHeight();
+    };
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} md={3}>
-          <PhaseCard
-            title="Phase 1"
-            icon={<SearchIcon fontSize="inherit" />}
-            main="Search Engine in greater NY region"
-            goals={[
-              "Build database of nonprofit websites",
-              "Leverage AI to organize data in support of keyword search and filtering",
-              "Insert geolocation capabilities to support geographic parameters",
-              "Optimize search experience",
-            ]}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <PhaseCard
-            title="Phase 2"
-            icon={<VolunteerActivismIcon fontSize="inherit" />}
-            main="Community Platform for Volunteers"
-            goals={[
-              "Support account creation",
-              "Launch social-media platform that supports relationships and documenting/sharing media and posts",
-              "Enhance nonprofit organizations’ presence and information",
-            ]}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <PhaseCard
-            title="Phase 3"
-            icon={<SmartToyIcon fontSize="inherit" />}
-            main="Non-Search Search Experience"
-            goals={[
-              "Offer AI conversational experience to render appropriate volunteer opportunities",
-              "Inject AI to provide volunteers with ‘intelligent’ customized recommendations of volunteer experiences",
-              "Integrate attendance and registration tools for volunteer opportunities",
-            ]}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <PhaseCard
-            title="Phase 4"
-            icon={<SouthAmericaIcon fontSize="inherit" />}
-            main="Develop additional regions"
-            goals={[
-              "Build database of nonprofits at additional target regions",
-              "Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database",
-              "Raise funds to ensure ongoing optimal site performance and scale functionality",
-            ]}
-          />
-        </Grid>
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6} md={3}>
+        <PhaseCard
+          title="Phase 1"
+          icon={<SearchIcon fontSize="inherit" />}
+          main="Search Engine in greater NY region"
+          goals={[
+            "Build database of nonprofit websites",
+            "Leverage AI to organize data in support of keyword search and filtering",
+            "Insert geolocation capabilities to support geographic parameters",
+            "Optimize search experience",
+          ]}
+          style={maxHeight ? { minHeight: maxHeight } : {}}
+          className="phase-card"
+        />
       </Grid>
+      <Grid item xs={12} sm={6} md={3}>
+        <PhaseCard
+          title="Phase 2"
+          icon={<VolunteerActivismIcon fontSize="inherit" />}
+          main="Community Platform for Volunteers"
+          goals={[
+            "Support account creation",
+            "Launch social-media platform that supports relationships and documenting/sharing media and posts",
+            "Enhance nonprofit organizations’ presence and information",
+          ]}
+          style={maxHeight ? { minHeight: maxHeight } : {}}
+          className="phase-card"
+        />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3}>
+        <PhaseCard
+          title="Phase 3"
+          icon={<SmartToyIcon fontSize="inherit" />}
+          main="Non-Search Search Experience"
+          goals={[
+            "AI chat generates appropriate volunteer activities",
+            "Machine learning provides volunteers with ‘intelligent’ customized recommendations ",
+            "Volunteer registration and management tools support nonprofits",
+          ]}
+          style={maxHeight ? { minHeight: maxHeight } : {}}
+          className="phase-card"
+        />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3}>
+        <PhaseCard
+          title="Phase 4"
+          icon={<SouthAmericaIcon fontSize="inherit" />}
+          main="Develop additional regions"
+          goals={[
+            "Build database of nonprofits at additional target regions",
+            "Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database",
+            "Raise funds to ensure ongoing optimal site performance and scale functionality",
+          ]}
+          style={maxHeight ? { minHeight: maxHeight } : {}}
+          className="phase-card"
+        />
+      </Grid>
+    </Grid>
   );
 };
 
@@ -540,11 +623,15 @@ const PhaseCard = ({
   main,
   icon,
   goals,
+  className,
+  style,
 }: {
   title: string;
   main: string;
   icon: React.ReactNode;
   goals: string[];
+  className?: string;
+  style?: React.CSSProperties;
 }) => {
   return (
     // big green icon
@@ -582,6 +669,8 @@ const PhaseCard = ({
           alignItems: "left",
           textAlign: "left",
         }}
+        className={className}
+        style={style}
       >
         <CardContent>
           <ul>
