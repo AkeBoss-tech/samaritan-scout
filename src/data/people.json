@@ -113,27 +113,27 @@
   },
   "quotes": {
     "quote1": {
-      "imagePath": "quote1.png",
+      "imagePath": "quote1.jpeg",
       "title": "Effect a scalable impact",
-      "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "quote": "This project has taught me a lot of newthings that I was previously unaware of. Ilearned about AWS Lambda, EFS, and Ieven had the opportunity to understandhow SCRUM Meetings are conducted..Honestly, the whole experience hasbeen amazing. Thank you for believingin me and giving me a chance to be apart of this great team.",
       "author": "Lorem Ipsum"
     },
     "quote2": {
-      "imagePath": "quote2.png",
+      "imagePath": "quote2.jpeg",
       "title": "Get inspired and inspire others",
-      "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "quote": "This project has taught me a lot of newthings that I was previously unaware of. Ilearned about AWS Lambda, EFS, and Ieven had the opportunity to understandhow SCRUM Meetings are conducted..Honestly, the whole experience hasbeen amazing. Thank you for believingin me and giving me a chance to be apart of this great team.",
       "author": "Lorem Ipsum"
     },
     "quote3": {
       "imagePath": "quote3.png",
       "title": "Develop skills to advance your career",
-      "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "quote": "This project has taught me a lot of newthings that I was previously unaware of. Ilearned about AWS Lambda, EFS, and Ieven had the opportunity to understandhow SCRUM Meetings are conducted..Honestly, the whole experience hasbeen amazing. Thank you for believingin me and giving me a chance to be apart of this great team.",
       "author": "Lorem Ipsum"
     },
     "quote4": {
       "imagePath": "quote4.png",
       "title": "Collaborate with kind people",
-      "quote": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "quote": "This project has taught me a lot of newthings that I was previously unaware of. Ilearned about AWS Lambda, EFS, and Ieven had the opportunity to understandhow SCRUM Meetings are conducted..Honestly, the whole experience hasbeen amazing. Thank you for believingin me and giving me a chance to be apart of this great team.",
       "author": "Lorem Ipsum"
     }
   }

@@ -16,6 +16,8 @@ import DuoLinks from '../components/DuoLinks';
 import JoinTheTeamForm from '../components/JoinTheTeamForm';
 import HeroImage from '../components/HeroImage';
 import HeroImageContent from '../components/HeroImageContent';
+import Carousel from 'react-material-ui-carousel';
+import { Icons } from '../components/Icons';
 
 interface PersonInfo {
   title: string;
@@ -25,16 +27,17 @@ interface PersonInfo {
 }
 
 type Quote = {
+  imagePath: string;
   title: string;
   author: string;
   quote: string;
 };
+const quotesObject: Record<string, Quote> = PeoplePageData['quotes'];
 
 const boardMembersObject: Record<string, PersonInfo> =
   PeoplePageData['boardMembers'];
 const volunteersObject: Record<string, PersonInfo> =
   PeoplePageData['volunteers'];
-const quotesObject: Record<string, Quote> = PeoplePageData['quotes'];
 
 function People() {
   return (
@@ -136,11 +139,81 @@ function People() {
                 </Stack>
               </Stack>
 
+              {/* Why volunteer with us? */}
+              <Stack width={'100%'} alignItems={'center'}>
+                <Stack spacing={8} width={'100%'}>
+                  <Typography variant='h1' align='center'>
+                    Why Volunteer With Us?
+                  </Typography>
+                  <Carousel
+                    sx={{
+                      boxShadow:
+                        '0 0px 15px -3px rgb(0 0 0 / 0.1), 0 0px 6px -4px rgb(0 0 0 / 0.1);',
+                      borderRadius: '15px',
+                    }}
+                  >
+                    {Object.keys(quotesObject).map((key) => (
+                      <Stack width={'100%'} alignItems={'center'}>
+                        <Stack
+                          direction={'row'}
+                          height={400}
+                          spacing={10}
+                          py={2}
+                          px={6}
+                          width={'70%'}
+                        >
+                          <Stack
+                            width={'50%'}
+                            alignItems={'center'}
+                            justifyContent={'center'}
+                            py={5}
+                          >
+                            <Typography variant='h2' align='center'>
+                              {quotesObject[key].title}
+                            </Typography>
+                            <img
+                              src={`/images/${quotesObject[key].imagePath}`}
+                              alt=''
+                              width={'280px'}
+                              height={'280px'}
+                            ></img>
+                          </Stack>
+
+                          <Stack
+                            height={'100%'}
+                            justifyContent={'center'}
+                            width={'50%'}
+                            spacing={2}
+                          >
+                            <Stack alignItems={'center'}>
+                              <Icons.Quote
+                                size={48}
+                                color={MaterialTheme.palette.primary.light}
+                              ></Icons.Quote>
+                            </Stack>
+                            <hr></hr>
+                            <Typography
+                              variant='body1'
+                              align='left'
+                              fontStyle={'italic'}
+                            >
+                              "{quotesObject[key].quote}"
+                            </Typography>
+                            <Typography variant='subtitle1' align='left'>
+                              - {quotesObject[key].author}
+                            </Typography>
+                          </Stack>
+                        </Stack>
+                      </Stack>
+                    ))}
+                  </Carousel>
+                </Stack>
+              </Stack>
+
               {/* Join the Team & Support Us Links */}
               <DuoLinks />
 
-              {/* Why volunteer with us? */}
-              <Stack spacing={8}>
+              {/* <Stack spacing={8}>
                 <Typography variant='h1' align='center'>
                   Why Volunteer With Us?
                 </Typography>
@@ -173,7 +246,7 @@ function People() {
                     ))}
                   </Grid>
                 </Box>
-              </Stack>
+              </Stack> */}
             </Stack>
           </Container>
         </Stack>
