@@ -1,9 +1,9 @@
-import Section from "../components/Section";
-import Carousel from "react-material-ui-carousel";
-import MaterialTheme from "../components/MaterialTheme";
-import { ThemeProvider, styled } from "@mui/material/styles";
-import SouthAmericaIcon from "@mui/icons-material/SouthAmerica";
-import SmartToyIcon from "@mui/icons-material/SmartToy";
+import Section from '../components/Section';
+import Carousel from 'react-material-ui-carousel';
+import MaterialTheme from '../components/MaterialTheme';
+import { ThemeProvider, styled } from '@mui/material/styles';
+import SouthAmericaIcon from '@mui/icons-material/SouthAmerica';
+import SmartToyIcon from '@mui/icons-material/SmartToy';
 import {
   Timeline,
   TimelineItem,
@@ -11,7 +11,7 @@ import {
   TimelineConnector,
   TimelineContent,
   TimelineDot,
-} from "@mui/lab";
+} from '@mui/lab';
 import {
   Avatar,
   Box,
@@ -22,29 +22,29 @@ import {
   Stack,
   Typography,
   useTheme,
-} from "@mui/material";
+} from '@mui/material';
 
-import SearchIcon from "@mui/icons-material/Search";
-import { MdOutlineVolunteerActivism } from "react-icons/md";
-import Stepper from "@mui/material/Stepper";
-import { Step } from "@mui/material";
-import { StepLabel } from "@mui/material";
-import { Grid } from "@mui/material";
-import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
-import { useMediaQuery } from "@mui/material";
-import CustomSection from "../components/CustomSection";
-import CustomButton from "../components/CustomButton";
-import color_theme from "../components/Theme";
-import CustomContainer from "../components/CustomSection";
-import CustomBackgroundSection from "../components/CustomBackgroundSection";
-import { green } from "@mui/material/colors";
-import DuoLinks from "../components/DuoLinks";
-import Separator from "../components/Separator";
-import React, { CSSProperties, useEffect, useState } from "react";
-import HeroImage from "../components/HeroImage";
-import HeroImageContent from "../components/HeroImageContent";
-import { BsFillHandThumbsUpFill } from "react-icons/bs";
-import { FaSearchLocation } from "react-icons/fa";
+import SearchIcon from '@mui/icons-material/Search';
+import { MdOutlineVolunteerActivism } from 'react-icons/md';
+import Stepper from '@mui/material/Stepper';
+import { Step } from '@mui/material';
+import { StepLabel } from '@mui/material';
+import { Grid } from '@mui/material';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import { useMediaQuery } from '@mui/material';
+import CustomSection from '../components/CustomSection';
+import Button from '../components/button';
+import color_theme from '../components/Theme';
+import CustomContainer from '../components/CustomSection';
+import CustomBackgroundSection from '../components/CustomBackgroundSection';
+import { green } from '@mui/material/colors';
+import DuoLinks from '../components/DuoLinks';
+import Separator from '../components/Separator';
+import React, { CSSProperties, useEffect, useState } from 'react';
+import HeroImage from '../components/HeroImage';
+import HeroImageContent from '../components/HeroImageContent';
+import { BsFillHandThumbsUpFill } from 'react-icons/bs';
+import { FaSearchLocation } from 'react-icons/fa';
 
 function About() {
   return (
@@ -74,125 +74,127 @@ function About() {
             </Typography>
           </HeroImageContent>
         </HeroImage> */}
-        <HeroImage imageSrc="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzc2lvbiUyMGxlZCUyMHVzJTIwaGVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80">
+        <HeroImage imageSrc='https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzc2lvbiUyMGxlZCUyMHVzJTIwaGVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'>
           <HeroImageContent
-            color="primary.light"
-            xPosition="center"
-            yPosition="bottom"
-            width="wide"
+            color='primary.light'
+            xPosition='center'
+            yPosition='bottom'
+            width='wide'
           >
-            <Typography variant="h3" textAlign={"center"}>
+            <Typography variant='h3' textAlign={'center'}>
               We are a group of passionate students who are dedicated to making
               a difference in our community.
             </Typography>
-            <Box sx={{ height: "20px" }}></Box>
+            <Box sx={{ height: '20px' }}></Box>
             <Typography
-              variant="h3"
-              textAlign={"center"}
-              color={"common.white"}
+              variant='h3'
+              textAlign={'center'}
+              color={'common.white'}
             >
               We're here to empower them.
             </Typography>
           </HeroImageContent>
         </HeroImage>
         <Box
-          sx={{ height: "10vh", backgroundColor: color_theme.grayBgColor }}
+          sx={{ height: '10vh', backgroundColor: color_theme.grayBgColor }}
         ></Box>
-        <CustomSection bgStyle="gray" marginStyle="wide">
-          <Grid container alignItems="center">
-          <Grid item xs={12} sm={6} justifyContent={"left"}>
-            <Typography
-              variant="body1"
-              align="left"
-              gutterBottom
-              justifyItems={"center"}
-              paddingTop={"10vh"}
-            >
-              <strong>Modern technology</strong> suggests products to buy, shows
-              to stream, and acquaintances to follow,
-            </Typography>
+        <CustomSection bgStyle='gray' marginStyle='wide'>
+          <Grid container alignItems='center'>
+            <Grid item xs={12} sm={6} justifyContent={'left'}>
+              <Typography
+                variant='body1'
+                align='left'
+                gutterBottom
+                justifyItems={'center'}
+                paddingTop={'10vh'}
+              >
+                <strong>Modern technology</strong> suggests products to buy,
+                shows to stream, and acquaintances to follow,
+              </Typography>
             </Grid>
             <Grid item xs={7} sm={2}></Grid>
-            <Grid item xs={4} sm={3}><BsFillHandThumbsUpFill size={"100%"} /></Grid>
-          </Grid>
-          <Grid container alignItems="center">
             <Grid item xs={4} sm={3}>
-              <FaSearchLocation size={"100%"} />
+              <BsFillHandThumbsUpFill size={'100%'} />
+            </Grid>
+          </Grid>
+          <Grid container alignItems='center'>
+            <Grid item xs={4} sm={3}>
+              <FaSearchLocation size={'100%'} />
             </Grid>
             <Grid item xs={0} sm={2}></Grid>
-            <Grid item xs={12} sm={6} justifyContent={"right"}>
+            <Grid item xs={12} sm={6} justifyContent={'right'}>
               <Typography
-                variant="body1"
-                align="right"
+                variant='body1'
+                align='right'
                 gutterBottom
-                justifyContent={"center"}
-                paddingTop={"8vh"}
-                style={{ wordWrap: "break-word" }}
+                justifyContent={'center'}
+                paddingTop={'8vh'}
+                style={{ wordWrap: 'break-word' }}
               >
-                But it has not been harnessed to{" "}
+                But it has not been harnessed to{' '}
                 <strong>match us to nearby service experiences</strong> that
                 best fit our abilities or interests.
               </Typography>
             </Grid>
           </Grid>
 
-          <Box sx={{ height: "1rem" }} />
-          <Typography variant="h5" align="center" gutterBottom>
+          <Box sx={{ height: '1rem' }} />
+          <Typography variant='h5' align='center' gutterBottom>
             <strong>UNTIL NOW</strong>
           </Typography>
         </CustomSection>
-        <CustomSection bgStyle="white" paddingY="large">
+        <CustomSection bgStyle='white' paddingY='large'>
           <Typography
-            variant="h2"
+            variant='h2'
             color={color_theme.primaryFontColor}
-            align="center"
+            align='center'
           >
             Our Mission
           </Typography>
           <Separator primary={false} />
           <Typography
-            variant="body1"
+            variant='body1'
             color={color_theme.primaryFontColor}
-            align="center"
+            align='center'
           >
             We harness cutting-edge technology to connect individuals with
             meaningful and impactful service activities.
           </Typography>
         </CustomSection>
-        <CustomSection bgStyle="accent" paddingY="medium" marginStyle="wide">
-          <Typography variant="h1" align="center" gutterBottom>
+        <CustomSection bgStyle='accent' paddingY='medium' marginStyle='wide'>
+          <Typography variant='h1' align='center' gutterBottom>
             Our Vision
           </Typography>
-          <Box sx={{ height: "20px " }}></Box>
-          <Typography variant="body1" align="center" gutterBottom>
+          <Box sx={{ height: '20px ' }}></Box>
+          <Typography variant='body1' align='center' gutterBottom>
             We aim to create a better world by inspiring a culture of service
             and enabling individuals everywhere to contribute positively to
             their community and beyond.
           </Typography>
         </CustomSection>
         <PhaseCarousel />
-        <Container maxWidth={"xl"} sx={{ paddingY: 10 }}>
+        <Container maxWidth={'xl'} sx={{ paddingY: 10 }}>
           <DuoLinks />
         </Container>
 
-        <CustomContainer bgStyle="primary" paddingY="large">
+        <CustomContainer bgStyle='primary' paddingY='large'>
           <Typography
-            variant="h2"
+            variant='h2'
             color={color_theme.primaryFontColor}
-            align="center"
+            align='center'
           >
             Meet the People making this Vision a Reality
           </Typography>
-          <Box sx={{ height: "20px " }}></Box>
-          <Link href="/people">
-            <CustomButton
-              size="medium"
-              bgStyle="secondary"
-              hoverStyle="light"
+          <Box sx={{ height: '20px ' }}></Box>
+          <Link href='/people'>
+            <Button
+              size='medium'
+              bgStyle='secondary'
+              hoverStyle='light'
               // startIcon={<AddIcon />}
             >
-              <Typography fontWeight={"bold"}>Our Team</Typography>
-            </CustomButton>
+              <Typography fontWeight={'bold'}>Our Team</Typography>
+            </Button>
           </Link>
         </CustomContainer>
       </ThemeProvider>
@@ -201,54 +203,54 @@ function About() {
 }
 
 let phaseList = {
-  "Phase 1": [
-    "Search Engine in Greater New York Area",
-    "Build database of nonprofit websites",
-    "Leverage AI to organize data in support of keyword search and filtering",
-    "Insert geolocation capabilities to support geographic parameters",
-    "Optimize search experience",
+  'Phase 1': [
+    'Search Engine in Greater New York Area',
+    'Build database of nonprofit websites',
+    'Leverage AI to organize data in support of keyword search and filtering',
+    'Insert geolocation capabilities to support geographic parameters',
+    'Optimize search experience',
   ],
-  "Phase 2": [
-    "Community Platform for Volunteers",
-    "Support account creation",
-    "Launch social-media platform that supports relationships and documenting/sharing media and posts",
-    "Enhance nonprofit organizations’ presence and information",
+  'Phase 2': [
+    'Community Platform for Volunteers',
+    'Support account creation',
+    'Launch social-media platform that supports relationships and documenting/sharing media and posts',
+    'Enhance nonprofit organizations’ presence and information',
   ],
-  "Phase 3": [
-    "Non-Search Search Experience",
-    "Offer AI conversational experience to render appropriate volunteer opportunities",
-    "Inject AI to provide volunteers with ‘intelligent’ customized recommendations of volunteer experiences",
-    "Integrate attendance and registration tools for volunteer opportunities",
+  'Phase 3': [
+    'Non-Search Search Experience',
+    'Offer AI conversational experience to render appropriate volunteer opportunities',
+    'Inject AI to provide volunteers with ‘intelligent’ customized recommendations of volunteer experiences',
+    'Integrate attendance and registration tools for volunteer opportunities',
   ],
-  "Phase 4": [
-    "Develop additional regions",
+  'Phase 4': [
+    'Develop additional regions',
 
-    "Build database of nonprofits at additional target regions",
-    "Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database",
-    "Raise funds to ensure ongoing optimal site performance and scale functionality",
+    'Build database of nonprofits at additional target regions',
+    'Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database',
+    'Raise funds to ensure ongoing optimal site performance and scale functionality',
   ],
 };
 
 function returnIcon(index: number) {
   switch (index) {
     case 0:
-      return <SearchIcon fontSize="inherit" />;
+      return <SearchIcon fontSize='inherit' />;
     case 1:
-      return <VolunteerActivismIcon fontSize="inherit" />;
+      return <VolunteerActivismIcon fontSize='inherit' />;
     case 2:
-      return <SmartToyIcon fontSize="inherit" />;
+      return <SmartToyIcon fontSize='inherit' />;
     case 3:
-      return <SouthAmericaIcon fontSize="inherit" />;
+      return <SouthAmericaIcon fontSize='inherit' />;
     default:
-      return <SearchIcon fontSize="inherit" />;
+      return <SearchIcon fontSize='inherit' />;
   }
 }
 
 const PhaseCarousel = () => {
   const theme = useTheme();
-  const isXs = useMediaQuery(theme.breakpoints.down("md"));
-  const isLg = useMediaQuery(theme.breakpoints.up("lg"));
-  const isXl = useMediaQuery(theme.breakpoints.up("xl"));
+  const isXs = useMediaQuery(theme.breakpoints.down('md'));
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const isXl = useMediaQuery(theme.breakpoints.up('xl'));
 
   const oppList: any = [];
   Object.keys(phaseList).forEach((key: string) => {
@@ -270,7 +272,7 @@ const PhaseCarousel = () => {
   let contentToShow: JSX.Element;
   if (isXs) {
     contentToShow = (
-      <Carousel animation="fade" autoPlay={false} swipe={true}>
+      <Carousel animation='fade' autoPlay={false} swipe={true}>
         {oppList}
       </Carousel>
     );
@@ -279,49 +281,49 @@ const PhaseCarousel = () => {
   }
 
   return (
-    <CustomContainer bgStyle="gray" paddingY="medium" marginStyle="narrow">
-      <Typography variant="h1" color={color_theme.fontColor} align="center">
+    <CustomContainer bgStyle='gray' paddingY='medium' marginStyle='narrow'>
+      <Typography variant='h1' color={color_theme.fontColor} align='center'>
         Our Plan
       </Typography>
       <Separator primary={false} />
       <Typography
-        variant="body1"
+        variant='body1'
         color={color_theme.primaryFontColor}
-        align="center"
+        align='center'
       >
         We’re developing a program with natural language processing,
         crawling/scraping functionality, and database management to serve as the
         basis of our search engine.
       </Typography>
-      <Box sx={{ height: "5vh " }}></Box>
+      <Box sx={{ height: '5vh ' }}></Box>
 
       {contentToShow}
     </CustomContainer>
   );
 };
 
-const HorizontalTimeline = styled("div")({
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "space-between",
-  padding: "20px",
+const HorizontalTimeline = styled('div')({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '20px',
 });
 
 const TimelineComponent = () => {
   return (
-    <Timeline position="alternate">
+    <Timeline position='alternate'>
       {/* PHASE 1 */}
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot color="primary">
+          <TimelineDot color='primary'>
             <SearchIcon />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <Typography variant="h3">Phase 1</Typography>
-          <Typography variant="h6">
+          <Typography variant='h3'>Phase 1</Typography>
+          <Typography variant='h6'>
             Search Engine in greater NY region
           </Typography>
           <Typography>Build database of nonprofit websites</Typography>
@@ -338,14 +340,14 @@ const TimelineComponent = () => {
       {/* PHASE 2 */}
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot color="info">
-            <Typography variant="h6">2</Typography>
+          <TimelineDot color='info'>
+            <Typography variant='h6'>2</Typography>
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <Typography variant="h3">Phase 2</Typography>
-          <Typography variant="h6">
+          <Typography variant='h3'>Phase 2</Typography>
+          <Typography variant='h6'>
             Community Platform for Volunteers
           </Typography>
           <Typography>Support account creation</Typography>
@@ -361,14 +363,14 @@ const TimelineComponent = () => {
       {/* PHASE 3 */}
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot color="primary">
+          <TimelineDot color='primary'>
             <MdOutlineVolunteerActivism />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <Typography variant="h3">Phase 3</Typography>
-          <Typography variant="h6">Non-Search Search Experience</Typography>
+          <Typography variant='h3'>Phase 3</Typography>
+          <Typography variant='h6'>Non-Search Search Experience</Typography>
           <Typography>
             Offer AI conversational experience for volunteer opportunities
           </Typography>
@@ -382,13 +384,13 @@ const TimelineComponent = () => {
       {/* PHASE 4 */}
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot color="info">
-            <Typography variant="h6">4</Typography>
+          <TimelineDot color='info'>
+            <Typography variant='h6'>4</Typography>
           </TimelineDot>
         </TimelineSeparator>
         <TimelineContent>
-          <Typography variant="h3">Phase 4</Typography>
-          <Typography variant="h6">Develop additional regions</Typography>
+          <Typography variant='h3'>Phase 4</Typography>
+          <Typography variant='h6'>Develop additional regions</Typography>
           <Typography>
             Build database of nonprofits in target regions
           </Typography>
@@ -404,7 +406,7 @@ const TimelineComponent = () => {
   );
 };
 
-const steps = ["Phase 1", "Phase 2", "Phase 3", "Phase 4"];
+const steps = ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4'];
 
 const PhaseIcon = ({ step }: { step: number }) => {
   switch (step) {
@@ -434,10 +436,10 @@ const PhaseText = ({ step }: { step: number }) => {
       return (
         <div>
           {/* Phase 1 content */}
-          <Typography textAlign="center" variant="h5">
+          <Typography textAlign='center' variant='h5'>
             Search Engine in greater NY region
           </Typography>
-          <Typography component="div" textAlign="center">
+          <Typography component='div' textAlign='center'>
             <ul>
               <p>Build database of nonprofit websites</p>
               <p>
@@ -456,10 +458,10 @@ const PhaseText = ({ step }: { step: number }) => {
       return (
         <div>
           {/* Phase 2 content */}
-          <Typography textAlign="center" variant="h5">
+          <Typography textAlign='center' variant='h5'>
             Community Platform for Volunteers
           </Typography>
-          <Typography component="div" textAlign="center">
+          <Typography component='div' textAlign='center'>
             <ul>
               <p>Support account creation</p>
               <p>
@@ -475,10 +477,10 @@ const PhaseText = ({ step }: { step: number }) => {
       return (
         <div>
           {/* Phase 3 content */}
-          <Typography textAlign="center" variant="h5">
+          <Typography textAlign='center' variant='h5'>
             Non-Search Search Experience
           </Typography>
-          <Typography component="div" textAlign="center">
+          <Typography component='div' textAlign='center'>
             <ul>
               <p>
                 Offer AI conversational experience to render appropriate
@@ -500,10 +502,10 @@ const PhaseText = ({ step }: { step: number }) => {
       return (
         <div>
           {/* Phase 4 content */}
-          <Typography textAlign="center" variant="h5">
+          <Typography textAlign='center' variant='h5'>
             Develop additional regions
           </Typography>
-          <Typography component="div" textAlign="center">
+          <Typography component='div' textAlign='center'>
             <ul>
               <p>Build database of nonprofits at additional target regions</p>
               <p>
@@ -528,7 +530,7 @@ const Phases = () => {
 
   useEffect(() => {
     const calculateMaxHeight = () => {
-      const phaseCardElements = document.querySelectorAll(".phase-card");
+      const phaseCardElements = document.querySelectorAll('.phase-card');
       let maxCardHeight = 0;
 
       phaseCardElements.forEach((element) => {
@@ -547,11 +549,11 @@ const Phases = () => {
     };
 
     // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     // Cleanup the event listener on component unmount
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -559,59 +561,59 @@ const Phases = () => {
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6} md={3}>
         <PhaseCard
-          title="Phase 1"
-          icon={<SearchIcon fontSize="inherit" />}
-          main="Search Engine in greater NY region"
+          title='Phase 1'
+          icon={<SearchIcon fontSize='inherit' />}
+          main='Search Engine in greater NY region'
           goals={[
-            "Build database of nonprofit websites",
-            "Leverage AI to organize data in support of keyword search and filtering",
-            "Insert geolocation capabilities to support geographic parameters",
-            "Optimize search experience",
+            'Build database of nonprofit websites',
+            'Leverage AI to organize data in support of keyword search and filtering',
+            'Insert geolocation capabilities to support geographic parameters',
+            'Optimize search experience',
           ]}
           style={maxHeight ? { minHeight: maxHeight } : {}}
-          className="phase-card"
+          className='phase-card'
         />
       </Grid>
       <Grid item xs={12} sm={6} md={3}>
         <PhaseCard
-          title="Phase 2"
-          icon={<VolunteerActivismIcon fontSize="inherit" />}
-          main="Community Platform for Volunteers"
+          title='Phase 2'
+          icon={<VolunteerActivismIcon fontSize='inherit' />}
+          main='Community Platform for Volunteers'
           goals={[
-            "Support account creation",
-            "Launch social-media platform that supports relationships and documenting/sharing media and posts",
-            "Enhance nonprofit organizations’ presence and information",
+            'Support account creation',
+            'Launch social-media platform that supports relationships and documenting/sharing media and posts',
+            'Enhance nonprofit organizations’ presence and information',
           ]}
           style={maxHeight ? { minHeight: maxHeight } : {}}
-          className="phase-card"
+          className='phase-card'
         />
       </Grid>
       <Grid item xs={12} sm={6} md={3}>
         <PhaseCard
-          title="Phase 3"
-          icon={<SmartToyIcon fontSize="inherit" />}
-          main="Non-Search Search Experience"
+          title='Phase 3'
+          icon={<SmartToyIcon fontSize='inherit' />}
+          main='Non-Search Search Experience'
           goals={[
-            "AI chat generates appropriate volunteer activities",
-            "Machine learning provides volunteers with ‘intelligent’ customized recommendations ",
-            "Volunteer registration and management tools support nonprofits",
+            'AI chat generates appropriate volunteer activities',
+            'Machine learning provides volunteers with ‘intelligent’ customized recommendations ',
+            'Volunteer registration and management tools support nonprofits',
           ]}
           style={maxHeight ? { minHeight: maxHeight } : {}}
-          className="phase-card"
+          className='phase-card'
         />
       </Grid>
       <Grid item xs={12} sm={6} md={3}>
         <PhaseCard
-          title="Phase 4"
-          icon={<SouthAmericaIcon fontSize="inherit" />}
-          main="Develop additional regions"
+          title='Phase 4'
+          icon={<SouthAmericaIcon fontSize='inherit' />}
+          main='Develop additional regions'
           goals={[
-            "Build database of nonprofits at additional target regions",
-            "Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database",
-            "Raise funds to ensure ongoing optimal site performance and scale functionality",
+            'Build database of nonprofits at additional target regions',
+            'Leverage marketing/PR techniques to attract local volunteers and review nonprofit organization database',
+            'Raise funds to ensure ongoing optimal site performance and scale functionality',
           ]}
           style={maxHeight ? { minHeight: maxHeight } : {}}
-          className="phase-card"
+          className='phase-card'
         />
       </Grid>
     </Grid>
@@ -638,9 +640,9 @@ const PhaseCard = ({
     <>
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
           paddingBottom: 2,
         }}
       >
@@ -649,25 +651,25 @@ const PhaseCard = ({
             width: 80,
             height: 80,
             backgroundColor: green[500],
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "50px",
-            color: "rgb(255, 255, 255, 0.9)",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '50px',
+            color: 'rgb(255, 255, 255, 0.9)',
           }}
         >
           {icon}
         </Avatar>
       </Box>
-      <Typography variant="h3">{title}</Typography>
-      <Typography variant="h5" sx={{ paddingBottom: 2 }}>
+      <Typography variant='h3'>{title}</Typography>
+      <Typography variant='h5' sx={{ paddingBottom: 2 }}>
         {main}
       </Typography>
       <Card
         sx={{
-          justifyContent: "left",
-          alignItems: "left",
-          textAlign: "left",
+          justifyContent: 'left',
+          alignItems: 'left',
+          textAlign: 'left',
         }}
         className={className}
         style={style}
@@ -687,9 +689,9 @@ const PhaseCard = ({
 
 const Timeline2Component = () => {
   const theme = useTheme();
-  const isXs = useMediaQuery(theme.breakpoints.down("xs"));
-  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
-  const isMd = useMediaQuery(theme.breakpoints.down("md"));
+  const isXs = useMediaQuery(theme.breakpoints.down('xs'));
+  const isSm = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMd = useMediaQuery(theme.breakpoints.down('md'));
 
   let activeStepCount = 4; // Default for xl and lg screens
   let additional = 0;
@@ -703,15 +705,15 @@ const Timeline2Component = () => {
   }
 
   return (
-    <Grid container spacing={2} paddingTop={"50px"}>
+    <Grid container spacing={2} paddingTop={'50px'}>
       <Grid item xs={12}>
-        <Stepper activeStep={0} alternativeLabel orientation="horizontal">
+        <Stepper activeStep={0} alternativeLabel orientation='horizontal'>
           {steps.slice(0, activeStepCount).map((label) => (
             <Step key={label}>
               <StepLabel StepIconComponent={PhaseIcon2[steps.indexOf(label)]}>
-                {" "}
+                {' '}
               </StepLabel>
-              <Typography textAlign="center" variant="h3">
+              <Typography textAlign='center' variant='h3'>
                 {label}
               </Typography>
               <PhaseText step={steps.indexOf(label)} />
@@ -720,15 +722,15 @@ const Timeline2Component = () => {
         </Stepper>
       </Grid>
       <Grid item xs={12}>
-        <Stepper activeStep={-1} alternativeLabel orientation="horizontal">
+        <Stepper activeStep={-1} alternativeLabel orientation='horizontal'>
           {steps
             .slice(activeStepCount, activeStepCount + additional)
             .map((label) => (
               <Step key={label}>
                 <StepLabel StepIconComponent={PhaseIcon2[steps.indexOf(label)]}>
-                  {" "}
+                  {' '}
                 </StepLabel>
-                <Typography textAlign="center" variant="h3">
+                <Typography textAlign='center' variant='h3'>
                   {label}
                 </Typography>
                 <PhaseText step={steps.indexOf(label)} />

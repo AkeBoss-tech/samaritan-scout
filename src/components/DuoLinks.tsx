@@ -1,6 +1,6 @@
 import { Box, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 import React from 'react';
-import CustomButton from './CustomButton';
+import Button from './button';
 import MaterialTheme from './MaterialTheme';
 import { useNavigate } from 'react-router-dom';
 
@@ -30,11 +30,11 @@ const DuoLinks = () => {
                 backgroundPosition: 'center',
                 objectFit: 'cover',
               }}
-              borderRadius={1}
+              borderRadius={2}
               height={'100%'}
               width={'100%'}
             ></Box>
-            <CustomButton
+            <Button
               size='large'
               bgStyle='primary'
               hoverStyle='dark'
@@ -47,7 +47,7 @@ const DuoLinks = () => {
               >
                 Join the effort
               </Typography>
-            </CustomButton>
+            </Button>
           </Stack>
         </Grid>
         <Grid item xs={12} sm={6} height={{ xs: '50%', sm: '100%' }}>
@@ -59,11 +59,11 @@ const DuoLinks = () => {
                 backgroundPosition: 'center',
                 objectFit: 'cover',
               }}
-              borderRadius={1}
+              borderRadius={2}
               height={'100%'}
               width={'100%'}
             ></Box>
-            <CustomButton
+            <Button
               size='large'
               bgStyle='primary'
               hoverStyle='dark'
@@ -72,7 +72,7 @@ const DuoLinks = () => {
               <Typography variant={isSm ? 'body1' : 'h3'} fontWeight={'bold'}>
                 Support our work
               </Typography>
-            </CustomButton>
+            </Button>
           </Stack>
         </Grid>
       </Grid>

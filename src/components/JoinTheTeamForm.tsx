@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Checkbox,
   FormControlLabel,
@@ -13,6 +12,7 @@ import React, { useState } from 'react';
 import MaterialTheme from './MaterialTheme';
 import CaptchaComponent from './CaptchaComponent';
 import FeedbackModal from './FeedbackModal';
+import Separator from './Separator';
 
 type FormData = {
   firstName: string;
@@ -136,9 +136,9 @@ const JoinTheTeamForm = () => {
     <ThemeProvider theme={MaterialTheme}>
       <FeedbackModal
         open={isModalOpen}
-        name='We will be in touch!'
-        description='Thank you for your support in harnessing cutting edge technology to connect individuals with meaningful and impactful service activities. Together, we can accelerate positive change!'
-        image={'join-the-team.jpeg'}
+        title='Thank you for your interest. We will be in touch with you soon!'
+        content=''
+        image={'jumping-dog.jpg'}
         onClose={closeModal}
       ></FeedbackModal>
       <Stack alignItems={'center'}>
@@ -153,12 +153,13 @@ const JoinTheTeamForm = () => {
           spacing={4}
           boxShadow={5}
           p={4}
-          borderRadius={4}
+          borderRadius={2}
           bgcolor={'white'}
         >
           <Typography variant='h1' gutterBottom textAlign={'center'}>
             Join The Effort
           </Typography>
+          <Separator primary></Separator>
           <Stack spacing={2}>
             {/* First Name and Last Name */}
             <Stack

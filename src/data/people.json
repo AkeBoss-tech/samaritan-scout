@@ -2,31 +2,31 @@
   "boardMembers": {
     "Scott Thompson": {
       "title": "Co-Founder, Board of Directors",
-      "image": "scott-thompson.jpg",
+      "image": "/images/people-page/board-of-directors/scott-thompson.jpg",
       "linkedin": "https://www.linkedin.com/in/scottthompsonaws/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Michelle Milentijevic": {
       "title": "Co-Founder, Board of Directors",
-      "image": "michelle-milentijevic.png",
+      "image": "/images/people-page/board-of-directors/michelle-milentijevic.png",
       "linkedin": "https://www.linkedin.com/in/michellebostmilentijevic/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Dvora Inwood": {
       "title": "Co-Founder",
-      "image": "dvora-inwood-headshot.jpg",
+      "image": "/images/people-page/board-of-directors/dvora-inwood-headshot.jpg",
       "linkedin": "https://www.linkedin.com/in/dvora-inwood/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Rene Ravenel": {
       "title": "Co-Founder, Head of Technology",
-      "image": "rene-ravenel-headshot.png",
+      "image": "/images/people-page/board-of-directors/rene-ravenel-headshot.png",
       "linkedin": "https://www.linkedin.com/in/reneravenel/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Will Rosenthal": {
       "title": "Co-Founder, Tech Lead",
-      "image": "will-rosenthal-headshot-circle.jpeg",
+      "image": "/images/people-page/board-of-directors/will-rosenthal-headshot-circle.jpeg",
       "linkedin": "https://www.linkedin.com/in/william-rosenthal-77072b247/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     }
@@ -34,107 +34,107 @@
   "volunteers": {
     "Aniket Anvekar": {
       "title": "Software Engineering Lead, Back-End Team",
-      "image": "aniket-anvekar.jpeg",
+      "image": "/images/people-page/2023-summer-interns/aniket-anvekar.jpeg",
       "linkedin": "https://www.linkedin.com/in/aniketanvekar/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Akash Dubey": {
       "title": "Front-End Software Engineer",
-      "image": "akash-dubey.jpeg",
+      "image": "/images/people-page/2023-summer-interns/akash-dubey.jpeg",
       "linkedin": "https://www.linkedin.com/in/akash-dubey-your-boss/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Jack Greenwald": {
       "title": "Front-End Software Engineer",
-      "image": "jack-greenwald.jpeg",
+      "image": "/images/people-page/2023-summer-interns/jack-greenwald.jpeg",
       "linkedin": "https://www.linkedin.com/in/jack-greenwald-a25052281/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Saket": {
       "title": "Back-End Software Engineer",
-      "image": "saket-manolkar.jpeg",
+      "image": "/images/people-page/2023-summer-interns/saket-manolkar.jpeg",
       "linkedin": "google.com",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Dhruvil Mehta": {
       "title": "Back-End Software Engineer",
-      "image": "dhruvil-mehta.jpeg",
+      "image": "/images/people-page/2023-summer-interns/dhruvil-mehta.jpeg",
       "linkedin": "https://www.linkedin.com/in/mehta-dhruvil28/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Shubham Mishra": {
       "title": "Back-End Software Engineer",
-      "image": "shubham-mishra.jpeg",
+      "image": "/images/people-page/2023-summer-interns/shubham-mishra.jpeg",
       "linkedin": "https://www.linkedin.com/in/bakharia/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Sreya Nimmagadda": {
       "title": "Back-End Software Engineer",
-      "image": "sreya-nimmagadda.jpeg",
+      "image": "/images/people-page/2023-summer-interns/sreya-nimmagadda.jpeg",
       "linkedin": "https://www.linkedin.com/in/sreyanimmagadda/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Om Prakash Prajapath": {
       "title": "Front-End Software Engineer",
-      "image": "om-prakash-prajapath.jpeg",
+      "image": "/images/people-page/2023-summer-interns/om-prakash-prajapath.jpeg",
       "linkedin": "https://www.linkedin.com/in/om-prajapath/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Deepa Pulugurtha": {
       "title": "Front-End Software Engineer",
-      "image": "deepa-pulugurtha.jpeg",
+      "image": "/images/people-page/2023-summer-interns/deepa-pulugurtha.jpeg",
       "linkedin": "https://www.linkedin.com/in/uma-pulugurtha/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Arslan Tariq": {
       "title": "Back-End Software Engineer",
-      "image": "arslan-tariq.jpg",
+      "image": "/images/people-page/2023-summer-interns/arslan-tariq.jpg",
       "linkedin": "https://www.linkedin.com/in/arslan-tariq-836b65199/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Hongzhi (Ethan) Zhao": {
       "title": "Front-End Software Engineer",
-      "image": "hongzhi-zhao.jpeg",
+      "image": "/images/people-page/2023-summer-interns/hongzhi-zhao.jpeg",
       "linkedin": "https://www.linkedin.com/in/hongzhi-zhao-631987211/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Kavita Mahabaleshwarkar": {
       "title": "UX Designer",
-      "image": "kavita-mahabaleshwarkar.jpeg",
+      "image": "/images/people-page/2023-summer-interns/kavita-mahabaleshwarkar.jpeg",
       "linkedin": "https://www.linkedin.com/in/kavita-mahabaleshwarkar-60932b23/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     },
     "Arav Sachdeva": {
       "title": "Front-End Software Engineer",
-      "image": "lacy-dog-square.jpg",
+      "image": "/images/people-page/2023-summer-interns/lacy-dog-square.jpg",
       "linkedin": "https://www.linkedin.com/in/arav-sachdeva-618b20247/",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra sem vitae neque mattis, quis dapibus nulla egestas. Phasellus non dui non eros mattis pharetra. Maecenas ipsum ante, auctor sed dignissim vitae, luctus sit amet metus. In mollis enim et lectus porttitor ultricies. Sed tincidunt quis diam ut tincidunt. Vestibulum scelerisque et erat sed tempor. Aliquam mi ante, aliquet a pharetra vitae, vehicula aliquet lorem. Suspendisse euismod est nec elit varius porta. Suspendisse eu eleifend ex."
     }
   },
   "quotes": {
     "quote1": {
-      "imagePath": "quote1.jpeg",
-      "title": "Effect a scalable impact",
-      "quote": "This project has taught me a lot of newthings that I was previously unaware of. Ilearned about AWS Lambda, EFS, and Ieven had the opportunity to understandhow SCRUM Meetings are conducted..Honestly, the whole experience hasbeen amazing. Thank you for believingin me and giving me a chance to be apart of this great team.",
-      "author": "Lorem Ipsum"
+      "imagePath": "/images/people-page/effect-impact.svg",
+      "title": "Effect A Scalable Impact",
+      "quote": "I am immensely grateful for the opportunity to contribute my skills to a cause that has the power of a scalable impact. The prospect of helping people in numerous places around the world, through innovative technology, fills me with hope and optimism for the future.",
+      "author": "Volunteer UX designer"
     },
     "quote2": {
-      "imagePath": "quote2.jpeg",
-      "title": "Get inspired and inspire others",
-      "quote": "This project has taught me a lot of newthings that I was previously unaware of. Ilearned about AWS Lambda, EFS, and Ieven had the opportunity to understandhow SCRUM Meetings are conducted..Honestly, the whole experience hasbeen amazing. Thank you for believingin me and giving me a chance to be apart of this great team.",
-      "author": "Lorem Ipsum"
+      "imagePath": "/images/people-page/get-inspired.svg",
+      "title": "Get Inspired and Inspire Others",
+      "quote": "Working with this remarkable team I have come to appreciate the power of collaboration and the magic that happens when individuals from different backgrounds and cultures come together with a common goal to help people to give back to the community.",
+      "author": "Volunteer back-end software developer"
     },
     "quote3": {
-      "imagePath": "quote3.png",
-      "title": "Develop skills to advance your career",
-      "quote": "This project has taught me a lot of newthings that I was previously unaware of. Ilearned about AWS Lambda, EFS, and Ieven had the opportunity to understandhow SCRUM Meetings are conducted..Honestly, the whole experience hasbeen amazing. Thank you for believingin me and giving me a chance to be apart of this great team.",
-      "author": "Lorem Ipsum"
+      "imagePath": "/images/people-page/develop-skills.svg",
+      "title": "Develop Skills To Advance Your Career",
+      "quote": "This project has taught me a lot of new things that I was previously unaware of, I learned AWS Lambda, EFS, and work in a real Agile Environment. Honestly, the whole experience is amazing. Thank you for believing in me and giving me a chance to be a part of this great team.",
+      "author": "Volunteer back-end software developer"
     },
     "quote4": {
-      "imagePath": "quote4.png",
-      "title": "Collaborate with kind people",
-      "quote": "This project has taught me a lot of newthings that I was previously unaware of. Ilearned about AWS Lambda, EFS, and Ieven had the opportunity to understandhow SCRUM Meetings are conducted..Honestly, the whole experience hasbeen amazing. Thank you for believingin me and giving me a chance to be apart of this great team.",
-      "author": "Lorem Ipsum"
+      "imagePath": "/images/people-page/collaborate.svg",
+      "title": "Collaborate With Kind People",
+      "quote": "I have met so many wonderful, kind-hearted people from different places who share my goals and my belief in this mission. We discuss ideas to improve the platform, we learn from each other, and even help each other on our career paths – all of which gives me a very strong sense of belonging.",
+      "author": "Volunteer front-end software developer"
     }
   }
 }

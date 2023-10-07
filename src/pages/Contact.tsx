@@ -105,7 +105,7 @@ const Contact = () => {
               xs: '90%',
             }}
           >
-            <Box boxShadow={5} p={4} borderRadius={4}>
+            <Box boxShadow={5} p={4} borderRadius={2}>
               <Stack spacing={2}>
                 {/* First Name and Last Name */}
                 <Stack
@@ -127,7 +127,7 @@ const Contact = () => {
                   >
                     <Typography variant='body2'>First Name*</Typography>
                     <TextField
-                    placeholder='Smith'
+                      placeholder='Smith'
                       fullWidth
                       required
                       variant='outlined'
@@ -140,7 +140,7 @@ const Contact = () => {
                   <Stack width={{ xs: '100%', sm: '50%' }} spacing={1}>
                     <Typography variant='body2'>Last Name*</Typography>
                     <TextField
-                    placeholder='Davidson'
+                      placeholder='Davidson'
                       fullWidth
                       required
                       variant='outlined'

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@mui/material/Button';
+import MaterialButton from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import MaterialTheme from './MaterialTheme';
 
@@ -21,7 +21,7 @@ type ButtonProps = {
 
 const theme = MaterialTheme;
 
-const StyledButton = styled(Button)<StyledButtonProps>(
+const StyledButton = styled(MaterialButton)<StyledButtonProps>(
   ({ size, bgstyle, hoverstyle }) => ({
     width: 'fit-content',
     boxShadow: theme.shadows[4],
@@ -58,7 +58,7 @@ const StyledButton = styled(Button)<StyledButtonProps>(
   })
 );
 
-const CustomButton: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   size,
   bgStyle,
   hoverStyle,
@@ -83,4 +83,4 @@ const CustomButton: React.FC<ButtonProps> = ({
   );
 };
 
-export default CustomButton;
+export default Button;

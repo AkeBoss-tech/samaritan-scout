@@ -11,11 +11,8 @@ import {
 import MaterialTheme from '../components/MaterialTheme';
 import PersonCard from '../components/PersonCard';
 import PeoplePageData from '../data/people.json';
-import CustomButton from '../components/CustomButton';
 import DuoLinks from '../components/DuoLinks';
-import JoinTheTeamForm from '../components/JoinTheTeamForm';
-import HeroImage from '../components/HeroImage';
-import HeroImageContent from '../components/HeroImageContent';
+
 import Carousel from 'react-material-ui-carousel';
 import { Icons } from '../components/Icons';
 
@@ -40,34 +37,35 @@ const volunteersObject: Record<string, PersonInfo> =
   PeoplePageData['volunteers'];
 
 function People() {
+  const theme1 = MaterialTheme;
+  const isXs = useMediaQuery(theme1.breakpoints.only('xs'));
+
   return (
     <>
       <ThemeProvider theme={MaterialTheme}>
         <Stack>
-          <HeroImage imageSrc='https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzc2lvbiUyMGxlZCUyMHVzJTIwaGVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'>
-            <HeroImageContent
-              color='primary.light'
-              xPosition='center'
-              yPosition='bottom'
-              width='wide'
+          <Stack
+            width={'100%'}
+            py={10}
+            px={4}
+            alignItems={'center'}
+            justifyContent={'center'}
+            bgcolor={'primary.light'}
+          >
+            <Typography
+              variant='h1'
+              gutterBottom
+              sx={{
+                textAlign: 'center',
+              }}
             >
-              <Typography variant='h3' textAlign={'center'}>
-                We are a group of passionate students who are dedicated to
-                making a difference in our community.
-              </Typography>
-              <Box sx={{ height: '20px' }}></Box>
-              <Typography
-                variant='h3'
-                textAlign={'center'}
-                color={'common.white'}
-              >
-                We're here to empower them.
-              </Typography>
-            </HeroImageContent>
-          </HeroImage>
+              We are committed to optimizing the discovery of volunteer
+              experiences.
+            </Typography>
+          </Stack>
           <Container
             maxWidth='xl'
-            sx={{ paddingBottom: '100px', paddingTop: '200px' }}
+            sx={{ paddingBottom: '100px', paddingTop: '50px' }}
           >
             <Stack spacing={12}>
               {/* Board Members & Developing Team Members */}
@@ -140,74 +138,155 @@ function People() {
               </Stack>
 
               {/* Why volunteer with us? */}
-              <Stack width={'100%'} alignItems={'center'}>
-                <Stack spacing={8} width={'100%'}>
-                  <Typography variant='h1' align='center'>
-                    Why Volunteer With Us?
-                  </Typography>
-                  <Carousel
-                    sx={{
-                      boxShadow:
-                        '0 0px 15px -3px rgb(0 0 0 / 0.1), 0 0px 6px -4px rgb(0 0 0 / 0.1);',
-                      borderRadius: '15px',
-                    }}
-                  >
-                    {Object.keys(quotesObject).map((key) => (
-                      <Stack width={'100%'} alignItems={'center'}>
+              <Stack width={'100%'} spacing={8} alignItems={'center'}>
+                <Typography variant='h1' align='center'>
+                  Why Volunteer With Us?
+                </Typography>
+                <Carousel
+                  navButtonsAlwaysVisible={isXs ? false : true}
+                  navButtonsAlwaysInvisible={isXs ? true : false}
+                  navButtonsProps={{
+                    style: {
+                      backgroundColor: 'white',
+                      border: '2px solid grey',
+                      color: 'grey',
+                      opacity: 0.4,
+                    },
+                  }}
+                  indicatorContainerProps={{
+                    style: {
+                      marginTop: '0px',
+                      marginBottom: '5px',
+                      // textAlign: 'right', // 4
+                    },
+                  }}
+                  sx={{
+                    boxShadow:
+                      '0 0px 15px -3px rgb(0 0 0 / 0.1), 0 0px 6px -4px rgb(0 0 0 / 0.1);',
+                    borderRadius: '15px',
+                    // width: '1000px',
+                    width: {
+                      xs: '100%',
+                      sm: '100%',
+                      md: '100%',
+                      lg: '90%',
+                      xl: '70%',
+                    },
+                  }}
+                >
+                  {Object.keys(quotesObject).map((key) => (
+                    <Stack width={'100%'} height={'100%'} alignItems={'center'}>
+                      <Stack
+                        width={{
+                          xs: '100%',
+                          sm: '90%',
+                          md: '90%',
+                          lg: '90%',
+                          xl: '90%',
+                        }}
+                        direction={{
+                          xs: 'column',
+                          sm: 'column',
+                          md: 'row',
+                          lg: 'row',
+                          xl: 'row',
+                        }}
+                        height={{
+                          xs: '520px',
+                          sm: '550px',
+                          md: '400px',
+                          lg: '400px',
+                          xl: '400px',
+                        }}
+                        spacing={{ xs: 2, sm: 2, md: 4, lg: 6, xl: 8 }}
+                        py={{ xs: 2, sm: 2, md: 4, lg: 6, xl: 6 }}
+                        px={{ xs: 3, sm: 6, md: 6, lg: 6, xl: 6 }}
+                      >
                         <Stack
-                          direction={'row'}
-                          height={400}
-                          spacing={10}
-                          py={2}
-                          px={6}
-                          width={'70%'}
+                          width={{
+                            xs: '100%',
+                            sm: '100%',
+                            md: '100%',
+                            lg: '50%',
+                            xl: '50%',
+                          }}
+                          alignItems={'center'}
                         >
-                          <Stack
-                            width={'50%'}
-                            alignItems={'center'}
-                            justifyContent={'center'}
-                            py={5}
+                          <Typography
+                            variant='h2'
+                            align='center'
+                            height={{
+                              xs: '50px',
+                              sm: '70px',
+                              md: '80px',
+                              lg: '80px',
+                              xl: '80px',
+                            }}
                           >
-                            <Typography variant='h2' align='center'>
-                              {quotesObject[key].title}
-                            </Typography>
+                            {quotesObject[key].title}
+                          </Typography>
+                          <Stack
+                            sx={{
+                              backgroundColor: 'primary.light',
+                              borderRadius: '50%',
+                            }}
+                            display={{
+                              xs: 'none',
+                              sm: 'block',
+                              md: 'block',
+                              lg: 'block',
+                              xl: 'block',
+                            }}
+                            width={{
+                              xs: '150px',
+                              sm: '150px',
+                              md: '200px',
+                              lg: '200px',
+                              xl: '200px',
+                            }}
+                            p={{ xs: 4, sm: 4, md: 5, lg: 5, xl: 5 }}
+                          >
                             <img
-                              src={`/images/${quotesObject[key].imagePath}`}
+                              src={quotesObject[key].imagePath}
                               alt=''
-                              width={'280px'}
-                              height={'280px'}
+                              width={'100%'}
+                              height={'100%'}
                             ></img>
                           </Stack>
+                        </Stack>
 
-                          <Stack
-                            height={'100%'}
-                            justifyContent={'center'}
-                            width={'50%'}
-                            spacing={2}
-                          >
-                            <Stack alignItems={'center'}>
-                              <Icons.Quote
-                                size={48}
-                                color={MaterialTheme.palette.primary.light}
-                              ></Icons.Quote>
-                            </Stack>
-                            <hr></hr>
-                            <Typography
-                              variant='body1'
-                              align='left'
-                              fontStyle={'italic'}
-                            >
-                              "{quotesObject[key].quote}"
-                            </Typography>
-                            <Typography variant='subtitle1' align='left'>
-                              - {quotesObject[key].author}
-                            </Typography>
+                        <Stack
+                          width={{
+                            xs: '100%',
+                            sm: '100%',
+                            md: '100%',
+                            lg: '50%',
+                            xl: '50%',
+                          }}
+                          spacing={2}
+                        >
+                          <Stack alignItems={'center'}>
+                            <Icons.Quote
+                              size={48}
+                              color={MaterialTheme.palette.primary.light}
+                            ></Icons.Quote>
                           </Stack>
+                          <hr></hr>
+                          <Typography
+                            variant='body1'
+                            align='left'
+                            fontStyle={'italic'}
+                          >
+                            "{quotesObject[key].quote}"
+                          </Typography>
+                          <Typography variant='subtitle1' align='left'>
+                            - {quotesObject[key].author}
+                          </Typography>
                         </Stack>
                       </Stack>
-                    ))}
-                  </Carousel>
-                </Stack>
+                    </Stack>
+                  ))}
+                </Carousel>
               </Stack>
 
               {/* Join the Team & Support Us Links */}

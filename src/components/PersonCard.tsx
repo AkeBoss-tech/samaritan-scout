@@ -51,7 +51,7 @@ export default function PersonCard({
           cursor: 'pointer',
           border: isHovered ? '2px solid #cbcfcb' : '2px solid white',
           transition: 'all 0.2s ease-in-out',
-          borderRadius: 1.5,
+          borderRadius: 2,
         }}
         onClick={() => {
           openModal();
@@ -60,7 +60,7 @@ export default function PersonCard({
         height={'100%'}
       >
         <img
-          src={'/images/team-images/' + image}
+          src={image}
           alt={name}
           style={{
             width: '100%',

@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import TeamContactForm from '../components/TeamContactForm';
-import CustomButton from '../components/CustomButton';
+import Button from '../components/button';
 import AddIcon from '@mui/icons-material/Add';
 // import GridTag from '../components/GridTag';
 const Test = () => {
@@ -10,24 +10,24 @@ const Test = () => {
         <TeamContactForm />
       </Stack>
       <Stack direction={'row'} spacing={5} m={5}>
-        <CustomButton
+        <Button
           size='medium'
           bgStyle='primary'
           hoverStyle='dark'
           startIcon={<AddIcon />}
         >
           <Typography fontWeight={'bold'}>Primary Button</Typography>
-        </CustomButton>
-        <CustomButton size='small' bgStyle='secondary' hoverStyle='light'>
+        </Button>
+        <Button size='small' bgStyle='secondary' hoverStyle='light'>
           <Typography fontSize={'14px'} fontWeight={'bold'}>
             Secondary Button
           </Typography>
-        </CustomButton>
-        <CustomButton size='small' bgStyle='tertiary' hoverStyle='light'>
+        </Button>
+        <Button size='small' bgStyle='tertiary' hoverStyle='light'>
           <Typography fontSize={'14px'} fontWeight={'bold'}>
             Tertiary Button
           </Typography>
-        </CustomButton>
+        </Button>
       </Stack>
       <Stack>{/* <GridTag /> */}</Stack>
     </div>

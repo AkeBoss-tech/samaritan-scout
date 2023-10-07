@@ -1,14 +1,8 @@
-import {
-  Box,
-  Container,
-  Stack,
-  ThemeProvider,
-  Typography,
-} from '@mui/material';
+import { Box, Stack, ThemeProvider, Typography } from '@mui/material';
 
 import JoinTheTeamForm from '../components/JoinTheTeamForm';
 import MaterialTheme from '../components/MaterialTheme';
-import CustomButton from '../components/CustomButton';
+import Button from '../components/button';
 import { useNavigate } from 'react-router-dom';
 
 const JoinUs = () => {
@@ -16,7 +10,8 @@ const JoinUs = () => {
   return (
     <ThemeProvider theme={MaterialTheme}>
       <>
-        <Stack position={'relative'} height={'170vh'}>
+        {/* Hero Image */}
+        <Stack position={'relative'} height={'100%'}>
           <Box
             sx={{
               backgroundImage:
@@ -39,83 +34,102 @@ const JoinUs = () => {
             position={'absolute'}
             width={'100%'}
             height={'100%'}
-            top={350}
+            top={{ xs: 250, sm: 350, md: 280, lg: 280, xl: 350 }}
           >
             {/* Join the Team Form */}
             <JoinTheTeamForm />
           </Stack>
         </Stack>
-        <Container maxWidth={'xl'}>
+
+        <Stack
+          height={{
+            xs: '1200px',
+            sm: '1100px',
+            md: '1010px',
+            lg: '1010px',
+            xl: '1015px',
+          }}
+        ></Stack>
+
+        <Stack width={'100%'} alignItems={'center'} pb={10}>
           <Stack
-            spacing={10}
-            alignItems={'center'}
-            py={5}
-            height={'65vh'}
-            width={'100%'}
+            width={{
+              xs: '90%',
+              sm: '600px',
+              md: '800px',
+              lg: '1000px',
+              xl: '1000px',
+            }}
+            height={{
+              xs: '500px',
+              sm: '300px',
+              md: '400px',
+              lg: '400px',
+              xl: '400px',
+            }}
+            borderRadius={2}
+            p={{ xs: 4, sm: 4, md: 7, lg: 7, xl: 7 }}
+            direction={{
+              xs: 'column',
+              sm: 'row',
+              md: 'row',
+              lg: 'row',
+              xl: 'row',
+            }}
+            spacing={{ xs: 4, sm: 3, md: 5, lg: 10, xl: 10 }}
+            boxShadow={5}
           >
             <Stack
-              width={'60%'}
-              alignItems={'center'}
-              boxShadow={5}
-              borderRadius={2}
+              width={{ xs: '100%', sm: '50%', md: '50%', lg: '50%', xl: '50%' }}
+              height={{
+                xs: '50%',
+                sm: '100%',
+                md: '100%',
+                lg: '100%',
+                xl: '100%',
+              }}
             >
-              <Stack
-                direction={'row'}
-                height={400}
-                spacing={5}
-                py={2}
-                px={6}
+              <img
+                src='/images/join-us-page/support-us.jpeg'
+                alt=''
                 width={'100%'}
+                height={'100%'}
+                style={{
+                  borderRadius: MaterialTheme.shape.borderRadius,
+                  objectFit: 'cover',
+                }}
+              ></img>
+            </Stack>
+            <Stack
+              width={{ xs: '100%', sm: '50%', md: '50%', lg: '50%', xl: '50%' }}
+              height={'100%'}
+              justifyContent={'space-between'}
+            >
+              <Typography
+                variant='body1'
+                fontSize={{ xs: 20, sm: 22, md: 28, lg: 28, xl: 28 }}
               >
-                <Stack
-                  width={'50%'}
-                  alignItems={'center'}
-                  justifyContent={'center'}
-                  py={5}
+                Help Us build the platform that will facilitate and accelerate
+                the improvements we need in the world around us.
+              </Typography>
+              <Button
+                size='large'
+                bgStyle='primary'
+                hoverStyle='dark'
+                onClick={() => navigate('/donate')}
+              >
+                <Typography
+                  variant='body1'
+                  fontSize={'20px'}
+                  fontWeight={'bold'}
+                  align='center'
                 >
-                  <img
-                    src={`/images/quote3.png`}
-                    alt=''
-                    width={'280px'}
-                    height={'280px'}
-                  ></img>
-                </Stack>
-
-                <Stack
-                  height={'100%'}
-                  justifyContent={'center'}
-                  width={'50%'}
-                  spacing={2}
-                  pr={2}
-                >
-                  <Typography
-                    variant='body1'
-                    align='left'
-                    fontStyle={'italic'}
-                    fontSize={24}
-                  >
-                    Help Us build the platform that will facilitate and
-                    accelerate the improvements we need in the world around us.
-                  </Typography>
-                  <CustomButton
-                    size='large'
-                    bgStyle='primary'
-                    hoverStyle='dark'
-                    onClick={() => navigate('/donate')}
-                  >
-                    <Typography
-                      variant={'h3'}
-                      fontWeight={'bold'}
-                      align='center'
-                    >
-                      Support Scout
-                    </Typography>
-                  </CustomButton>
-                </Stack>
-              </Stack>
+                  Join the effort
+                </Typography>
+              </Button>
             </Stack>
           </Stack>
-        </Container>
+        </Stack>
       </>
     </ThemeProvider>
   );
