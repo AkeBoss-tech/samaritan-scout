@@ -11,7 +11,7 @@ import {
   FormControlLabel,
 } from '@mui/material';
 import MaterialTheme from '../components/MaterialTheme';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from '@mui/material/Link';
 import CaptchaComponent from '../components/CaptchaComponent';
 
@@ -51,6 +51,10 @@ const Contact = () => {
       console.log('Please complete the captcha.');
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   return (
     <ThemeProvider theme={MaterialTheme}>

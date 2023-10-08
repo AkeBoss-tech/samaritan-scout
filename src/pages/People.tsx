@@ -15,6 +15,7 @@ import DuoLinks from '../components/DuoLinks';
 
 import Carousel from 'react-material-ui-carousel';
 import { Icons } from '../components/Icons';
+import { useEffect } from 'react';
 
 interface PersonInfo {
   title: string;
@@ -39,6 +40,10 @@ const volunteersObject: Record<string, PersonInfo> =
 function People() {
   const theme1 = MaterialTheme;
   const isXs = useMediaQuery(theme1.breakpoints.only('xs'));
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   return (
     <>

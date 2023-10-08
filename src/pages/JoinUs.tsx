@@ -4,9 +4,14 @@ import JoinTheTeamForm from '../components/JoinTheTeamForm';
 import MaterialTheme from '../components/MaterialTheme';
 import Button from '../components/button';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const JoinUs = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
   return (
     <ThemeProvider theme={MaterialTheme}>
       <>

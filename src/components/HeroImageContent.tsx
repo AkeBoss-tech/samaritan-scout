@@ -38,10 +38,10 @@ const HeroImageContent: React.FC<HeroImageContentProps> = ({ color, xPosition, y
     }
     switch (yPosition) {
         case 'center':
-            yPositionValue = { xs: "-10vh", sm: "-5vh", md: "-50%", lg: "-50%", xl: "-50%" };
+            yPositionValue = { xs: "-10vh", sm: "-50%", md: "-50%", lg: "-50%", xl: "-50%" };
             break;
         case 'bottom':
-            yPositionValue = { xs: "50%", sm: "50%", md: "50%", lg: "50%", xl: "50%" };
+            yPositionValue = { xs: "75%", sm: "50%", md: "50%", lg: "50%", xl: "50%" };
             break;
         case 'top':
             yPositionValue = { xs: "-75%", sm: "-100%", md: "-25vh", lg: "-25vh", xl: "-25vh" };

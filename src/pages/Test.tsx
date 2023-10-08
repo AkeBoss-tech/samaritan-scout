@@ -2,8 +2,13 @@ import { Stack, Typography } from '@mui/material';
 import TeamContactForm from '../components/TeamContactForm';
 import Button from '../components/button';
 import AddIcon from '@mui/icons-material/Add';
+import { useEffect } from 'react';
 // import GridTag from '../components/GridTag';
 const Test = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
   return (
     <div>
       <Stack>

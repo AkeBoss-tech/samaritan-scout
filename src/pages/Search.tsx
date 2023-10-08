@@ -2,7 +2,7 @@ import { Box, Button, Checkbox, FormControlLabel, Grid, IconButton, TextField, T
 import color_theme from "../components/Theme";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Card from '../components/Card';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import SearchIcon from "@mui/icons-material/Search";
 import MaterialTheme from '../components/MaterialTheme';
 import CustomSection from '../components/CustomSection';
@@ -103,6 +103,10 @@ const SearchBar = () => {
 };
 
 const Search = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
   return (
     <ThemeProvider theme={MaterialTheme}>
       <ReactHome />

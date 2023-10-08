@@ -8,7 +8,7 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import DonateForm from "../components/DonateForm";
 import Section from "../components/Section";
 import MaterialTheme from "../components/MaterialTheme";
@@ -20,6 +20,10 @@ import HeroImage from "../components/HeroImage";
 import HeroImageContent from "../components/HeroImageContent";
 
 const Donate = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   return (
     <div className="Home">
       <ThemeProvider theme={MaterialTheme}>

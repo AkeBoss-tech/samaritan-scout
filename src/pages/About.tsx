@@ -47,6 +47,10 @@ import { BsFillHandThumbsUpFill } from 'react-icons/bs';
 import { FaSearchLocation } from 'react-icons/fa';
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
   return (
     <>
       <ThemeProvider theme={MaterialTheme}>
