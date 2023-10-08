@@ -150,6 +150,7 @@ function People() {
                 <Carousel
                   navButtonsAlwaysVisible={isXs ? false : true}
                   navButtonsAlwaysInvisible={isXs ? true : false}
+                  animation='slide'
                   navButtonsProps={{
                     style: {
                       backgroundColor: 'white',

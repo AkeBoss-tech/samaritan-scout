@@ -50,34 +50,17 @@ function About() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
+
+  const theme1 = useTheme();
+  const isXs = useMediaQuery(theme1.breakpoints.only("xs"));
+  const isSm = useMediaQuery(theme1.breakpoints.only("sm"));
+
+  let imageWidth = isSm || isXs ? "90vw" : "45vw";
+  imageWidth = isXs ? "0" : imageWidth;
   
   return (
     <>
       <ThemeProvider theme={MaterialTheme}>
-        {/* <HeroImage 
-          imageSrc="https://www.metrolibrary.org/sites/default/files/2019-03/Support-us-banner.jpg"
-          fullScreen={true}
-          backgroundColor="rgb(255,255,255, 0.2)"
-        >
-          <HeroImageContent
-            color="rgb(255,255,255, 0.5)"
-            xPosition="center"
-            yPosition="top"
-            width="wide"
-          >
-            <Typography variant="subtitle2" align="center" gutterBottom>
-              About Us
-            </Typography>
-            <Box sx={{ height: "2rem" }} />
-            <Typography variant="h6" align="center" gutterBottom>
-              We live in a world filled with kind people who have enthusiasm and
-              skills to share.
-            </Typography>
-            <Typography variant="h3" align="center" gutterBottom>
-              We’re here to empower them.
-            </Typography>
-          </HeroImageContent>
-        </HeroImage> */}
         <HeroImage imageSrc='https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzc2lvbiUyMGxlZCUyMHVzJTIwaGVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'>
           <HeroImageContent
             color='primary.light'
@@ -110,29 +93,37 @@ function About() {
                 align='left'
                 gutterBottom
                 justifyItems={'center'}
-                paddingTop={'10vh'}
               >
                 <strong>Modern technology</strong> suggests products to buy,
                 shows to stream, and acquaintances to follow,
               </Typography>
             </Grid>
-            <Grid item xs={7} sm={2}></Grid>
-            <Grid item xs={4} sm={3}>
-              <BsFillHandThumbsUpFill size={'100%'} />
+            <Grid item xs={12} sm={1}></Grid>
+            <Grid item xs={0} sm={5}>
+              <img
+                src="https://fintechreview.net/wp-content/uploads/2023/03/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNjkyMS1pbWFnZS1rejJkeHU4My5qcGc.jpg"
+                alt="Image that shows tech and people"
+                style={{ maxWidth: imageWidth, alignSelf: "center" }}
+                width={"100%"}
+              />
             </Grid>
           </Grid>
           <Grid container alignItems='center'>
-            <Grid item xs={4} sm={3}>
-              <FaSearchLocation size={'100%'} />
+            <Grid item xs={0} sm={5}>
+              <img
+                src="images/about-page/volunteer.jpg"
+                alt="Image that shows tech and people"
+                style={{ maxWidth: imageWidth, alignSelf: "center" }}
+                width={"100%"}
+              />
             </Grid>
-            <Grid item xs={0} sm={2}></Grid>
+            <Grid item xs={0} sm={1}></Grid>
             <Grid item xs={12} sm={6} justifyContent={'right'}>
               <Typography
                 variant='body1'
                 align='right'
                 gutterBottom
                 justifyContent={'center'}
-                paddingTop={'8vh'}
                 style={{ wordWrap: 'break-word' }}
               >
                 But it has not been harnessed to{' '}
@@ -142,7 +133,7 @@ function About() {
             </Grid>
           </Grid>
 
-          <Box sx={{ height: '1rem' }} />
+          <Box sx={{ height: '2rem' }} />
           <Typography variant='h5' align='center' gutterBottom>
             <strong>UNTIL NOW</strong>
           </Typography>
