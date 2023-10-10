@@ -21,7 +21,7 @@ import HeroImageContent from "../components/HeroImageContent";
 
 const Donate = () => {
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, []);
 
   return (

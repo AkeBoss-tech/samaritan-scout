@@ -48,7 +48,7 @@ import { FaSearchLocation } from 'react-icons/fa';
 
 function About() {
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, []);
 
   const theme1 = useTheme();

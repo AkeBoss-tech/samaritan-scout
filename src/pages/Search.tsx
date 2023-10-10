@@ -104,7 +104,7 @@ const SearchBar = () => {
 
 const Search = () => {
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, []);
   
   return (

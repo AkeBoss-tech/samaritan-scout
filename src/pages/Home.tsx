@@ -50,7 +50,7 @@ const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
 
 function Home() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });;
   }, []);
 
   const [keywords, setKeywords] = useState("");

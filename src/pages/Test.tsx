@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 // import GridTag from '../components/GridTag';
 const Test = () => {
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, []);
   
   return (

@@ -53,7 +53,7 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, []);
 
   return (
@@ -84,8 +84,7 @@ const Contact = () => {
           </Typography>
           <Stack alignItems={'center'} spacing={2} px={5}>
             <Typography variant='h4' color='primary' textAlign={'center'}>
-              Thank you for your interest in learning more about Samaritan Scout
-              !
+              Thank you for your interest in learning more about Samaritan Scout!
             </Typography>
             <Link
               href='mailto:infor@samaritanscout.org'

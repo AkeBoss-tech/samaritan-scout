@@ -15,9 +15,9 @@ import Contact from './pages/Contact';
 import JoinUs from './pages/JoinUs';
 
 const App = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, []);
+  /* useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  }, []); */
 
   return (
     <BrowserRouter>
